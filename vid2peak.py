@@ -264,6 +264,7 @@ for f in a:
             get_gif(Inputfolder + '/' + f, time3, "save2_begin", dir)
             time4 = timestamp[endframe]
             get_gif(Inputfolder + '/' + f, time4, "save2_end", dir)
+
         elif teams == togs:
             logger.write("TOGETHER!\n The picture is from" + str(pic5) + " to " +str(pic6))
             time1 = timestamp[pic5]
