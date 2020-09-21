@@ -1,0 +1,23 @@
+Calculation of z_y_hold_164:
+Showtime pic is: 4378.jpg
+Final pic is: 8592.jpg
+The peak score is:  [1659538 1659538  756396 1749531  670555] the filename is: 7813.jpg to 8251.jpg
+The second peak score is:  [756396 670555 670555 670555 670555] , score is  [[258864. 258656. 257618. 257618. 257514.]] the filename is: 3907.jpg to 4345.jpg
+The peak score for together/ssp is:  [ 630047  630394 1462255 1462255 1462255] , score is  [[255210. 254967. 254740. 254740. 254740.]] the filename is: 3469.jpg to 4345.jpg
+The peak score for saving is:  867838 1462255 , score is  261679 the filename is: 4302.jpg 7132.jpg
+Ending time for saving is: 1697966
+Btime is: 438
+PERFECT score is: 2166656.1750000003 , FIRE score is: 2107946.1
+Team: PERFECT score is: 2166656.1750000003 , FIRE score is: 2107946.1
+
+
+Conclusion:
+
+SAVE!
+The pic is  4302.jpg to 4378.jpg 	 7132.jpg to 7932.jpg
+
+Solo peak:  7813.jpg to 8251.jpg
+
+The skill is PERFECT!
+Overall time: 588.4103729724884 
+

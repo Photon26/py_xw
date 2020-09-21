@@ -1,0 +1,23 @@
+Calculation of s_x_hold_164:
+Showtime pic is: 3757.jpg
+Final pic is: 7420.jpg
+The peak score is:  [1370557 1370651 1370745 1370369 1370463] the filename is: 6421.jpg to 6785.jpg
+The second peak score is:  [656483 656389 656295 657450 657763] , score is  [[269510. 269291. 269072. 268296. 268296.]] the filename is: 3389.jpg to 3753.jpg
+The peak score for together/ssp is:  [1370369 1370369 1370369 1376391 1376485] , score is  [[256152. 256152. 256152. 256152. 256152.]] the filename is: 6417.jpg to 7145.jpg
+The peak score for saving is:  662411 1376579 , score is  268693 the filename is: 3405.jpg 6439.jpg
+Ending time for saving is: 1516386
+Btime is: 364
+PERFECT score is: 1977853.5000000002 , FIRE score is: 1944975.6
+Team: PERFECT score is: 1977853.5000000002 , FIRE score is: 1944975.6
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  6421.jpg to 6785.jpg 	 3389.jpg to 3753.jpg
+
+Solo peak:  6421.jpg to 6785.jpg
+
+The skill is PERFECT!
+Overall time: 55.04257035255432 
+

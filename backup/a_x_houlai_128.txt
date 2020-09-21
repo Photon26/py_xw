@@ -1,0 +1,23 @@
+Calculation of a_x_houlai_128:
+Showtime pic is: 4769.jpg
+Final pic is: 9488.jpg
+The peak score is:  [922727 922727 922727 923040 922727] the filename is: 8738.jpg to 9300.jpg
+The second peak score is:  [573445 554569 554882 555195 573351] , score is  [[235654. 235092. 234779. 234529. 234443.]] the filename is: 6397.jpg to 6959.jpg
+The peak score for together/ssp is:  [528359 528359 528359 528359 528359] , score is  [[199680. 199680. 199680. 199680. 199680.]] the filename is: 6062.jpg to 7186.jpg
+The peak score for saving is:  428831 539903 , score is  206172 the filename is: 4730.jpg 6169.jpg
+Ending time for saving is: 736715
+Btime is: 562
+PERFECT score is: 1255136.9400000002 , FIRE score is: 1275087.6
+Team: PERFECT score is: 1255136.9400000002 , FIRE score is: 1275087.6
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  8738.jpg to 9300.jpg 	 6397.jpg to 6959.jpg
+
+Solo peak:  8738.jpg to 9300.jpg
+
+The skill is FIRE!
+Overall time: 824.0956339836121 
+

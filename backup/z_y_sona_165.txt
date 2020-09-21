@@ -1,0 +1,23 @@
+Calculation of z_y_sona_165:
+Showtime pic is: 4832.jpg
+Final pic is: 9107.jpg
+The peak score is:  [1677106 1677002 1676898 1676794 1678144] the filename is: 7674.jpg to 8110.jpg
+The second peak score is:  [641469 649089 641816 649436 586106] , score is  [[295114. 295074. 294801. 294761. 294358.]] the filename is: 3487.jpg to 3923.jpg
+The peak score for together/ssp is:  [1626046 1632972 1632972 1638201 1638097] , score is  [[285274. 285274. 285274. 285173. 285138.]] the filename is: 7504.jpg to 8376.jpg
+The peak score for saving is:  1016064 1665131 , score is  294801 the filename is: 4730.jpg 7634.jpg
+Ending time for saving is: 1922540
+Btime is: 436
+PERFECT score is: 2433632.265 , FIRE score is: 2371154.7
+Team: PERFECT score is: 2433632.265 , FIRE score is: 2371154.7
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  7674.jpg to 8110.jpg 	 3487.jpg to 3923.jpg
+
+Solo peak:  7674.jpg to 8110.jpg
+
+The skill is PERFECT!
+Overall time: 213.45385599136353 
+

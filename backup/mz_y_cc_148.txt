@@ -1,0 +1,23 @@
+Calculation of mz_y_cc_148:
+Showtime pic is: 4680.jpg
+Final pic is: 9718.jpg
+The peak score is:  [202423 202423 202423 202423 199303] the filename is: 2315.jpg to 2801.jpg
+The second peak score is:  [924391 921271 921271 921271 921271] , score is  [[176592. 175968. 175968. 175968. 175344.]] the filename is: 7582.jpg to 8068.jpg
+The peak score for together/ssp is:  [194623 194623 194623 194623 194623] , score is  [[169104. 169104. 169104. 169104. 169104.]] the filename is: 2264.jpg to 3236.jpg
+The peak score for saving is:  589303 951847 , score is  169728 the filename is: 4649.jpg 7747.jpg
+Ending time for saving is: 1114711
+Btime is: 486
+PERFECT score is: 1453259.73 , FIRE score is: 1416695.8
+Team: PERFECT score is: 1453259.73 , FIRE score is: 1416695.8
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  2315.jpg to 2801.jpg 	 7582.jpg to 8068.jpg
+
+Solo peak:  2315.jpg to 2801.jpg
+
+The skill is PERFECT!
+Overall time: 318.7048897743225 
+

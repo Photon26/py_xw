@@ -1,0 +1,23 @@
+Calculation of a_x_newp_125:
+Showtime pic is: 4585.jpg
+Final pic is: 9624.jpg
+The peak score is:  [835934 835840 839302 839396 836306] the filename is: 7189.jpg to 7764.jpg
+The second peak score is:  [389834 389928 389650 376046 390022] , score is  [[197680. 197377. 197313. 197180. 197120.]] the filename is: 3504.jpg to 4079.jpg
+The peak score for together/ssp is:  [817338 812470 812564 812658 812376] , score is  [[193595. 193470. 193376. 193282. 193261.]] the filename is: 7081.jpg to 8231.jpg
+The peak score for saving is:  495820 810410 , score is  203018 the filename is: 4184.jpg 7031.jpg
+Ending time for saving is: 940420
+Btime is: 575
+PERFECT score is: 1395881.6100000003 , FIRE score is: 1379190.2
+Team: PERFECT score is: 1395881.6100000003 , FIRE score is: 1379190.2
+
+
+Conclusion:
+
+SAVE!
+The pic is  4184.jpg to 4585.jpg 	 7031.jpg to 7780.jpg
+
+Solo peak:  7189.jpg to 7764.jpg
+
+The skill is PERFECT!
+Overall time: 739.7720646858215 
+

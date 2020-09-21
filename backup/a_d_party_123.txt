@@ -1,0 +1,19 @@
+Calculation of a_d_party_123:
+Showtime pic is: 4008.jpg
+Final pic is: 8446.jpg
+The peak score is:  [777788 291346 778066 291440 778160] the filename is: 6883.jpg to 7468.jpg
+The second peak score is:  [291346 291440 291534 290974 291628] , score is  [[212874. 212502. 212408. 212259. 212220.]] the filename is: 3146.jpg to 3731.jpg
+The peak score for together/ssp is:  [641004 641629 641004 642254 642879] , score is  [[200932. 200620. 200619. 200308. 199996.]] the filename is: 6072.jpg to 7242.jpg
+The peak score for saving is:  369970 561444 , score is  205514 the filename is: 3606.jpg 5574.jpg
+Ending time for saving is: 701844
+Btime is: 585
+PERFECT score is: 1194906.12 , FIRE score is: 1204383.2
+Team: PERFECT score is: 1253901.5100000002 , FIRE score is: 1385089.8
+Overall time: 1080.880931854248
+
+
+CONCULSION:
+
+SEPERATE! 
+The picture is from	 6883.jpg 	to	 7468.jpg 	and	 3146.jpg 	to	 3731.jpg
+The skill is FIRE!

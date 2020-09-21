@@ -1,0 +1,23 @@
+Calculation of l_x_ane_168:
+Showtime pic is: 5908.jpg
+Final pic is: 10225.jpg
+The peak score is:  [1109290 1109290 1109290 1110226 1110226] the filename is: 5480.jpg to 5908.jpg
+The second peak score is:  [1884922 1884922 1884922 1876810 1876810] , score is  [[259584. 259584. 259584. 257712. 257712.]] the filename is: 9217.jpg to 9645.jpg
+The peak score for together/ssp is:  [1873690  355810  355810  355810 1876810] , score is  [[245544. 245232. 245232. 245232. 243360.]] the filename is: 9174.jpg to 10030.jpg
+The peak score for saving is:  1111162 1876810 , score is  262704 the filename is: 5493.jpg 9184.jpg
+Ending time for saving is: 2009410
+Btime is: 428
+PERFECT score is: 2472349.6200000006 , FIRE score is: 2385713.2
+Team: PERFECT score is: 2472349.6200000006 , FIRE score is: 2385713.2
+
+
+Conclusion:
+
+SAVE!
+The pic is  5493.jpg to 5908.jpg 	 9184.jpg to 9625.jpg
+
+Solo peak:  5480.jpg to 5908.jpg
+
+The skill is PERFECT!
+Overall time: 738.8990480899811 
+

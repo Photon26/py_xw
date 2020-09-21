@@ -1,0 +1,23 @@
+Calculation of a_d_break_180:
+Showtime pic is: 4009.jpg
+Final pic is: 8485.jpg
+The peak score is:  [724804 747110 747110 753663 753976] the filename is: 3493.jpg to 3892.jpg
+The second peak score is:  [1542711 1543024 1543337 1543650 1543963] , score is  [[224794. 224641. 224328. 224328. 224328.]] the filename is: 7337.jpg to 7736.jpg
+The peak score for together/ssp is:  [646834 646740 646646 652856 647895] , score is  [[216655. 216436. 216217. 215934. 215907.]] the filename is: 3195.jpg to 3993.jpg
+The peak score for saving is:  800932 1493102 , score is  231666 the filename is: 3798.jpg 7156.jpg
+Ending time for saving is: 1656910
+Btime is: 399
+PERFECT score is: 2115090.5700000003 , FIRE score is: 2040830.2
+Team: PERFECT score is: 2115090.5700000003 , FIRE score is: 2040830.2
+
+
+Conclusion:
+
+SAVE!
+The pic is  3798.jpg to 4009.jpg 	 7156.jpg to 7743.jpg
+
+Solo peak:  3493.jpg to 3892.jpg
+
+The skill is PERFECT!
+Overall time: 765.3930492401123 
+

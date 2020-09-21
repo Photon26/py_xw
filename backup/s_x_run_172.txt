@@ -1,0 +1,23 @@
+Calculation of s_x_run_172:
+Showtime pic is: 3774.jpg
+Final pic is: 7509.jpg
+The peak score is:  [332201 330983 332107 332013 331919] the filename is: 1820.jpg to 2167.jpg
+The second peak score is:  [1367011 1366917 1426697 1368883 1374499] , score is  [[295437. 295184. 294502. 294066. 293845.]] the filename is: 5555.jpg to 5902.jpg
+The peak score for together/ssp is:  [381903 381809 381809 382463 381715] , score is  [[286574. 286355. 286042. 286014. 285823.]] the filename is: 1935.jpg to 2629.jpg
+The peak score for saving is:  1008559 1360989 , score is  292868 the filename is: 3740.jpg 5534.jpg
+Ending time for saving is: 1637015
+Btime is: 347
+PERFECT score is: 2362230.4050000003 , FIRE score is: 2305904.7
+Team: PERFECT score is: 2362230.4050000003 , FIRE score is: 2305904.7
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  1820.jpg to 2167.jpg 	 5555.jpg to 5902.jpg
+
+Solo peak:  1820.jpg to 2167.jpg
+
+The skill is PERFECT!
+Overall time: 57.180113315582275 
+

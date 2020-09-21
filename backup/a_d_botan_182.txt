@@ -1,0 +1,23 @@
+Calculation of a_d_botan_182:
+Showtime pic is: 4927.jpg
+Final pic is: 9836.jpg
+The peak score is:  [1586474 1586568 1585632 1586380 1951732] the filename is: 7899.jpg to 8294.jpg
+The second peak score is:  [1951732 1951732 1951732 1951732 1951732] , score is  [[248695. 248288. 247984. 247861. 247853.]] the filename is: 9293.jpg to 9688.jpg
+The peak score for together/ssp is:  [1425606 1425606 1425606 1425606 1425606] , score is  [[229320. 229320. 229320. 229320. 229320.]] the filename is: 7307.jpg to 8097.jpg
+The peak score for saving is:  949806 1887366 , score is  231816 the filename is: 4917.jpg 9056.jpg
+Ending time for saving is: 2116062
+Btime is: 395
+PERFECT score is: 2417988.4800000004 , FIRE score is: 2327902.4
+Team: PERFECT score is: 2417988.4800000004 , FIRE score is: 2327902.4
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  7899.jpg to 8294.jpg 	 9293.jpg to 9688.jpg
+
+Solo peak:  7899.jpg to 8294.jpg
+
+The skill is PERFECT!
+Overall time: 802.2868065834045 
+

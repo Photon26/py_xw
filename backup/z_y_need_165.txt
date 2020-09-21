@@ -1,0 +1,23 @@
+Calculation of z_y_need_165:
+Showtime pic is: 4465.jpg
+Final pic is: 8415.jpg
+The peak score is:  [1232111  334181 1235921 1236268 1236615] the filename is: 6266.jpg to 6702.jpg
+The second peak score is:  [334181 341107 310287 310634 310981] , score is  [[289282. 285473. 284295. 284295. 284295.]] the filename is: 2470.jpg to 2906.jpg
+The peak score for together/ssp is:  [ 341107  327255 1239037  341107 1252889] , score is  [[272614. 270509. 270509. 270191. 270191.]] the filename is: 2493.jpg to 3365.jpg
+The peak score for saving is:  931672 1239037 , score is  271549 the filename is: 4456.jpg 6287.jpg
+Ending time for saving is: 1507470
+Btime is: 436
+PERFECT score is: 2150205.4200000004 , FIRE score is: 2112062.8
+Team: PERFECT score is: 2150205.4200000004 , FIRE score is: 2112062.8
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  6266.jpg to 6702.jpg 	 2470.jpg to 2906.jpg
+
+Solo peak:  6266.jpg to 6702.jpg
+
+The skill is PERFECT!
+Overall time: 203.0072889328003 
+

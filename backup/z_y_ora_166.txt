@@ -1,0 +1,23 @@
+Calculation of z_y_ora_166:
+Showtime pic is: 4614.jpg
+Final pic is: 8952.jpg
+The peak score is:  [1285160 1284952 1285056 1284848 1284330] the filename is: 6491.jpg to 6924.jpg
+The second peak score is:  [228196 228300 228092 227988 221896] , score is  [[314261. 312841. 312605. 312230. 311907.]] the filename is: 2153.jpg to 2586.jpg
+The peak score for together/ssp is:  [ 233319 1290526 1290873  237129  237476] , score is  [[300830. 298072. 298072. 297367. 297367.]] the filename is: 2175.jpg to 3041.jpg
+The peak score for saving is:  957154 1290179 , score is  302701 the filename is: 4449.jpg 6511.jpg
+Ending time for saving is: 1537810
+Btime is: 433
+PERFECT score is: 2395449.93 , FIRE score is: 2349139.0
+Team: PERFECT score is: 2395449.93 , FIRE score is: 2349139.0
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  6491.jpg to 6924.jpg 	 2153.jpg to 2586.jpg
+
+Solo peak:  6491.jpg to 6924.jpg
+
+The skill is PERFECT!
+Overall time: 209.99981355667114 
+

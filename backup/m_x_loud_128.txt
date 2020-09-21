@@ -1,0 +1,23 @@
+Calculation of m_x_loud_128:
+Showtime pic is: 4858.jpg
+Final pic is: 9833.jpg
+The peak score is:  [924287 924287 187343 187343 147823] the filename is: 7556.jpg to 8118.jpg
+The second peak score is:  [187343 187343 147823 147823 131079] , score is  [[234936. 234936. 233896. 233896. 232752.]] the filename is: 2415.jpg to 2977.jpg
+The peak score for together/ssp is:  [855647 855647 855647 855647 855647] , score is  [[225264. 225264. 225264. 225264. 225264.]] the filename is: 7194.jpg to 8318.jpg
+The peak score for saving is:  584831 856583 , score is  227136 the filename is: 4845.jpg 7207.jpg
+Ending time for saving is: 1080911
+Btime is: 562
+PERFECT score is: 1523274.09 , FIRE score is: 1513842.2
+Team: PERFECT score is: 1523274.09 , FIRE score is: 1513842.2
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  7556.jpg to 8118.jpg 	 2415.jpg to 2977.jpg
+
+Solo peak:  7556.jpg to 8118.jpg
+
+The skill is PERFECT!
+Overall time: 242.1234848499298 
+

@@ -1,0 +1,23 @@
+Calculation of y_d_grand_134:
+Showtime pic is: 2057.jpg
+Final pic is: 3305.jpg
+The peak score is:  [387080 386892 388858 387734 386704] the filename is: 1600.jpg to 1818.jpg
+The second peak score is:  [626196 625542 625072 627038 624884] , score is  [[205698. 205082. 204800. 204672. 204366.]] the filename is: 2403.jpg to 2621.jpg
+The peak score for together/ssp is:  [350324 350324 350324 344084 344084] , score is  [[215280. 214351. 213725. 213130. 212848.]] the filename is: 1533.jpg to 1969.jpg
+The peak score for saving is:  528477 606728 , score is  184015 the filename is: 1901.jpg 2347.jpg
+Ending time for saving is: 722416
+Btime is: 218
+PERFECT score is: 1127216.1 , FIRE score is: 1149242.8
+Team: PERFECT score is: 1127216.1 , FIRE score is: 1149242.8
+
+
+Conclusion:
+
+TOGETHER!
+The pic is  1533.jpg to 1969.jpg
+
+Solo peak:  1600.jpg to 1818.jpg
+
+The skill is FIRE!
+Overall time: 46.04989457130432 
+

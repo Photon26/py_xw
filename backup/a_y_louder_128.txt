@@ -1,0 +1,23 @@
+Calculation of a_y_louder_128:
+Showtime pic is: 4731.jpg
+Final pic is: 9703.jpg
+The peak score is:  [587212 587525 587838 588151 588464] the filename is: 5835.jpg to 6397.jpg
+The second peak score is:  [741650 741963 742276 742589 742902] , score is  [[213628. 213628. 213628. 213628. 213628.]] the filename is: 6675.jpg to 7237.jpg
+The peak score for together/ssp is:  [577226 577539 577852 578165 578478] , score is  [[208635. 208635. 208635. 208635. 208635.]] the filename is: 5791.jpg to 6915.jpg
+The peak score for saving is:  530648 577226 , score is  208412 the filename is: 4730.jpg 5791.jpg
+Ending time for saving is: 785548
+Btime is: 562
+PERFECT score is: 1405982.6100000003 , FIRE score is: 1397693.4
+Team: PERFECT score is: 1405982.6100000003 , FIRE score is: 1397693.4
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  5835.jpg to 6397.jpg 	 6675.jpg to 7237.jpg
+
+Solo peak:  5835.jpg to 6397.jpg
+
+The skill is PERFECT!
+Overall time: 756.808833360672 
+

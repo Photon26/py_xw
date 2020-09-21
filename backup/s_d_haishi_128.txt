@@ -1,0 +1,23 @@
+Calculation of s_d_haishi_128:
+Showtime pic is: 3926.jpg
+Final pic is: 8022.jpg
+The peak score is:  [614338 614442 614234 614960 615064] the filename is: 4836.jpg to 5302.jpg
+The second peak score is:  [914284 914284 914631 914978 914284] , score is  [[239751. 239404. 239168. 238983. 238643.]] the filename is: 6284.jpg to 6750.jpg
+The peak score for together/ssp is:  [971373 970439 971269 969609 970335] , score is  [[223673. 223573. 223437. 223362. 223330.]] the filename is: 6535.jpg to 7467.jpg
+The peak score for saving is:  523467 971373 , score is  226796 the filename is: 3864.jpg 6535.jpg
+Ending time for saving is: 1179127
+Btime is: 466
+PERFECT score is: 1500633.975 , FIRE score is: 1496701.3
+Team: PERFECT score is: 1500633.975 , FIRE score is: 1496701.3
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  4836.jpg to 5302.jpg 	 6284.jpg to 6750.jpg
+
+Solo peak:  4836.jpg to 5302.jpg
+
+The skill is PERFECT!
+Overall time: 57.77707290649414 
+

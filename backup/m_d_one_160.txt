@@ -1,0 +1,23 @@
+Calculation of m_d_one_160:
+Showtime pic is: 4904.jpg
+Final pic is: 9404.jpg
+The peak score is:  [ 68354  68354  68354  68354 295659] the filename is: 1500.jpg to 1949.jpg
+The second peak score is:  [ 295659  295659  295659  295659 1042899] , score is  [[199225. 199225. 199225. 199225. 197808.]] the filename is: 2735.jpg to 3184.jpg
+The peak score for together/ssp is:  [715923 715923 715923 956163 956163] , score is  [[185640. 185640. 185640. 185328. 185328.]] the filename is: 5456.jpg to 6354.jpg
+The peak score for saving is:  636051 757107 , score is  193752 the filename is: 4532.jpg 5648.jpg
+Ending time for saving is: 870987
+Btime is: 449
+PERFECT score is: 1691044.4850000003 , FIRE score is: 1643474.3
+Team: PERFECT score is: 1691044.4850000003 , FIRE score is: 1643474.3
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  1500.jpg to 1949.jpg 	 2735.jpg to 3184.jpg
+
+Solo peak:  1500.jpg to 1949.jpg
+
+The skill is PERFECT!
+Overall time: 208.29993867874146 
+

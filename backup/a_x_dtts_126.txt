@@ -1,0 +1,23 @@
+Calculation of a_x_dtts_126:
+Showtime pic is: 4379.jpg
+Final pic is: 9867.jpg
+The peak score is:  [321011 309933 310027 310121 310215] the filename is: 3541.jpg to 4112.jpg
+The second peak score is:  [794157 794157 794157 794157 794251] , score is  [[193688. 193222. 193222. 193222. 193128.]] the filename is: 7452.jpg to 8023.jpg
+The peak score for together/ssp is:  [227129 227035 226851 226757 226663] , score is  [[188260. 188051. 187922. 187703. 187484.]] the filename is: 2939.jpg to 4081.jpg
+The peak score for saving is:  364567 797435 , score is  193878 the filename is: 3828.jpg 7483.jpg
+Ending time for saving is: 896187
+Btime is: 571
+PERFECT score is: 1325287.83 , FIRE score is: 1311812.2
+Team: PERFECT score is: 1325287.83 , FIRE score is: 1311812.2
+
+
+Conclusion:
+
+SAVE!
+The pic is  3828.jpg to 4379.jpg 	 7483.jpg to 8074.jpg
+
+Solo peak:  3541.jpg to 4112.jpg
+
+The skill is PERFECT!
+Overall time: 781.3861954212189 
+

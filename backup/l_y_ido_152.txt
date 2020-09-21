@@ -1,0 +1,12 @@
+Calculation of l_y_ido_152:
+Showtime pic is: 5011.jpg
+Final pic is: 9161.jpg
+The peak score is:  [347307 347307 347307 347307 347307] the filename is: 2991.jpg to 3456.jpg
+The second peak score is:  [1012923 1012923 1012923 1012923 1012923] , score is  [[225576. 225576. 225576. 225576. 225576.]] the filename is: 6866.jpg to 7331.jpg
+The peak score for together/ssp is:  [259635 259635 259635 259635 259635] , score is  [[209976. 209976. 209976. 209976. 209976.]] the filename is: 2561.jpg to 3026.jpg
+The peak score for saving is:  723387 1012923 , score is  212168 the filename is: 5010.jpg 8420.jpg
+Ending time for saving is: 1187027
+Btime is: 465
+PERFECT score is: 1708306.6500000001 , FIRE score is: 1677168.6
+Team: PERFECT score is: 1769605.29 , FIRE score is: 1864930.2
+Overall time: 523.8274326324463

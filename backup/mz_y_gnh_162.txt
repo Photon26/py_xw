@@ -1,0 +1,23 @@
+Calculation of mz_y_gnh_162:
+Showtime pic is: 4249.jpg
+Final pic is: 8552.jpg
+The peak score is:  [438152 438152 438152 458432 458432] the filename is: 3423.jpg to 3867.jpg
+The second peak score is:  [1095536 1095536 1095536 1095536 1075256] , score is  [[190632. 190632. 190632. 189696. 188760.]] the filename is: 7797.jpg to 8241.jpg
+The peak score for together/ssp is:  [ 373568  373568 1010672 1010672 1010672] , score is  [[172224. 172224. 172224. 172224. 172224.]] the filename is: 3034.jpg to 3922.jpg
+The peak score for saving is:  515216 1095536 , score is  177528 the filename is: 3805.jpg 7797.jpg
+Ending time for saving is: 1190384
+Btime is: 444
+PERFECT score is: 1434399.7200000002 , FIRE score is: 1407192.8
+Team: PERFECT score is: 1434399.7200000002 , FIRE score is: 1407192.8
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  3423.jpg to 3867.jpg 	 7797.jpg to 8241.jpg
+
+Solo peak:  3423.jpg to 3867.jpg
+
+The skill is PERFECT!
+Overall time: 292.6842839717865 
+

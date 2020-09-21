@@ -1,0 +1,23 @@
+Calculation of l_d_sunshine_166:
+Showtime pic is: 5091.jpg
+Final pic is: 9956.jpg
+The peak score is:  [1629706 1629706 1629706 1718314 1718314] the filename is: 8759.jpg to 9192.jpg
+The second peak score is:  [1198834 1198834 1198834 1202578 1202578] , score is  [[238992. 238992. 238992. 237744. 237744.]] the filename is: 7015.jpg to 7448.jpg
+The peak score for together/ssp is:  [1597258 1603498 1597258 1597258 1597258] , score is  [[235872. 235248. 234000. 234000. 234000.]] the filename is: 8636.jpg to 9502.jpg
+The peak score for saving is:  817570 1682122 , score is  242424 the filename is: 4781.jpg 8956.jpg
+Ending time for saving is: 1836874
+Btime is: 433
+PERFECT score is: 2199968.9400000004 , FIRE score is: 2127221.2
+Team: PERFECT score is: 2199968.9400000004 , FIRE score is: 2127221.2
+
+
+Conclusion:
+
+SAVE!
+The pic is  4781.jpg to 5091.jpg 	 8956.jpg to 9512.jpg
+
+Solo peak:  8759.jpg to 9192.jpg
+
+The skill is PERFECT!
+Overall time: 738.2566797733307 
+

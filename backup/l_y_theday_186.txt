@@ -1,0 +1,12 @@
+Calculation of l_y_theday_186:
+Showtime pic is: 4179.jpg
+Final pic is: 8854.jpg
+The peak score is:  [423241 423241 423241 423241 423241] the filename is: 2739.jpg to 3119.jpg
+The second peak score is:  [1595017 1595017 1595017 1595017 1595017] , score is  [[236400. 236400. 236400. 236400. 236400.]] the filename is: 7824.jpg to 8204.jpg
+The peak score for together/ssp is:  [434473 434473 434473 434473 434473] , score is  [[223296. 223296. 223296. 223296. 223296.]] the filename is: 2769.jpg to 3149.jpg
+The peak score for saving is:  763537 1559761 , score is  236808 the filename is: 4178.jpg 7527.jpg
+Ending time for saving is: 1712953
+Btime is: 380
+PERFECT score is: 2151021.27 , FIRE score is: 2080013.8
+Team: PERFECT score is: 2216702.1900000004 , FIRE score is: 2281198.6
+Overall time: 650.1459777355194

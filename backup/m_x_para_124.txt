@@ -1,0 +1,23 @@
+Calculation of m_x_para_124:
+Showtime pic is: 4793.jpg
+Final pic is: 8489.jpg
+The peak score is:  [316420 316420 316420 316420 316420] the filename is: 3329.jpg to 3909.jpg
+The second peak score is:  [90753 91650 91650 91650 91650] , score is  [[215059. 214162. 214162. 214162. 214162.]] the filename is: 1986.jpg to 2566.jpg
+The peak score for together/ssp is:  [242476 242476 243412 243412 244348] , score is  [[205608. 205608. 205608. 205608. 205608.]] the filename is: 2904.jpg to 4064.jpg
+The peak score for saving is:  485212 785980 , score is  204984 the filename is: 4324.jpg 6882.jpg
+Ending time for saving is: 906412
+Btime is: 580
+PERFECT score is: 1198498.08 , FIRE score is: 1208896.0
+Team: PERFECT score is: 1198498.08 , FIRE score is: 1208896.0
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  3329.jpg to 3909.jpg 	 1986.jpg to 2566.jpg
+
+Solo peak:  3329.jpg to 3909.jpg
+
+The skill is FIRE!
+Overall time: 152.589586019516 
+

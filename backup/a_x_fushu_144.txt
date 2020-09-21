@@ -1,0 +1,23 @@
+Calculation of a_x_fushu_144:
+Showtime pic is: 5051.jpg
+Final pic is: 9053.jpg
+The peak score is:  [727408 726942 727314 721292 720989] the filename is: 6414.jpg to 6913.jpg
+The second peak score is:  [967336 967430 967524 967618 968272] , score is  [[193470. 193320. 193261. 193192. 193119.]] the filename is: 7826.jpg to 8325.jpg
+The peak score for together/ssp is:  [715052 715052 715052 715052 715052] , score is  [[182520. 182520. 182520. 182520. 182520.]] the filename is: 6328.jpg to 7326.jpg
+The peak score for saving is:  564514 690874 , score is  186580 the filename is: 4866.jpg 6211.jpg
+Ending time for saving is: 846724
+Btime is: 499
+PERFECT score is: 1353602.8200000003 , FIRE score is: 1339044.4
+Team: PERFECT score is: 1353602.8200000003 , FIRE score is: 1339044.4
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  6414.jpg to 6913.jpg 	 7826.jpg to 8325.jpg
+
+Solo peak:  6414.jpg to 6913.jpg
+
+The skill is PERFECT!
+Overall time: 747.0686540603638 
+

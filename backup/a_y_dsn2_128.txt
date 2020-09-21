@@ -1,0 +1,19 @@
+Calculation of a_y_dsn2_128:
+Showtime pic is: 4991.jpg
+Final pic is: 9930.jpg
+The peak score is:  [808755 809068 809381 809694 390989] the filename is: 7211.jpg to 7773.jpg
+The second peak score is:  [390989 391302 391615 391928 390363] , score is  [[188696. 188320. 187944. 187568. 187448.]] the filename is: 3620.jpg to 4182.jpg
+The peak score for together/ssp is:  [740427 740740 741053 741366 741679] , score is  [[177842. 177842. 177842. 177842. 177842.]] the filename is: 6747.jpg to 7871.jpg
+The peak score for saving is:  590979 743735 , score is  180148 the filename is: 4981.jpg 6765.jpg
+Ending time for saving is: 920763
+Btime is: 562
+PERFECT score is: 1390773.945 , FIRE score is: 1366542.7
+Team: PERFECT score is: 1442963.37 , FIRE score is: 1526402.2
+Overall time: 1614.0211522579193
+
+
+CONCULSION:
+
+SEPERATE! The picture is from	 7211.jpg 	to	 7773.jpg 	and	 3620.jpg 	to	 4182.jpg
+
+The skill is PERFECT!

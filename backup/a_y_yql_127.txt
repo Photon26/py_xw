@@ -1,0 +1,23 @@
+Calculation of a_y_yql_127:
+Showtime pic is: 4809.jpg
+Final pic is: 9346.jpg
+The peak score is:  [861649 861274 861399 861524 861274] the filename is: 8316.jpg to 8882.jpg
+The second peak score is:  [509342 509655 509968 480356 480262] , score is  [[173312. 172939. 172720. 172661. 172598.]] the filename is: 5768.jpg to 6334.jpg
+The peak score for together/ssp is:  [848952 848858 849512 849606 848764] , score is  [[170203. 169984. 169946. 169852. 169765.]] the filename is: 8213.jpg to 9345.jpg
+The peak score for saving is:  450310 865018 , score is  174468 the filename is: 4679.jpg 8344.jpg
+Ending time for saving is: 1019458
+Btime is: 566
+PERFECT score is: 1180446.705 , FIRE score is: 1169083.5
+Team: PERFECT score is: 1180446.705 , FIRE score is: 1169083.5
+
+
+Conclusion:
+
+SAVE!
+The pic is  4679.jpg to 4809.jpg 	 8344.jpg to 9346.jpg
+
+Solo peak:  8316.jpg to 8882.jpg
+
+The skill is PERFECT!
+Overall time: 680.8787863254547 
+

@@ -1,0 +1,23 @@
+Calculation of s_d_new_125:
+Showtime pic is: 3676.jpg
+Final pic is: 7815.jpg
+The peak score is:  [857982 858500 858604 858708 858708] the filename is: 5675.jpg to 6153.jpg
+The second peak score is:  [437222 361109 362251 362355 361317] , score is  [[217293. 217047. 216946. 216842. 216839.]] the filename is: 2944.jpg to 3422.jpg
+The peak score for together/ssp is:  [328300 332866 328818 342388 328196] , score is  [[206717. 206308. 206199. 206141. 206132.]] the filename is: 2416.jpg to 3372.jpg
+The peak score for saving is:  521165 858708 , score is  211095 the filename is: 3333.jpg 5681.jpg
+Ending time for saving is: 997447
+Btime is: 478
+PERFECT score is: 1485843.2250000003 , FIRE score is: 1469528.3
+Team: PERFECT score is: 1485843.2250000003 , FIRE score is: 1469528.3
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  5675.jpg to 6153.jpg 	 2944.jpg to 3422.jpg
+
+Solo peak:  5675.jpg to 6153.jpg
+
+The skill is PERFECT!
+Overall time: 56.02140808105469 
+

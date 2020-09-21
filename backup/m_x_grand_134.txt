@@ -1,0 +1,23 @@
+Calculation of m_x_grand_134:
+Showtime pic is: 5079.jpg
+Final pic is: 8614.jpg
+The peak score is:  [393172 393172 411892 411892 400036] the filename is: 3968.jpg to 4505.jpg
+The second peak score is:  [638716 638716 638716 638716 635596] , score is  [[222456. 222456. 222456. 222456. 221208.]] the filename is: 5958.jpg to 6495.jpg
+The peak score for together/ssp is:  [300508 300508 300508 300508 300508] , score is  [[217776. 217776. 217776. 217776. 217776.]] the filename is: 3481.jpg to 4555.jpg
+The peak score for saving is:  535756 610636 , score is  197496 the filename is: 4683.jpg 5777.jpg
+Ending time for saving is: 739492
+Btime is: 537
+PERFECT score is: 1261874.6400000001 , FIRE score is: 1277224.0
+Team: PERFECT score is: 1261874.6400000001 , FIRE score is: 1277224.0
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  3968.jpg to 4505.jpg 	 5958.jpg to 6495.jpg
+
+Solo peak:  3968.jpg to 4505.jpg
+
+The skill is FIRE!
+Overall time: 208.04084277153015 
+

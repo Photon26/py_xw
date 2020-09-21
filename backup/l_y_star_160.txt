@@ -1,0 +1,12 @@
+Calculation of l_y_star_160:
+Showtime pic is: 4238.jpg
+Final pic is: 8918.jpg
+The peak score is:  [1310594 1310594  391418  391418 1311530] the filename is: 6616.jpg to 7058.jpg
+The second peak score is:  [391418 391418 390487 390487 389546] , score is  [[274872. 274872. 273619. 273619. 273312.]] the filename is: 2661.jpg to 3103.jpg
+The peak score for together/ssp is:  [1195154 1195154 1195154 1195154  275978] , score is  [[253344. 253344. 253344. 253344. 252408.]] the filename is: 6174.jpg to 6616.jpg
+The peak score for saving is:  752570 1249442 , score is  266141 the filename is: 4237.jpg 8271.jpg
+Ending time for saving is: 1446007
+Btime is: 442
+PERFECT score is: 2207046.3000000003 , FIRE score is: 2153814.8
+Team: PERFECT score is: 2283063.54 , FIRE score is: 2386660.4
+Overall time: 700.0809502601624

@@ -1,0 +1,12 @@
+Calculation of l_y_bb_145:
+Showtime pic is: 7115.jpg
+Final pic is: 10416.jpg
+The peak score is:  [ 514006  514006  514006 1020550 1020550] the filename is: 5677.jpg to 6165.jpg
+The second peak score is:  [1020550 1020550 1020550 1047694 1047694] , score is  [[210912. 210912. 210912. 209040. 209040.]] the filename is: 8902.jpg to 9390.jpg
+The peak score for together/ssp is:  [915406 921646 921646 921646 921646] , score is  [[198432. 198120. 198120. 198120. 198120.]] the filename is: 8344.jpg to 8832.jpg
+The peak score for saving is:  707446 1020550 , score is  213408 the filename is: 7114.jpg 8875.jpg
+Ending time for saving is: 1138798
+Btime is: 488
+PERFECT score is: 1525889.2500000002 , FIRE score is: 1501222.2
+Team: PERFECT score is: 1585802.61 , FIRE score is: 1684740.6
+Overall time: 510.8805341720581

@@ -1,0 +1,35 @@
+import cv2
+import time
+import os
+import shutil
+
+# Inputfolder = 'E:/vid/s10/bug'
+Inputfolder = '/media/hlabbunri/GAO/vid/s10/bug'
+a = os.listdir(Inputfolder)
+
+for f in a:
+    if f.startswith("y_"):
+        # Opens the Video file
+        filen = f[:-4]
+        cap = cv2.VideoCapture(Inputfolder+'/'+f)
+        i = 0
+        st = time.time()
+        # dir = "E:/data/"+filen
+        dir = "/media/hlabbunri/GAO/data/" + filen
+        if not os.path.exists(dir):
+            os.makedirs(dir)
+
+        while(cap.isOpened()):
+            ret, frame = cap.read()
+            if ret == False:
+                break
+            cv2.imwrite(dir+'/'+str(i)+'.jpg',frame)
+            i += 1
+            # if i == 10:
+            #     break
+
+        cap.release()
+        cv2.destroyAllWindows()
+        print(time.time()-st)
+        print(filen)
+        # shutil.move(Inputfolder + '/' + f, Inputfolder + '/done/' + f)

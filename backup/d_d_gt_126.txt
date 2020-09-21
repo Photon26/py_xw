@@ -1,0 +1,23 @@
+Calculation of d_d_gt_126:
+Showtime pic is: 4199.jpg
+Final pic is: 7566.jpg
+The peak score is:  [745550 745550 745550 745550 745550] the filename is: 6457.jpg to 6989.jpg
+The second peak score is:  [386126 386126 386126 386126 386126] , score is  [[222456. 222456. 222456. 222456. 219336.]] the filename is: 3667.jpg to 4199.jpg
+The peak score for together/ssp is:  [742742 742742 742742 745550 745550] , score is  [[220584. 220584. 220584. 217776. 217776.]] the filename is: 6451.jpg to 7515.jpg
+The peak score for saving is:  446966 760526 , score is  229320 the filename is: 4013.jpg 6541.jpg
+Ending time for saving is: 939926
+Btime is: 532
+PERFECT score is: 1136477.9400000002 , FIRE score is: 1157889.2
+Team: PERFECT score is: 1136477.9400000002 , FIRE score is: 1157889.2
+
+
+Conclusion:
+
+SAVE!
+The pic is  4013.jpg to 4199.jpg 	 6541.jpg to 7419.jpg
+
+Solo peak:  6457.jpg to 6989.jpg
+
+The skill is FIRE!
+Overall time: 241.4232678413391 
+

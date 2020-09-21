@@ -1,0 +1,23 @@
+Calculation of a_d_ane_168:
+Showtime pic is: 5841.jpg
+Final pic is: 9283.jpg
+The peak score is:  [882530 882436 881500 882342 881406] the filename is: 4847.jpg to 5275.jpg
+The second peak score is:  [1468996 1472770 1468154 1468902 1473083] , score is  [[238740. 238501. 238347. 238009. 237966.]] the filename is: 8018.jpg to 8446.jpg
+The peak score for together/ssp is:  [871546 871640 871546 871546 871546] , score is  [[223144. 223144. 223050. 222956. 222862.]] the filename is: 4802.jpg to 5658.jpg
+The peak score for saving is:  1041214 1458106 , score is  224794 the filename is: 5462.jpg 7974.jpg
+Ending time for saving is: 1588304
+Btime is: 428
+PERFECT score is: 2020402.0200000003 , FIRE score is: 1964623.6
+Team: PERFECT score is: 2020402.0200000003 , FIRE score is: 1964623.6
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  4847.jpg to 5275.jpg 	 8018.jpg to 8446.jpg
+
+Solo peak:  4847.jpg to 5275.jpg
+
+The skill is PERFECT!
+Overall time: 916.384601354599 
+

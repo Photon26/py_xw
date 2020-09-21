@@ -1,0 +1,23 @@
+Calculation of a_y_para_124:
+Showtime pic is: 4736.jpg
+Final pic is: 8435.jpg
+The peak score is:  [408947 409041 409135 408853 409229] the filename is: 4156.jpg to 4736.jpg
+The second peak score is:  [176943 176943 177569 176943 177256] , score is  [[187264. 187076. 186916. 186867. 186763.]] the filename is: 2577.jpg to 3157.jpg
+The peak score for together/ssp is:  [145153 145059 144965 144871 144777] , score is  [[180615. 180584. 180553. 180522. 180491.]] the filename is: 2354.jpg to 3514.jpg
+The peak score for saving is:  419525 666783 , score is  186106 the filename is: 4238.jpg 6613.jpg
+Ending time for saving is: 768183
+Btime is: 580
+PERFECT score is: 1064872.9500000002 , FIRE score is: 1073685.8
+Team: PERFECT score is: 1064872.9500000002 , FIRE score is: 1073685.8
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  4156.jpg to 4736.jpg 	 2577.jpg to 3157.jpg
+
+Solo peak:  4156.jpg to 4736.jpg
+
+The skill is FIRE!
+Overall time: 697.7302844524384 
+

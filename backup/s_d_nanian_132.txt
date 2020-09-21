@@ -1,0 +1,23 @@
+Calculation of s_d_nanian_132:
+Showtime pic is: 3483.jpg
+Final pic is: 7534.jpg
+The peak score is:  [506278 506278 506278 506278 506278] the filename is: 4368.jpg to 4820.jpg
+The second peak score is:  [828605 828605 828605 828605 828605] , score is  [[207046. 207046. 207046. 207046. 207046.]] the filename is: 5910.jpg to 6362.jpg
+The peak score for together/ssp is:  [487236 487236 487236 487236 487236] , score is  [[198742. 198742. 198742. 198742. 198742.]] the filename is: 4280.jpg to 5184.jpg
+The peak score for saving is:  433920 488277 , score is  200817 the filename is: 3473.jpg 4290.jpg
+Ending time for saving is: 685978
+Btime is: 452
+PERFECT score is: 1325374.965 , FIRE score is: 1318259.1
+Team: PERFECT score is: 1325374.965 , FIRE score is: 1318259.1
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  4368.jpg to 4820.jpg 	 5910.jpg to 6362.jpg
+
+Solo peak:  4368.jpg to 4820.jpg
+
+The skill is PERFECT!
+Overall time: 53.653796911239624 
+

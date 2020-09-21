@@ -1,0 +1,23 @@
+Calculation of a_x_404_122:
+Showtime pic is: 4521.jpg
+Final pic is: 9211.jpg
+The peak score is:  [730443 247249 730537 247343 730631] the filename is: 7473.jpg to 8062.jpg
+The second peak score is:  [247249 247343 264563 264563 264563] , score is  [[198834. 198646. 198586. 198492. 198492.]] the filename is: 3226.jpg to 3815.jpg
+The peak score for together/ssp is:  [192867 192961 676155 676249 192773] , score is  [[195966. 195966. 195966. 195966. 195663.]] the filename is: 2901.jpg to 4079.jpg
+The peak score for saving is:  439283 675967 , score is  197620 the filename is: 4480.jpg 7146.jpg
+Ending time for saving is: 864227
+Btime is: 589
+PERFECT score is: 1156139.37 , FIRE score is: 1160923.8
+Team: PERFECT score is: 1156139.37 , FIRE score is: 1160923.8
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  7473.jpg to 8062.jpg 	 3226.jpg to 3815.jpg
+
+Solo peak:  7473.jpg to 8062.jpg
+
+The skill is FIRE!
+Overall time: 794.0099582672119 
+

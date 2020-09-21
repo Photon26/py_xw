@@ -1,0 +1,45 @@
+import cv2
+import numpy as np
+import os
+
+name = "mz"
+dir = "./model_mz"
+if not os.path.exists(dir):
+    os.makedirs(dir)
+
+if name == "y":
+    area = (54, 40)
+elif name == "m":
+    area = (75, 55)
+elif name =="z":
+    area = (75, 55)
+elif name == "s":
+    area = (45, 42)
+elif name == "mz":
+    area = (50, 45)
+elif name == "k":
+    area = (30, 25)
+elif name == "d":
+    area = (40, 30)
+elif name == "g":
+    area = (55, 35)
+else:
+    area = (75, 55)
+
+for i in range(0,10):
+
+    InputFolder = "./"+str(i)
+    a = os.listdir(InputFolder)
+    imlist = []
+    for f in a:
+        img_ = np.zeros(area).astype('int')
+        frame = cv2.imread(InputFolder + "/" + f)
+        s1, s2, _ = np.shape(frame)
+        img_[:s1, :s2] = frame[:, :, 0]
+        imlist.append(img_)
+
+    imlist = np.array(imlist)
+    imlist_ = np.mean(imlist, 0)
+    imlist_ = np.round(imlist_).astype("int")
+
+    cv2.imwrite(dir+'/'+str(i)+".jpg", imlist_)

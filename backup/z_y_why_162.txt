@@ -1,0 +1,23 @@
+Calculation of z_y_why_162:
+Showtime pic is: 4377.jpg
+Final pic is: 9341.jpg
+The peak score is:  [ 966449  957516 1583126 1012428 1012532] the filename is: 5347.jpg to 5791.jpg
+The second peak score is:  [1583126 1583540 1583644 1583748 1583852] , score is  [[258199. 257546. 257486. 257336. 257336.]] the filename is: 7706.jpg to 8150.jpg
+The peak score for together/ssp is:  [915550 915411 915272 915272 915272] , score is  [[254554. 254346. 254138. 254138. 254138.]] the filename is: 5190.jpg to 6078.jpg
+The peak score for saving is:  788609 915550 , score is  259354 the filename is: 4150.jpg 5190.jpg
+Ending time for saving is: 1110900
+Btime is: 444
+PERFECT score is: 2200410.165 , FIRE score is: 2137575.1
+Team: PERFECT score is: 2200410.165 , FIRE score is: 2137575.1
+
+
+Conclusion:
+
+SAVE!
+The pic is  4150.jpg to 4377.jpg 	 5190.jpg to 5851.jpg
+
+Solo peak:  5347.jpg to 5791.jpg
+
+The skill is PERFECT!
+Overall time: 611.7669298648834 
+

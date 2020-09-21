@@ -1,0 +1,23 @@
+Calculation of mz_y_take_125:
+Showtime pic is: 4305.jpg
+Final pic is: 8687.jpg
+The peak score is:  [193089 193089 193089 193089 193089] the filename is: 2541.jpg to 3116.jpg
+The second peak score is:  [385281 385281 385281 385281 385281] , score is  [[209976. 209976. 209976. 209976. 209976.]] the filename is: 3714.jpg to 4289.jpg
+The peak score for together/ssp is:  [138177 138177 138177 139113 139113] , score is  [[206232. 206232. 206232. 205296. 205296.]] the filename is: 2217.jpg to 3367.jpg
+The peak score for saving is:  429585 747513 , score is  214968 the filename is: 3961.jpg 6711.jpg
+Ending time for saving is: 896025
+Btime is: 575
+PERFECT score is: 1253981.4300000002 , FIRE score is: 1256260.2
+Team: PERFECT score is: 1253981.4300000002 , FIRE score is: 1256260.2
+
+
+Conclusion:
+
+SAVE!
+The pic is  3961.jpg to 4305.jpg 	 6711.jpg to 7517.jpg
+
+Solo peak:  2541.jpg to 3116.jpg
+
+The skill is FIRE!
+Overall time: 311.0713574886322 
+

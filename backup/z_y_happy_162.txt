@@ -1,0 +1,23 @@
+Calculation of z_y_happy_162:
+Showtime pic is: 3901.jpg
+Final pic is: 8677.jpg
+The peak score is:  [1796974 1796974  258816 1798116 1798220] the filename is: 7868.jpg to 8312.jpg
+The second peak score is:  [258816 687237 256741 259163 257088] , score is  [[285968. 285761. 284889. 284583. 284582.]] the filename is: 1982.jpg to 2426.jpg
+The peak score for together/ssp is:  [1658203 1658203 1658550 1658897 1659244] , score is  [[282242. 282138. 281999. 281756. 281513.]] the filename is: 7424.jpg to 8312.jpg
+The peak score for saving is:  716895 1658550 , score is  288528 the filename is: 3543.jpg 7425.jpg
+Ending time for saving is: 1831332
+Btime is: 444
+PERFECT score is: 2346998.985 , FIRE score is: 2286578.7
+Team: PERFECT score is: 2346998.985 , FIRE score is: 2286578.7
+
+
+Conclusion:
+
+SAVE!
+The pic is  3543.jpg to 3901.jpg 	 7425.jpg to 7955.jpg
+
+Solo peak:  7868.jpg to 8312.jpg
+
+The skill is PERFECT!
+Overall time: 597.5756695270538 
+

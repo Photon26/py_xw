@@ -1,0 +1,23 @@
+Calculation of mz_y_skbm_128:
+Showtime pic is: 2116.jpg
+Final pic is: 4372.jpg
+The peak score is:  [978068 984932 984932 984932 984932] the filename is: 3627.jpg to 4180.jpg
+The second peak score is:  [384644 384644 384644 384644 384644] , score is  [[365976. 365352. 365352. 365352. 365352.]] the filename is: 1401.jpg to 1954.jpg
+The peak score for together/ssp is:  [846404 846404 849524 849524 845468] , score is  [[360984. 360984. 359112. 359112. 358800.]] the filename is: 3203.jpg to 4309.jpg
+The peak score for saving is:  585884 876980 , score is  367848 the filename is: 2037.jpg 3302.jpg
+Ending time for saving is: 1214876
+Btime is: 553
+PERFECT score is: 1463317.44 , FIRE score is: 1540323.2
+Team: PERFECT score is: 1463317.44 , FIRE score is: 1540323.2
+
+
+Conclusion:
+
+SAVE!
+The pic is  2037.jpg to 2116.jpg 	 3302.jpg to 4329.jpg
+
+Solo peak:  3627.jpg to 4180.jpg
+
+The skill is FIRE!
+Overall time: 158.91410088539124 
+

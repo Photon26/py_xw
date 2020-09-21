@@ -1,0 +1,23 @@
+Calculation of z_y_ane2_168:
+Showtime pic is: 5814.jpg
+Final pic is: 10510.jpg
+The peak score is:  [ 626475  626822 1882672 1883019 1883366] the filename is: 3301.jpg to 3729.jpg
+The second peak score is:  [1882672 1883019 1883366 1883713 1884060] , score is  [[297724. 297516. 297430. 297430. 297430.]] the filename is: 8103.jpg to 8531.jpg
+The peak score for together/ssp is:  [1083212 1083316 1083420 1080202 1080306] , score is  [[283533. 283533. 283533. 283429. 283429.]] the filename is: 4772.jpg to 5628.jpg
+The peak score for saving is:  1289169 1881284 , score is  283761 the filename is: 5397.jpg 8099.jpg
+Ending time for saving is: 2034607
+Btime is: 428
+PERFECT score is: 2838227.265 , FIRE score is: 2735772.3
+Team: PERFECT score is: 2838227.265 , FIRE score is: 2735772.3
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  3301.jpg to 3729.jpg 	 8103.jpg to 8531.jpg
+
+Solo peak:  3301.jpg to 3729.jpg
+
+The skill is PERFECT!
+Overall time: 236.58486461639404 
+

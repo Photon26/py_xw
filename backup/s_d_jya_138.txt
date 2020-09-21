@@ -1,0 +1,23 @@
+Calculation of s_d_jya_138:
+Showtime pic is: 3971.jpg
+Final pic is: 7404.jpg
+The peak score is:  [223210 223210 223210 223210 223304] the filename is: 2320.jpg to 2753.jpg
+The second peak score is:  [915226 915851 915226 915226 915226] , score is  [[165992. 165680. 165679. 165679. 165272.]] the filename is: 6957.jpg to 7390.jpg
+The peak score for together/ssp is:  [150826 138971 138971 150826 151139] , score is  [[157566. 157435. 157341. 157253. 157253.]] the filename is: 1903.jpg to 2769.jpg
+The peak score for saving is:  437712 915226 , score is  160210 the filename is: 3552.jpg 6957.jpg
+Ending time for saving is: 1001650
+Btime is: 433
+PERFECT score is: 1158065.22 , FIRE score is: 1143266.8
+Team: PERFECT score is: 1158065.22 , FIRE score is: 1143266.8
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  2320.jpg to 2753.jpg 	 6957.jpg to 7390.jpg
+
+Solo peak:  2320.jpg to 2753.jpg
+
+The skill is PERFECT!
+Overall time: 54.787153482437134 
+

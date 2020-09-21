@@ -1,0 +1,23 @@
+Calculation of z_ast_126:
+Showtime pic is: 4598.jpg
+Final pic is: 10550.jpg
+The peak score is:  [1737646 1737646 1737646 1737646 1737646] the filename is: 8284.jpg to 8855.jpg
+The second peak score is:  [1471021 1421162  573480  573480  573480] , score is  [[405473. 405159. 404920. 404816. 404712.]] the filename is: 7456.jpg to 8027.jpg
+The peak score for together/ssp is:  [1421162 1422543 1432932 1432932 1432932] , score is  [[398342. 398207. 398207. 398207. 398207.]] the filename is: 7318.jpg to 8460.jpg
+The peak score for saving is:  851189 1477947 , score is  405252 the filename is: 4433.jpg 7483.jpg
+Ending time for saving is: 1819504
+Btime is: 571
+PERFECT score is: 2888519.145 , FIRE score is: 2847418.7
+Team: PERFECT score is: 2888519.145 , FIRE score is: 2847418.7
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  8284.jpg to 8855.jpg 	 7456.jpg to 8027.jpg
+
+Solo peak:  8284.jpg to 8855.jpg
+
+The skill is PERFECT!
+Overall time: 275.69501423835754 
+

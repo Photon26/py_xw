@@ -1,0 +1,23 @@
+Calculation of s_x_one_160:
+Showtime pic is: 3940.jpg
+Final pic is: 7766.jpg
+The peak score is:  [1099750 1100689 1100063 1101002 1100376] the filename is: 5951.jpg to 6324.jpg
+The second peak score is:  [201158 201252 201346 203030 200573] , score is  [[204576. 204573. 204357. 204354. 203881.]] the filename is: 1664.jpg to 2037.jpg
+The peak score for together/ssp is:  [202936 203030 194106 194200 194294] , score is  [[195718. 195718. 195624. 195624. 195624.]] the filename is: 1672.jpg to 2418.jpg
+The peak score for saving is:  662637 1069548 , score is  195965 the filename is: 3620.jpg 5836.jpg
+Ending time for saving is: 1187826
+Btime is: 373
+PERFECT score is: 1756874.7000000002 , FIRE score is: 1706432.4
+Team: PERFECT score is: 1756874.7000000002 , FIRE score is: 1706432.4
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  5951.jpg to 6324.jpg 	 1664.jpg to 2037.jpg
+
+Solo peak:  5951.jpg to 6324.jpg
+
+The skill is PERFECT!
+Overall time: 58.81444811820984 
+

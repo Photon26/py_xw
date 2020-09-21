@@ -1,0 +1,23 @@
+Calculation of l_d_need_165:
+Showtime pic is: 4430.jpg
+Final pic is: 8319.jpg
+The peak score is:  [738335  76817 739271 739271 739271] the filename is: 5208.jpg to 5644.jpg
+The second peak score is:  [76817 77714 77714 77714 77714] , score is  [[211614. 210171. 209781. 209781. 209781.]] the filename is: 1409.jpg to 1845.jpg
+The peak score for together/ssp is:  [741143 741143  79508  79508  79508] , score is  [[203736. 203736. 203307. 203307. 203307.]] the filename is: 5227.jpg to 6099.jpg
+The peak score for saving is:  647855 741143 , score is  214344 the filename is: 4299.jpg 5228.jpg
+Ending time for saving is: 917423
+Btime is: 436
+PERFECT score is: 1589767.53 , FIRE score is: 1559519.0
+Team: PERFECT score is: 1589767.53 , FIRE score is: 1559519.0
+
+
+Conclusion:
+
+SAVE!
+The pic is  4299.jpg to 4430.jpg 	 5228.jpg to 5969.jpg
+
+Solo peak:  5208.jpg to 5644.jpg
+
+The skill is PERFECT!
+Overall time: 607.0617127418518 
+

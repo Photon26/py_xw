@@ -1,0 +1,23 @@
+Calculation of z_y_sunshine_166:
+Showtime pic is: 5134.jpg
+Final pic is: 15242.jpg
+The peak score is:  [1908017 1908121 1908225 1908329 1908433] the filename is: 14035.jpg to 14468.jpg
+The second peak score is:  [728598 728945 727213 727317 727421] , score is  [[287708. 287465. 287225. 287225. 287225.]] the filename is: 3911.jpg to 4344.jpg
+The peak score for together/ssp is:  [1894410 1894410 1894410 1894410 1894410] , score is  [[276167. 276063. 275959. 275337. 275233.]] the filename is: 13996.jpg to 14862.jpg
+The peak score for saving is:  1054509 1894410 , score is  281225 the filename is: 5124.jpg 13996.jpg
+Ending time for saving is: 2168709
+Btime is: 433
+PERFECT score is: 2614944.105 , FIRE score is: 2529410.7
+Team: PERFECT score is: 2614944.105 , FIRE score is: 2529410.7
+
+
+Conclusion:
+
+SEPERATE!
+The pic is  14035.jpg to 14468.jpg 	 3911.jpg to 4344.jpg
+
+Solo peak:  14035.jpg to 14468.jpg
+
+The skill is PERFECT!
+Overall time: 348.40502548217773 
+
