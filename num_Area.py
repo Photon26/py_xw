@@ -1,9 +1,9 @@
 import cv2
 import numpy as np
 
-frame = cv2.imread("raw_img/4266.jpg")
-frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-# frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+frame = cv2.imread("raw_img/4293.jpg")
+# frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
 m,n =np.shape(frame)[:2]
 a = np.zeros((m, n)).astype(int)
 a[:, :] = frame[:, :, 0]
@@ -25,7 +25,6 @@ while True:
     # cv2.imshow("pic", img)
     cv2.imshow("pic", disIm)
 
-    # cv2.imshow("tst", disIm)
     print("Press 'a' 'd' 'w' 's' to adjust the rectangle.\nPress SPACE to exit.")
     key = cv2.waitKey(0)
     if key & 0xFF == 32:
