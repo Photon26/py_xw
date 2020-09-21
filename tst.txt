@@ -1,5 +1,0 @@
-wwwwwwww
-dddd10wwww
-dddd[3, 5, 67]wwww
-dddd[[ 3  5 67]
- [ 3  5  7]]

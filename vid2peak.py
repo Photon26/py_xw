@@ -10,11 +10,11 @@ import xlwt
 import sys
 from get_Gif import get_gif
 
-Inputfolder = '/media/hlabbunri/GAO/vid/s10'
-Outputfolder = '/media/hlabbunri/GAO/data/s10'
+# Inputfolder = '/media/hlabbunri/GAO/vid/s10'
+# Outputfolder = '/media/hlabbunri/GAO/data/s10'
 
-# Inputfolder = 'E:/vid/s10'
-# Outputfolder = 'E:/data/s10'
+Inputfolder = 'H:/vid/s10'
+Outputfolder = 'H:/data/s10'
 a = os.listdir(Inputfolder)
 
 for f in a:
@@ -236,6 +236,28 @@ for f in a:
 
         logger.write("\nOverall time:" + str(time.time() - st))
 
+
+        if jxscore >= bqscore:
+            logger.write("\n\nThe skill is PERFECT!")
+        else:
+            logger.write("\n\nThe skill is FIRE!")
+        if jxscore2 > bqscore2:
+            logger.write("\n\nSkill for team is PERFECT!!!")
+
+        cap = cv2.VideoCapture(Inputfolder + '/' + f)
+        sttime = timestamp[res_list[0]]
+        cap.set(0, sttime)
+        ret, frame = cap.read()
+        cv2.imwrite(dir+"/"+"showtime.jpg",frame)
+        cap.release()
+        cv2.destroyAllWindows()
+
+    except IndexError or NameError:
+
+        cv2.destroyAllWindows()
+        shutil.move(Inputfolder + '/' + f, Inputfolder + '/bug/' + f)
+
+    else:
         logger.write("\n\n\nCONCULSION:\n")
 
         teams = max(savescore, seps, togs)
@@ -244,7 +266,7 @@ for f in a:
             logger.write("SEPERATE! \nThe picture is from" + str(pic1) + " to " + str(pic2) + "\tThe second is from "
                          + str(pic3) + " to " + str(pic4))
             time1 = timestamp[pic1]
-            get_gif(Inputfolder+'/'+f, time1, "sep1_begin", dir)
+            get_gif(Inputfolder + '/' + f, time1, "sep1_begin", dir)
             time2 = timestamp[pic2]
             get_gif(Inputfolder + '/' + f, time2, "sep1_end", dir)
             time3 = timestamp[pic3]
@@ -266,7 +288,7 @@ for f in a:
             get_gif(Inputfolder + '/' + f, time4, "save2_end", dir)
 
         elif teams == togs:
-            logger.write("TOGETHER!\n The picture is from" + str(pic5) + " to " +str(pic6))
+            logger.write("TOGETHER!\n The picture is from" + str(pic5) + " to " + str(pic6))
             time1 = timestamp[pic5]
             get_gif(Inputfolder + '/' + f, time1, "tog_begin", dir)
             time2 = timestamp[pic6]
@@ -278,26 +300,7 @@ for f in a:
         time2 = timestamp[pic2]
         get_gif(Inputfolder + '/' + f, time2, "solo_end", dir)
 
-        if jxscore >= bqscore:
-            logger.write("\n\nThe skill is PERFECT!")
-        else:
-            logger.write("\n\nThe skill is FIRE!")
-        if jxscore2 > bqscore2:
-            logger.write("\n\nSkill for team is PERFECT!!!")
-
-        cap = cv2.VideoCapture(Inputfolder + '/' + f)
-        sttime = timestamp[res_list[0]]
-        cap.set(0, sttime)
-        ret, frame = cap.read()
-        cv2.imwrite(dir+"/"+"showtime.jpg",frame)
-        cap.release()
-        cv2.destroyAllWindows()
-
         print(f)
-        logger.write("\n\nOverall runtime is:"+ str(time.time-st))
+        logger.write("\n\nOverall runtime is:" + str(time.time() - st))
         logger.close()
         shutil.move(Inputfolder + '/' + f, Inputfolder + '/done/' + f)
-
-    except:
-        cv2.destroyAllWindows()
-        shutil.move(Inputfolder + '/' + f, Inputfolder + '/bug/' + f)
