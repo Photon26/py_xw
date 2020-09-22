@@ -108,8 +108,8 @@ for f in a:
             ret, frame = cap.read()
             if ret == False:
                 break
-            img0 = img_ini(frame, thres=120, mode=mode, name=name)      # edited for y
-            # img0 = img_ini(frame, mode=mode, name=name)
+            # img0 = img_ini(frame, thres=120, mode=mode, name=name)      # edited for y
+            img0 = img_ini(frame, mode=mode, name=name)
             num = num_Recog(img0, model, name=name)
             worksheet.write(count, 0, label=str(num))
             count = count + 1
