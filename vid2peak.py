@@ -10,11 +10,11 @@ import xlwt
 import sys
 from get_Gif import get_gif
 
-# Inputfolder = '/media/hlabbunri/GAO/vid/s10'
-# Outputfolder = '/media/hlabbunri/GAO/data/s10'
+Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
+Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'H:/vid/s10'
-Outputfolder = 'H:/data/s10'
+# Inputfolder = 'H:/vid/s10'
+# Outputfolder = 'H:/data/s10'
 a = os.listdir(Inputfolder)
 
 for f in a:

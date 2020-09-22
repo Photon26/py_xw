@@ -16,11 +16,11 @@ import heapq
 import xlwt
 from get_Gif import get_gif
 
-# Inputfolder = '/media/hlabbunri/GAO/vid/s10'
-# Outputfolder = '/media/hlabbunri/GAO/data/s10'
+# Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
+# Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'H:/vid/s10'
-Outputfolder = 'H:/data/s10'
+Inputfolder = 'H:/vid/s10/tst'
+Outputfolder = 'H:/data/s10/tst'
 a = os.listdir(Inputfolder)
 
 for f in a:
@@ -108,8 +108,8 @@ for f in a:
             ret, frame = cap.read()
             if ret == False:
                 break
-            # img0 = img_ini(frame, thres=120, mode=mode, name=name)      # edited for y
-            img0 = img_ini(frame, mode=mode, name=name)
+            img0 = img_ini(frame, thres=120, mode=mode, name=name)      # edited for y
+            # img0 = img_ini(frame, mode=mode, name=name)
             num = num_Recog(img0, model, name=name)
             worksheet.write(count, 0, label=str(num))
             count = count + 1
@@ -159,7 +159,7 @@ for f in a:
         timea = 20*60*1000/bpm
         dif = np.zeros((length, 1))
 
-        while timestamp[i+timea]<timelength:
+        while timestamp[i]+timea<timelength:
             endtime = timestamp[i]+timea
             frameid = (np.abs(timestamp - endtime)).argmin()
             # frameid = -np.searchsorted(timestamp[::-1], endtime)       # A version for nearest smaller value
@@ -172,10 +172,11 @@ for f in a:
                      str(dif_id[0] + timea))
         pscore = xs[0][0]
         pic1 = dif_id[0]
-        pic2 = (np.abs(timestamp - timestamp[pic1]+timea)).argmin()
+        pic2 = (np.abs(timestamp - timestamp[pic1]-timea)).argmin()
 
-        head = max(0, dif_id[0] - timea)
-        end = min(np.shape(dif)[0], dif_id[0] + timea)
+        head_time = max(0, timestamp[pic1] - timea)
+        end = min(np.shape(dif)[0], pic2)
+        head = (np.abs(timestamp - head_time)).argmin()
         dif[head: end] = 0
         dif_id = heapq.nlargest(5, range(len(dif)), key=dif.__getitem__)
         ys = dif[dif_id]
@@ -191,8 +192,9 @@ for f in a:
         #   Figure out the peak point(together)
         timea2 = timea * 2
         dif = np.zeros((length, 1))
+        i = 0
 
-        while timestamp[i + timea2] < timelength:
+        while timestamp[i] + timea2 < timelength:
             endtime = timestamp[i] + timea2
             frameid = (np.abs(timestamp - endtime)).argmin()
             # frameid = -np.searchsorted(timestamp[::-1], endtime)       # A version for nearest smaller value
@@ -263,6 +265,11 @@ for f in a:
         cap.set(0, sttime)
         ret, frame = cap.read()
         cv2.imwrite(dir+"/"+"showtime.jpg",frame)
+
+        fintime = timestamp[res_list1[0]]
+        cap.set(0, fintime)
+        ret, frame = cap.read()
+        cv2.imwrite(dir + "/" + "final.jpg", frame)
         cap.release()
         cv2.destroyAllWindows()
 

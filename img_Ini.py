@@ -123,7 +123,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         # print(stats)
         # for every component in the image, you keep it only if it's above min_size
         for i in range(0, nb_components):
-            if sizes[i] >= min_size and stats[i+1][3] > min_height and stats[i+1][3]<max_height:
+            if sizes[i] >= min_size and stats[i+1][3] > min_height and stats[i+1][3]<max_height and stats[i+1][0]>20:
                 if name == "s":
                     if stats[i + 1][1] > 0:
                         img2[output == i + 1] = 255
@@ -137,7 +137,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/4266.jpg")
-    pic_ = img_ini(pic, mode = "d", name='mz')
+    pic = cv2.imread("./raw_img/5664.jpg")
+    pic_ = img_ini(pic, mode = "d", name='a')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)
