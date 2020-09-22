@@ -24,3 +24,15 @@
 
 import numpy as np
 
+import random
+import numpy as np
+import time
+
+a = np.zeros((10000,1))
+for j in range(0,10000):
+    a[j] = random.random()
+st = time.time()
+i = (np.abs(a-0.7)).argmin()
+print(i, a[i])
+
+print(time.time()-st)

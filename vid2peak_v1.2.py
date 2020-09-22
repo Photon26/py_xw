@@ -1,5 +1,8 @@
 """
     Try to figure out the exact time of fire using timestamp.
+    Variable explanation:
+        showtime: score of st, alength: frame of st, showtime_ms: time of st
+
 """
 
 import cv2
@@ -11,7 +14,6 @@ from num_Recog import num_Recog
 import numpy as np
 import heapq
 import xlwt
-import sys
 from get_Gif import get_gif
 
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10'
@@ -206,27 +208,30 @@ for f in a:
 
         #   Figure out the peak point(save)
         alength = res_list[0]
-        apara = result[0:alength + 1]
-        bpara = result[res_list[-1]:]
-        blength = np.shape(bpara)[0]
+        showtime_ms = timestamp[alength]
+        bpara_begin = res_list[-1]
+        bpara_end = res_list1[0]
         savescore = 0
         blankt = res_list[-1] - res_list[0]
-        for x in range(alength - timea, alength):
-            ascore = showtime - apara[x]
-            for y in range(0, blength - timea):
-                b_end = 2 * timea - (alength - x) + y
+        save_start_cal_time = (np.abs(timestamp - (timestamp[alength]-timea))).argmin()
+        save_end_cal_time = (np.abs(timestamp - (timestamp[bpara_end]-timea))).argmin()
+        for x in range(save_start_cal_time, alength):
+            ascore = showtime - result[x]
+            for y in range(bpara_begin, save_end_cal_time):
+                b_end_time = 2 * timea - (showtime_ms - timestamp[x]) + timestamp[y]
                 try:
-                    bscore = bpara[b_end] - bpara[y]
+                    b_end = (np.abs(timestamp - b_end_time)).argmin()
+                    bscore = result[b_end] - result[y]
                     if ascore + bscore > savescore:
                         savescore = ascore + bscore
-                        xs = apara[x]
-                        ys = bpara[y]
+                        xs = result[x]
+                        ys = result[y]
                         xsave = x
                         ysave = y
-                        ends = bpara[b_end]
+                        ends = result[b_end]
                 except:
                     break
-        logger.write("\nThe peak score for saving is: " + str(xs) + str(ys) + ", score is " +str(savescore) +
+        logger.write("\nThe peak score for saving is: " + str(xs) + " " + str(ys) + ", score is " +str(savescore) +
                      "the filename is:" + str(xsave) + " and " + str(ysave + alength + blankt))
         logger.write("\nEnding time for saving is:" + str(ends))
         endframe = list(filter(lambda x: result[x] == ends, range(len(result))))[0]
@@ -291,7 +296,7 @@ for f in a:
             get_gif(Inputfolder + '/' + f, time1, "save1_begin", dir)
             time2 = timestamp[res_list[0]]
             get_gif(Inputfolder + '/' + f, time2, "save1_end", dir)
-            time3 = timestamp[ysave + alength + blankt]
+            time3 = timestamp[ysave]
             get_gif(Inputfolder + '/' + f, time3, "save2_begin", dir)
             time4 = timestamp[endframe]
             get_gif(Inputfolder + '/' + f, time4, "save2_end", dir)

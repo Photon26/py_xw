@@ -154,6 +154,8 @@ for f in a:
             timea = int(20.33 / bpm * 60 * 49)
         elif name == "k":
             timea = int(20.33 / bpm * 60 * 30)
+        elif name == "z":
+            timea = int(20.33 / bpm * 60 * 30)
         else:
             timea = int(20.33 / bpm * 60 * 59)
 
