@@ -17,9 +17,9 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = frame_[194: 269, 1380: 1832, :]
     elif name == "s":
         frame_ = frame[8: 52, 968: 1229, :]
-    elif name == "mz":                                                  # edited for single file xiashan_y
+    elif name == "mz":
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-        # frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        # frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)           # edited for single file xiashan_y
         frame_ = frame_[11: 59, 1224: 1505, :]
         # frame_ = frame_[11: 59, 1092: 1384, :]
     elif name == "l":

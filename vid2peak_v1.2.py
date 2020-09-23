@@ -15,12 +15,13 @@ import numpy as np
 import heapq
 import xlwt
 from get_Gif import get_gif
+from save_Img import save_Img
 
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'H:/vid/s10/tst'
-Outputfolder = 'H:/data/s10/tst'
+Inputfolder = 'H:/vid/s10'
+Outputfolder = 'H:/data/s10'
 a = os.listdir(Inputfolder)
 
 for f in a:
@@ -168,8 +169,8 @@ for f in a:
 
         dif_id = heapq.nlargest(5, range(len(dif)), key=dif.__getitem__)
         xs = dif[dif_id]
-        logger.write("\nThe peak score is:  " + str(result[dif_id]) + ". The filename is:  " + str(dif_id[0]) + " to " +
-                     str(dif_id[0] + timea))
+        logger.write("\nThe peak score is:  " + str(result[dif_id]) + ". The time is:  " + str(timestamp[dif_id[0]]/1000) + " to " +
+                     str((timestamp[dif_id[0]] + timea)/1000))
         pscore = xs[0][0]
         pic1 = dif_id[0]
         pic2 = (np.abs(timestamp - timestamp[pic1]-timea)).argmin()
@@ -183,10 +184,10 @@ for f in a:
         score = result[dif_id]
 
         pic3 = dif_id[0]
-        pic4 = (np.abs(timestamp - timestamp[pic3]+timea)).argmin()
+        pic4 = (np.abs(timestamp - timestamp[pic3]-timea)).argmin()
 
         logger.write("\nThe second peak score is: " + str(result[dif_id]) + ", score is " + str((xs + ys).T) +
-                     "the filename is:" + str(pic3) + "to" + str(pic4))
+                     "the time is: " + str(timestamp[dif_id[0]]/1000) + "to" + str((timestamp[dif_id[0]] + timea)/1000))
         seps = (xs + ys).T[0][0]
 
         #   Figure out the peak point(together)
@@ -203,9 +204,9 @@ for f in a:
 
         dif_id = heapq.nlargest(5, range(len(dif)), key=dif.__getitem__)
         pic5 = dif_id[0]
-        pic6 = (np.abs(timestamp - timestamp[pic5]+timea2)).argmin()
+        pic6 = (np.abs(timestamp - timestamp[pic5]-timea2)).argmin()
         logger.write("\nThe peak score for together/ssp is: "+ str(result[dif_id]) + ", score is " + str(dif[dif_id].T) +
-                     "the filename is:" + str(pic5) + " to " + str(pic6))
+                     "the time is:" + str(timestamp[dif_id[0]]/1000) + " to " + str((timestamp[dif_id[0]] + timea2)/1000))
         togs = dif[dif_id].T[0][0]
 
         #   Figure out the peak point(save)
@@ -260,18 +261,11 @@ for f in a:
         if jxscore2 > bqscore2:
             logger.write("\n\nSkill for team is PERFECT!!!")
 
-        cap = cv2.VideoCapture(Inputfolder + '/' + f)
         sttime = timestamp[res_list[0]]
-        cap.set(0, sttime)
-        ret, frame = cap.read()
-        cv2.imwrite(dir+"/"+"showtime.jpg",frame)
+        save_Img(Inputfolder + '/' + f, sttime/1000, dir+"/"+"showtime.jpg")
 
         fintime = timestamp[res_list1[0]]
-        cap.set(0, fintime)
-        ret, frame = cap.read()
-        cv2.imwrite(dir + "/" + "final.jpg", frame)
-        cap.release()
-        cv2.destroyAllWindows()
+        save_Img(Inputfolder + '/' + f, fintime/1000, dir + "/" + "final.jpg")
 
     except IndexError or NameError:
 
@@ -321,10 +315,10 @@ for f in a:
         time2 = timestamp[pic2]
         get_gif(Inputfolder + '/' + f, time2, "solo_end", dir)
 
-        logger.write("\n\nThe ssp peak is from" + str(pic1) + " to " + str(pic2))
-        time1 = timestamp[pic1]
+        logger.write("\n\nThe ssp peak is from" + str(pic5) + " to " + str(pic6))
+        time1 = timestamp[pic5]
         get_gif(Inputfolder + '/' + f, time1, "ssp_begin", dir)
-        time2 = timestamp[pic2]
+        time2 = timestamp[pic6]
         get_gif(Inputfolder + '/' + f, time2, "ssp_end", dir)
 
         print(f)
