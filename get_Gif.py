@@ -6,30 +6,32 @@ def get_gif(viddir, firetime, outputname, dir = ""):
     # cap.release()
 
     firetime = firetime/1000
-    duration = 1.5
+    duration1 = 1.5
+    duration2 = 0.5
     # centertime = frameid/fps
     centertime = firetime
-    st = centertime-duration
-    et = centertime+duration
+    st = centertime-duration1
+    et = centertime+duration2
     wholeclip = (VideoFileClip(viddir)
                  .subclip(st, et)
                  .resize((560, 400)))
     aclip = (wholeclip
-         .subclip(0, duration))
+             .subclip(0, duration1)
+             .speedx(0.5))
 
     bclip = (wholeclip
-            .to_ImageClip(duration)
-            .set_duration(1))
+             .to_ImageClip(duration1)
+             .set_duration(0.8))
 
     cclip = (wholeclip
-             .subclip(duration, 2*duration))
+             .subclip(duration1, duration1+duration2))
     L = []
     L.append(aclip)
     L.append(bclip)
     L.append(cclip)
 
     final_clip = concatenate_videoclips(L)
-    final_clip.write_gif(dir + "/" + outputname+".gif", fps=15)
+    final_clip.write_gif(dir + "/" + outputname+".gif", fps=10)
     wholeclip.close()
 
 

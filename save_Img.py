@@ -1,6 +1,6 @@
 from moviepy.editor import *
 
-# cv2 cap.set(), CV_CAP_PROP_POS_MSEC n m s l
+# cv2 cap.set(cv2.CV_CAP_PROP_POS_MSEC, *),  n m s l
 
 def save_Img(viddir, t, savedir):
     clip = (VideoFileClip(viddir).resize((560, 400)))

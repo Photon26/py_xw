@@ -12,8 +12,8 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     elif name == "d":
         frame_ = frame[5: 44, 928:1158, :]
     elif name == "z":
-        # frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-        frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)          # edited for standup1
+        frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        # frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)          # edited for standup1
         frame_ = frame_[194: 269, 1380: 1832, :]
     elif name == "s":
         frame_ = frame[8: 52, 968: 1229, :]
