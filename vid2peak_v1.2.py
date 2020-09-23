@@ -321,6 +321,12 @@ for f in a:
         time2 = timestamp[pic2]
         get_gif(Inputfolder + '/' + f, time2, "solo_end", dir)
 
+        logger.write("\n\nThe ssp peak is from" + str(pic1) + " to " + str(pic2))
+        time1 = timestamp[pic1]
+        get_gif(Inputfolder + '/' + f, time1, "ssp_begin", dir)
+        time2 = timestamp[pic2]
+        get_gif(Inputfolder + '/' + f, time2, "ssp_end", dir)
+
         print(f)
         logger.write("\n\nOverall runtime is:" + str(time.time() - st))
         logger.close()
