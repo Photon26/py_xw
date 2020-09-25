@@ -249,7 +249,13 @@ for f in a:
         baoscore = max(seps, savescore, togs)
         jxscore2 = fins * 1.11 + baoscore * 0.5 * 1.11
         bqscore2 = fins + baoscore * 1.7
+
+        bqscore_ssp = fins + togs * 2.323
+        jxscore_ssp = fins * 1.11 + togs*(2.067-1.11)
+
         logger.write("\nTeam: PERFECT score is:" + str(jxscore2) + ", FIRE score is:" + str(bqscore2))
+
+        logger.write("\nSsp: PERFECT score is:" + str(jxscore_ssp) + ", FIRE score is:" + str(bqscore_ssp))
 
         logger.write("\nOverall time:" + str(time.time() - st))
 
@@ -260,6 +266,9 @@ for f in a:
             logger.write("\n\nThe skill is FIRE!")
         if jxscore2 > bqscore2:
             logger.write("\n\nSkill for team is PERFECT!!!")
+
+        if bqscore_ssp<jxscore_ssp:
+            logger.write("\n\nSkill for ssp is PERFECT!!!")
 
         sttime = timestamp[res_list[0]]
         save_Img(Inputfolder + '/' + f, sttime/1000, dir+"/"+"showtime.jpg")
