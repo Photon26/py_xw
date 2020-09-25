@@ -17,5 +17,4 @@ User list：
 · model_z -> 真理
 
 Ongoing Optimization:
-1. Fire time figuration independent of fps.
-2. The figuration of the end of A paragragh.
+· The figuration of the end of A paragragh.
