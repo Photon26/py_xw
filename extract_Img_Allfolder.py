@@ -3,12 +3,12 @@ import time
 import os
 import shutil
 
-Inputfolder = 'H:/vid/s10/tst'
+Inputfolder = 'H:/vid/test'
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 a = os.listdir(Inputfolder)
 
 for f in a:
-    if f.startswith("z_"):
+    if f.startswith("ac"):
         # Opens the Video file
         filen = f[:-4]
         cap = cv2.VideoCapture(Inputfolder+'/'+f)
@@ -23,10 +23,11 @@ for f in a:
             ret, frame = cap.read()
             if ret == False:
                 break
+            frame = cv2.rotate(frame,cv2.ROTATE_90_COUNTERCLOCKWISE)
             cv2.imwrite(dir+'/'+str(i)+'.jpg',frame)
             i += 1
-            if i == 10:
-                break
+            # if i == 10:
+            #     break
 
         cap.release()
         cv2.destroyAllWindows()

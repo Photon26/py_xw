@@ -94,7 +94,7 @@ if __name__ == '__main__':
     from img_Ini import img_ini
     import os
 
-    modeldir = "./model_mz"
+    modeldir = "./model_s"
     model = []
     for i in range(0, 10):
         img = cv2.imread(modeldir + '/' + str(i) + ".jpg")
@@ -106,7 +106,8 @@ if __name__ == '__main__':
     model = np.array(model)
     a = os.listdir("raw_img")
     for f in a:
-        img = cv2.imread("./raw_img/"+f)
-        img_ = img_ini(img, mode="d", name="mz")
-        num = num_Recog(img_, model, name="mz")
-        print(num)
+        if f.startswith("6441"):
+            img = cv2.imread("./raw_img/"+f)
+            img_ = img_ini(img, mode="d", name="s")
+            num = num_Recog(img_, model, name="s")
+            print(num)
