@@ -4,7 +4,6 @@
 """
 
 import cv2
-import os
 import numpy as np
 
 def firetime_Check(frame, name="a"):
@@ -25,8 +24,8 @@ def firetime_Check(frame, name="a"):
     elif name == "s":
         roi = frame[222: 420, 1185: 1280, :]
     elif name == "z":
-        frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         roi = frame[555: 887, 1762: 1920, :]
     else:
         return 0

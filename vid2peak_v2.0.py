@@ -79,17 +79,17 @@ for f in a:
     if bpm[0] == "_":
         bpm = bpm[1:]
     bpm = int(bpm)
-    song = filen
+    song = filen[4:]
 
     try:
         # Opens the Video file
         cap = cv2.VideoCapture(Inputfolder + '/' + f)
 
         st = time.time()
-        dir = Outputfolder + '/' + filen
+        dir = Outputfolder + '/' + song
         if not os.path.exists(dir):
             os.makedirs(dir)
-        logger = open(dir + "/backup.txt", "a")
+        logger = open(dir + "/backup.txt", "w")
         logger.write("Calculation of " + song + ":\n")
         workbook = xlwt.Workbook(encoding='utf-8')
         worksheet = workbook.add_sheet('raw')
@@ -145,24 +145,25 @@ for f in a:
                     result[i - 1] = result[i - 2]
                 else:
                     result[i] = result[i - 1]
-            if result[i] - result[i - 1] > 10000:
+            if result[i] - result[i - 1] > 10400:
                 result[i] = result[i - 1]
             worksheet.write(count, 1, label=str(result[i]))
             count = count + 1
 
-            #   aend time method 1
-            if anti_aendflag == 0:
-                if fireflaglist[i] == 0 and fireflaglist[i - 1] == 1:
-                    showtime0 = i
-                    aendflag = 1
-                elif fireflaglist[i] == 0 and fireflaglist[i - 1] == 0:
-                    if aendflag == stmax:
-                        anti_aendflag = 1
-                    elif showtime0 != 0:
-                        aendflag = aendflag + 1
-                elif fireflaglist[i] == 1 and fireflaglist[i - 1] == 0:
-                    aendflag = 0
-                    showtime0 = 0
+            if i>1000:
+                #   aend time method 1
+                if anti_aendflag == 0:
+                    if fireflaglist[i] == 0 and fireflaglist[i - 1] == 1:
+                        showtime0 = i
+                        aendflag = 1
+                    elif fireflaglist[i] == 0 and fireflaglist[i - 1] == 0:
+                        if aendflag == stmax:
+                            anti_aendflag = 1
+                        elif showtime0 != 0:
+                            aendflag = aendflag + 1
+                    elif fireflaglist[i] == 1 and fireflaglist[i - 1] == 0:
+                        aendflag = 0
+                        showtime0 = 0
 
         truest = timestamp[showtime0 - 1]  # The true ending time of a paragraph(excluding time lagging).
         showtime_ms = truest + lag  # According to the time lagging we have to postpone the showtime when calculating.
@@ -308,6 +309,9 @@ for f in a:
         teams = max(savescore, seps, togs)
 
         if teams == seps:
+            if pic1 > pic3:
+                pic1, pic3 = pic3, pic1
+                pic2, pic4 = pic4, pic2
             logger.write("SEPERATE! \nThe picture is from" + str(pic1) + " to " + str(pic2) + "\tThe second is from "
                          + str(pic3) + " to " + str(pic4))
             time1 = timestamp[pic1]
