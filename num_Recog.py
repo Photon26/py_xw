@@ -43,6 +43,8 @@ def num_Recog(frame0, model, name = "l"):
         area = (40, 30)
     elif name =="g":
         area = (55, 35)
+    elif name == "f":
+        area = (80, 50)
     else:
         area = (75, 55)
     for i in range(0, len(colsum)):
@@ -66,7 +68,7 @@ def num_Recog(frame0, model, name = "l"):
                 begin = m[j]
                 end = n[j]
 
-                if end-begin >=area[1]:  #   The num block is too large.
+                if end-begin >area[1]:  #   The num block is too large.
                     # recog_num = 0
                     # return recog_num
                     continue
@@ -94,7 +96,7 @@ if __name__ == '__main__':
     from img_Ini import img_ini
     import os
 
-    modeldir = "./model"
+    modeldir = "./model_f"
     model = []
     for i in range(0, 10):
         img = cv2.imread(modeldir + '/' + str(i) + ".jpg")
@@ -106,8 +108,7 @@ if __name__ == '__main__':
     model = np.array(model)
     a = os.listdir("raw_img")
     for f in a:
-        if f.startswith("6"):
-            img = cv2.imread("./raw_img/"+f)
-            img_ = img_ini(img, mode="d", name="a")
-            num = num_Recog(img_, model, name="a")
-            print(num)
+        img = cv2.imread("./raw_img/"+f)
+        img_ = img_ini(img, mode="d", name="f")
+        num = num_Recog(img_, model, name="f")
+        print(num)

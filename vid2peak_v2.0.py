@@ -69,6 +69,10 @@ for f in a:
         name = "k"
         modeldir = "./model_k"
         stmax = 100
+    elif f.startswith("f_"):
+        name = "f"
+        modeldir = "./model_f"
+        stmax = 150
     else:
         continue
 
@@ -79,7 +83,7 @@ for f in a:
     if bpm[0] == "_":
         bpm = bpm[1:]
     bpm = int(bpm)
-    song = filen[4:]
+    song = filen[2:]
 
     try:
         # Opens the Video file

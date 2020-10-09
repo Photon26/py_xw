@@ -1,8 +1,8 @@
 import cv2
 import numpy as np
 
-frame = cv2.imread("raw_img/z.jpg")
-frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+frame = cv2.imread("raw_img/3545.jpg")
+# frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
 # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
 m,n =np.shape(frame)[:2]
 a = np.zeros((m, n)).astype(int)
@@ -19,11 +19,11 @@ a[int(center[0]-a1/2) : int(center[0]+a1/2), int(center[1]-b1/2): int(center[1]+
 disIm[:, :, 0] = a
 
 while True:
-    # height, width = disIm.shape[:2]
-    # size = (int(width * 0.5), int(height * 0.5))
-    # img = cv2.resize(disIm, size, interpolation=cv2.INTER_AREA)
-    # cv2.imshow("pic", img)
-    cv2.imshow("pic", disIm)
+    height, width = disIm.shape[:2]
+    size = (int(width * 0.5), int(height * 0.5))
+    img = cv2.resize(disIm, size, interpolation=cv2.INTER_AREA)
+    cv2.imshow("pic", img)
+    # cv2.imshow("pic", disIm)
 
     print("Press 'a' 'd' 'w' 's' to adjust the rectangle.\nPress SPACE to exit.")
     key = cv2.waitKey(0)

@@ -36,6 +36,9 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     elif name == "m1":
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         frame_ = frame_[194: 267, 1413: 1835, :]
+    elif name == "f":
+        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        frame_ = frame[191:268, 1417: 1834, :]
     else:
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame_[193: 268, 1413: 1835, :]
@@ -92,6 +95,11 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             min_height = 35
             max_height = 48
             ksize = 2
+        elif name == "f":
+            min_size = 300
+            min_height = 50
+            max_height = 70
+            ksize = 1
         else:
             min_size = 100
             min_height = 50
@@ -138,7 +146,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/6819.jpg")
-    pic_ = img_ini(pic, mode = "d", name='a')
+    pic = cv2.imread("./raw_img/3216.jpg")
+    pic_ = img_ini(pic, mode = "d", name='f')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

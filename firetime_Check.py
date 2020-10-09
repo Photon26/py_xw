@@ -27,6 +27,9 @@ def firetime_Check(frame, name="a"):
         # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         roi = frame[555: 887, 1762: 1920, :]
+    elif name == "f":
+        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        roi = frame[558: 885, 1759: 1919, :]
     else:
         return 0
 
@@ -57,7 +60,7 @@ if __name__ == "__main__":
     import os
     import numpy as np
 
-    Inputfolder = "H:/data/fortst/y_p_louder_128"
+    Inputfolder = "H:/data/f_y_invader_180"
     os.chdir(Inputfolder)
 
     a = os.listdir(Inputfolder)
@@ -67,7 +70,8 @@ if __name__ == "__main__":
     for f in a:
         # f = "1420.jpg"
         frame = cv2.imread(f)
-        flag.append(firetime_Check(frame, "y"))
+        print(firetime_Check(frame, "f"))
+        flag.append(firetime_Check(frame, "f"))
     flag = np.array(flag)
     length = np.shape(flag)[0]
     aendflag = 0
