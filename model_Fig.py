@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 import os
 
-name = "f"
-dir = "./model_f"
+name = "q"
+dir = "./model_q"
 if not os.path.exists(dir):
     os.makedirs(dir)
 
@@ -25,6 +25,8 @@ elif name == "g":
     area = (55, 35)
 elif name == "f":
     area = (80, 50)
+elif name == "q":
+    area = (50, 30)
 else:
     area = (75, 55)
 
@@ -43,5 +45,7 @@ for i in range(0,10):
     imlist = np.array(imlist)
     imlist_ = np.mean(imlist, 0)
     imlist_ = np.round(imlist_).astype("int")
+    imlist_[imlist_<150]=0
+    imlist_[imlist_>150]=255
 
     cv2.imwrite(dir+'/'+str(i)+".jpg", imlist_)

@@ -24,12 +24,14 @@ def firetime_Check(frame, name="a"):
     elif name == "s":
         roi = frame[222: 420, 1185: 1280, :]
     elif name == "z":
-        # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         roi = frame[555: 887, 1762: 1920, :]
     elif name == "f":
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         roi = frame[558: 885, 1759: 1919, :]
+    elif name == "q":
+        roi = frame[205: 401, 1185: 1279, :]
     else:
         return 0
 

@@ -8,7 +8,7 @@ Inputfolder = 'H:/vid/s10'
 a = os.listdir(Inputfolder)
 
 for f in a:
-    if f.startswith("f_y"):
+    if f.startswith("q"):
         # Opens the Video file
         filen = f[:-4]
         cap = cv2.VideoCapture(Inputfolder+'/'+f)
@@ -23,7 +23,7 @@ for f in a:
             ret, frame = cap.read()
             if ret == False:
                 break
-            frame = cv2.rotate(frame,cv2.ROTATE_90_COUNTERCLOCKWISE)
+            # frame = cv2.rotate(frame,cv2.ROTATE_90_COUNTERCLOCKWISE)
             cv2.imwrite(dir+'/'+str(i)+'.jpg',frame)
             i += 1
             # if i == 10:

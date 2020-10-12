@@ -57,6 +57,10 @@ for f in a:
         name = "s"
         modeldir = "./model_s"
         stmax = 150
+    elif f.startswith("q_"):
+        name = "q"
+        modeldir = "./model_q"
+        stmax = 150
     elif f.startswith("g_"):
         name = "g"
         modeldir = "./model_g"
@@ -122,6 +126,10 @@ for f in a:
             fireflag = firetime_Check(frame, name)
             img0 = img_ini(frame, mode=mode, name=name)
             num = num_Recog(img0, model, name=name)
+
+            # if num == 68:
+            #     cv2.imwrite("bug.jpg", frame)     #   for debug
+
             worksheet.write(count, 0, label=str(num))
             count = count + 1
             result.append(num)
@@ -149,7 +157,7 @@ for f in a:
                     result[i - 1] = result[i - 2]
                 else:
                     result[i] = result[i - 1]
-            if result[i] - result[i - 1] > 10400:
+            if result[i] - result[i - 1] > 10000:
                 result[i] = result[i - 1]
             worksheet.write(count, 1, label=str(result[i]))
             count = count + 1

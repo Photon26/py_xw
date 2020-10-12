@@ -45,6 +45,8 @@ def num_Recog(frame0, model, name = "l"):
         area = (55, 35)
     elif name == "f":
         area = (80, 50)
+    elif name == "q":
+        area = (50, 30)
     else:
         area = (75, 55)
     for i in range(0, len(colsum)):
@@ -80,6 +82,7 @@ def num_Recog(frame0, model, name = "l"):
                     tmp_[:s1, :s2] = tmp
 
                     # mask = model[:] & tmp_
+
                     mask = (model[:] == tmp_).astype('int')
 
                     # print(np.shape(mask))
@@ -96,7 +99,7 @@ if __name__ == '__main__':
     from img_Ini import img_ini
     import os
 
-    modeldir = "./model_f"
+    modeldir = "./model_q"
     model = []
     for i in range(0, 10):
         img = cv2.imread(modeldir + '/' + str(i) + ".jpg")
@@ -107,8 +110,9 @@ if __name__ == '__main__':
         model.append(img)
     model = np.array(model)
     a = os.listdir("raw_img")
-    for f in a:
-        img = cv2.imread("./raw_img/"+f)
-        img_ = img_ini(img, mode="d", name="f")
-        num = num_Recog(img_, model, name="f")
-        print(num)
+    # for f in a:
+    f = "7241.jpg"
+    img = cv2.imread("./raw_img/"+f)
+    img_ = img_ini(img, mode="d", name="q")
+    num = num_Recog(img_, model, name="q")
+    print(num)

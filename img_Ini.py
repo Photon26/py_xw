@@ -12,8 +12,9 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     elif name == "d":
         frame_ = frame[5: 44, 928:1158, :]
     elif name == "z":
-        # frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-        frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)          # edited for standup1
+        frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        # frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)          # edited for standup1
+        # frame_ = cv2.rotate(frame, cv2.ROTATE_180)
         frame_ = frame_[194: 269, 1380: 1832, :]
     elif name == "s":
         frame_ = frame[8: 52, 968: 1229, :]
@@ -39,6 +40,8 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     elif name == "f":
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame[191:268, 1417: 1834, :]
+    elif name == "q":
+        frame_ = frame[4: 49, 991: 1233, :]
     else:
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame_[193: 268, 1413: 1835, :]
@@ -55,59 +58,76 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             min_height = 30
             max_height = 50
             ksize = 2
+            ystart = 20
         elif name == "m" or name == "m1":
             min_size = 300
             min_height = 50
             max_height = 70
             ksize = 3
+            ystart = 20
         elif name == "z":
             min_size = 300
             min_height = 50
             max_height = 70
             ksize = 3
+            ystart = 20
         elif name == "s":
             min_size = 100
             min_height = 30
             max_height = 42
             ksize = 2
+            ystart = 20
         elif name =="mz":
             min_size = 100
             min_height = 35
             max_height = 51
             ksize = 2
+            ystart = 20
         elif name == "l":
             min_size = 300
             min_height = 50
             max_height = 70
             ksize = 4
+            ystart = 20
         elif name == "d":
             min_size = 100
             min_height = 30
             max_height = 40
             ksize = 2
+            ystart = 20
         elif name == "k":
             min_size = 0
             min_height = 0
             max_height = 30
             ksize = 1
+            ystart = 20
         elif name == "g":
             min_size = 100
             min_height = 35
             max_height = 48
             ksize = 2
+            ystart = 20
         elif name == "f":
             min_size = 300
             min_height = 50
             max_height = 70
             ksize = 1
+            ystart = 20
+        elif name == "q":
+            min_size = 50
+            min_height = 20
+            max_height = 42
+            ksize = 1
+            ystart = 20
         else:
             min_size = 100
             min_height = 50
             max_height = 70
             ksize = 4
+            ystart = 18
 
-        if name =="mz":
-            kernel = np.ones((2,2), np.uint8)
+        if name =="mz" or name == "q":
+            kernel = np.ones((6,6), np.uint8)
             frame0 = cv2.dilate(frame0, kernel, iterations=1)
             frame0 = cv2.erode(frame0, kernel, iterations=1)
         if name == "k":
@@ -131,7 +151,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         # print(stats)
         # for every component in the image, you keep it only if it's above min_size
         for i in range(0, nb_components):
-            if sizes[i] >= min_size and stats[i+1][3] > min_height and stats[i+1][3]<max_height and stats[i+1][0]>3:
+            if sizes[i] >= min_size and stats[i+1][3] > min_height and stats[i+1][3]<max_height and stats[i+1][0]>3 and stats[i+1][1]<ystart:
             # if sizes[i] >= min_size and stats[i + 1][3] > min_height and stats[i + 1][3] < max_height and stats[i + 1][0] > 20:
                 if name == "s":
                     if stats[i + 1][1] > 0:
@@ -146,7 +166,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/3216.jpg")
-    pic_ = img_ini(pic, mode = "d", name='f')
+    pic = cv2.imread("./raw_img/bug.jpg")
+    pic_ = img_ini(pic, mode="d", name='q')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)
