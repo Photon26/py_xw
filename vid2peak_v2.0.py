@@ -77,6 +77,10 @@ for f in a:
         name = "f"
         modeldir = "./model_f"
         stmax = 150
+    elif f.startswith("x_"):
+        name = "x"
+        modeldir = "./model_x"
+        stmax = 150
     else:
         continue
 
@@ -320,6 +324,12 @@ for f in a:
 
         teams = max(savescore, seps, togs)
 
+        logger.write("\n\nThe solo peak is from" + str(pic1) + " to " + str(pic2))
+        time1 = timestamp[pic1]
+        get_gif(Inputfolder + '/' + f, time1, "solo_begin", dir)
+        time2 = timestamp[pic2]
+        get_gif(Inputfolder + '/' + f, time2, "solo_end", dir)
+
         if teams == seps:
             if pic1 > pic3:
                 pic1, pic3 = pic3, pic1
@@ -354,12 +364,6 @@ for f in a:
             get_gif(Inputfolder + '/' + f, time1, "tog_begin", dir)
             time2 = timestamp[pic6]
             get_gif(Inputfolder + '/' + f, time2, "tog_end", dir)
-
-        logger.write("\n\nThe solo peak is from" + str(pic1) + " to " + str(pic2))
-        time1 = timestamp[pic1]
-        get_gif(Inputfolder + '/' + f, time1, "solo_begin", dir)
-        time2 = timestamp[pic2]
-        get_gif(Inputfolder + '/' + f, time2, "solo_end", dir)
 
         logger.write("\n\nThe ssp peak is from" + str(pic5) + " to " + str(pic6))
         time1 = timestamp[pic5]

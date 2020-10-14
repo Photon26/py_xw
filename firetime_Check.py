@@ -32,6 +32,8 @@ def firetime_Check(frame, name="a"):
         roi = frame[558: 885, 1759: 1919, :]
     elif name == "q":
         roi = frame[205: 401, 1185: 1279, :]
+    elif name == "x":
+        roi = frame[435: 766, 1762: 1920, :]
     else:
         return 0
 

@@ -42,6 +42,8 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = frame[191:268, 1417: 1834, :]
     elif name == "q":
         frame_ = frame[4: 49, 991: 1233, :]
+    elif name == "x":
+        frame_ = frame[72: 151, 1414: 1836, :]
     else:
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame_[193: 268, 1413: 1835, :]
@@ -119,6 +121,12 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             max_height = 42
             ksize = 1
             ystart = 20
+        elif name == "x":
+            min_size = 500
+            min_height = 50
+            max_height = 75
+            ksize = 2
+            ystart = 20
         else:
             min_size = 100
             min_height = 50
@@ -166,7 +174,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/bug.jpg")
-    pic_ = img_ini(pic, mode="d", name='q')
+    pic = cv2.imread("./raw_img/1117.jpg")
+    pic_ = img_ini(pic, mode="d", name='x')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

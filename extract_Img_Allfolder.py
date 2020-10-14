@@ -8,7 +8,7 @@ Inputfolder = 'H:/vid/s10'
 a = os.listdir(Inputfolder)
 
 for f in a:
-    if f.startswith("q"):
+    if f.startswith("x"):
         # Opens the Video file
         filen = f[:-4]
         cap = cv2.VideoCapture(Inputfolder+'/'+f)
