@@ -14,7 +14,7 @@ def firetime_Check(frame, name="a"):
         roi = frame[369:594, 1176:1279, :]
     elif name == "y":
         roi = frame[251: 471, 1172: 1279, :]
-    elif name == "m":
+    elif name == "m1":
         frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         roi = frame[555: 887, 1762: 1920, :]
@@ -32,6 +32,8 @@ def firetime_Check(frame, name="a"):
         roi = frame[558: 885, 1759: 1919, :]
     elif name == "q":
         roi = frame[205: 401, 1185: 1279, :]
+    elif name == "h":
+        roi = frame[338: 561, 1173: 1281, :]
     elif name == "x":
         roi = frame[435: 766, 1762: 1920, :]
     else:

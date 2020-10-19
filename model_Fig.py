@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 import os
 
-name = "x"
-dir = "./model_x"
+name = "h"
+dir = "./model_h"
 if not os.path.exists(dir):
     os.makedirs(dir)
 
@@ -29,6 +29,8 @@ elif name == "q":
     area = (50, 30)
 elif name == "x":
     area = (80, 55)
+elif name == "h":
+    area = (55, 35)
 else:
     area = (75, 55)
 
