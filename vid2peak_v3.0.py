@@ -18,6 +18,10 @@
                        pic4: second peak end(index)
                        pic5: ssp/together peak start(index)
                        pic6: ssp/together peak end(index)
+                       pic1_1: peak1 start for neighbouring
+                       pic1_2: peak1 end for neighbouring
+                       pic2_1: peak2 start for neighbouring
+                       pic2_2: peak2 end for neighbouring
         xsave: save start(A index)
         ysave: save start(B index)
         endframe: save end(B index)
@@ -25,6 +29,7 @@
         sepindex: seperate fire index
         togindex: together fire index
         saveindex: save fire index
+        neigindex: neighbouring fire index
 
 """
 
@@ -120,7 +125,10 @@ for f in a:
     if bpm[0] == "_":
         bpm = bpm[1:]
     bpm = int(bpm)
-    song = filen[2:]
+    if f.startswith("mz_"):
+        song = filen[3:]
+    else:
+        song = filen[2:]
 
     try:
         # Opens the Video file
@@ -256,8 +264,9 @@ for f in a:
 
         while timestamp[i] + timea < timelength:
             endtime = timestamp[i] + timea
-            frameid = (np.abs(timestamp - endtime)).argmin()
+            # frameid = (np.abs(timestamp - endtime)).argmin()     # A version for nearest value
             # frameid = -np.searchsorted(timestamp[::-1], endtime)       # A version for nearest smaller value
+            frameid = np.searchsorted(timestamp, [endtime, ], side='right')[0]      # A version for nearest greater value
             dif[i] = result[frameid] - result[i]
             i = i + 1
 
@@ -270,7 +279,26 @@ for f in a:
         pscore = xs[0][0]
         pic1 = dif_id[0]
         pic2 = (np.abs(timestamp - timestamp[pic1] - timea)).argmin()
-        pindex = round(xs/3120, 1)
+        pindex = round(pscore/3120, 1)
+
+        #   Figure out the point for neighbouring fire(sep when solo peak is not one of the 2 points)
+        neigs = 0
+        neig_x = 0
+        neig_y = 0
+        neig_start_cal_time = (np.abs(timestamp - (timestamp[pic1] - timea))).argmin()  # index of peak-t
+        neig_end_cal_time = pic2  # index of peak + t
+        for i in range(neig_start_cal_time, pic1):
+            second_neig_start_cal_time = (np.abs(timestamp - (timestamp[i] + timea))).argmin()  # index of i+t
+            for j in range(second_neig_start_cal_time, neig_end_cal_time):
+                if dif[i][0] + dif[j][0] > neigs:
+                    neigs = dif[i][0] + dif[j][0]
+                    neig_x = i
+                    neig_y = j
+        pic1_1 = i
+        pic1_2 = (np.abs(timestamp - (timestamp[i] + timea))).argmin()
+        pic2_1 = j
+        pic2_2 = (np.abs(timestamp - (timestamp[j] + timea))).argmin()
+        neigindex = round(neigs/3120, 1)
 
         #   Second peak
         head_time = max(0, timestamp[pic1] - timea)
@@ -284,14 +312,17 @@ for f in a:
         pic3 = dif_id[0]
         pic4 = (np.abs(timestamp - timestamp[pic3] - timea)).argmin()
 
-        logger.write("\nThe second peak score is: " + str(result[dif_id]) + ", score is " + str((xs + ys).T) +
-                     "the time is: " + str(timestamp[dif_id[0]] / 1000) + "to" + str(
-            (timestamp[dif_id[0]] + timea) / 1000))
+        logger.write(
+            "\nThe second peak score is: " + str(result[dif_id]) + ", score is " + str((xs + ys).T) +
+            "the time is: " + str(timestamp[dif_id[0]] / 1000) + "to" + str(
+                (timestamp[dif_id[0]] + timea) / 1000))
         seps = (xs + ys).T[0][0]
-        sepindex = round(seps/3120, 1)
+        sepindex = round(seps / 3120, 1)
 
-        #   Figure out the point for neighbouring fire(sep when solo peak is not one of the 2 points)
-        for i in range()
+        logger.write(
+            "\nThe score for neighbouring is: " + str(result[pic1_1]) + " and "+ str(result[pic2_1]) +", score is " + str(neigs) +
+            "the time is: " + str(timestamp[pic1_1] / 1000) + "to" + str(timestamp[pic1_2] / 1000) + " and "+
+        str(timestamp[pic2_1] / 1000) + "to" + str(timestamp[pic2_2] / 1000))
 
         #   Figure out the peak point(together)
         timea2 = timea * 2
@@ -386,7 +417,7 @@ for f in a:
     else:
         logger.write("\n\n\nCONCULSION:\n")
 
-        teams = max(savescore, seps, togs)
+        teams = max(savescore, seps, togs, neigs)
 
         logger.write("\n\nThe solo peak is from" + str(pic1) + " to " + str(pic2))
         logger.write("\nSolo index is " + str(pindex))
@@ -409,7 +440,7 @@ for f in a:
             get_gif(Inputfolder + '/' + f, time3, "sep2_begin", dir)
             time4 = timestamp[pic4]
             get_gif(Inputfolder + '/' + f, time4, "sep2_end", dir)
-            logger.write("\nSeperate index is " + str(sepindex))
+            logger.write("\nSeperate index is " + str(sepindex)+"\n")
 
 
         elif teams == savescore:
@@ -423,7 +454,7 @@ for f in a:
             get_gif(Inputfolder + '/' + f, time3, "save2_begin", dir)
             time4 = timestamp[endframe]
             get_gif(Inputfolder + '/' + f, time4, "save2_end", dir)
-            logger.write("\nSave index is " + str(saveindex))
+            logger.write("\nSave index is " + str(saveindex)+"\n")
 
             if pic1 > pic3:
                 pic1, pic3 = pic3, pic1
@@ -439,7 +470,7 @@ for f in a:
             time4 = timestamp[pic4]
             get_gif(Inputfolder + '/' + f, time4, "sep2_end", dir)
             logger.write("\nSeperate index is " + str(sepindex))
-            logger.write("\nSave - Seperate = " + str(savescore-seps))      #   Check difference between Seps and Saves
+            logger.write("\nSave - Seperate = " + str(savescore-seps)+"\n")      #   Check difference between Seps and Saves
 
         elif teams == togs:
             logger.write("TOGETHER!\n The picture is from" + str(pic5) + " to " + str(pic6))
@@ -447,12 +478,27 @@ for f in a:
             get_gif(Inputfolder + '/' + f, time1, "tog_begin", dir)
             time2 = timestamp[pic6]
             get_gif(Inputfolder + '/' + f, time2, "tog_end", dir)
+            logger.write("\nTogether index is " + str(togindex)+"\n")
+
+        elif teams == neigs:
+            logger.write("SEPERATE! \nThe picture is from" + str(pic1_1) + " to " + str(pic1_2) + "\tThe second is from "
+                         + str(pic2_1) + " to " + str(pic2_2))
+            time1 = timestamp[pic1_1]
+            get_gif(Inputfolder + '/' + f, time1, "sep1_begin", dir)
+            time2 = timestamp[pic1_2]
+            get_gif(Inputfolder + '/' + f, time2, "sep1_end", dir)
+            time3 = timestamp[pic2_1]
+            get_gif(Inputfolder + '/' + f, time3, "sep2_begin", dir)
+            time4 = timestamp[pic2_2]
+            get_gif(Inputfolder + '/' + f, time4, "sep2_end", dir)
+            logger.write("\nSeperate index is " + str(neigindex)+"\n")
 
         logger.write("\n\nThe ssp peak is from" + str(pic5) + " to " + str(pic6))
         time1 = timestamp[pic5]
         get_gif(Inputfolder + '/' + f, time1, "ssp_begin", dir)
         time2 = timestamp[pic6]
         get_gif(Inputfolder + '/' + f, time2, "ssp_end", dir)
+        logger.write("\nSSP index is " + str(togindex))
 
         print(f)
         logger.write("\n\nOverall runtime is:" + str(time.time() - st))
