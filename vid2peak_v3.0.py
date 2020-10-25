@@ -49,8 +49,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'H:/vid/s11'
-Outputfolder = 'H:/data/s11'
+Inputfolder = 'H:/vid/s10'
+Outputfolder = 'H:/data/s10/1022'
 a = os.listdir(Inputfolder)
 
 for f in a:
@@ -115,6 +115,14 @@ for f in a:
         name = "l"
         modeldir = "./model_l"
         stmax = 150
+    elif f.startswith("r_"):
+        name = "r"
+        modeldir = "./model_r"
+        stmax = 150
+    elif f.startswith("qx_"):
+        name = "qx"
+        modeldir = "./model_qx"
+        stmax = 150
     else:
         continue
 
@@ -125,7 +133,7 @@ for f in a:
     if bpm[0] == "_":
         bpm = bpm[1:]
     bpm = int(bpm)
-    if f.startswith("mz_"):
+    if f.startswith("mz_") or f.startswith("qx_"):
         song = filen[3:]
     else:
         song = filen[2:]
@@ -198,7 +206,7 @@ for f in a:
                     result[i - 1] = result[i - 2]
                 else:
                     result[i] = result[i - 1]
-            if result[i] - result[i - 1] > 10000:
+            if result[i] - result[i - 1] > 10000:           #   edit for fanmade
                 result[i] = result[i - 1]
             worksheet.write(count, 1, label=str(result[i]))
             count = count + 1
@@ -264,9 +272,9 @@ for f in a:
 
         while timestamp[i] + timea < timelength:
             endtime = timestamp[i] + timea
-            # frameid = (np.abs(timestamp - endtime)).argmin()     # A version for nearest value
+            frameid = (np.abs(timestamp - endtime)).argmin()     # A version for nearest value
             # frameid = -np.searchsorted(timestamp[::-1], endtime)       # A version for nearest smaller value
-            frameid = np.searchsorted(timestamp, [endtime, ], side='right')[0]      # A version for nearest greater value
+            # frameid = np.searchsorted(timestamp, [endtime, ], side='right')[0]      # A version for nearest greater value
             dif[i] = result[frameid] - result[i]
             i = i + 1
 
@@ -352,6 +360,9 @@ for f in a:
         blankt = res_list[-1] - alength
         save_start_cal_time = (np.abs(timestamp - (timestamp[alength] - timea))).argmin()
         save_end_cal_time = (np.abs(timestamp - (timestamp[bpara_end] - timea))).argmin()
+        xsave = 0
+        ysave = 0
+        ends = 0
         for x in range(save_start_cal_time, alength):
             ascore = showtime - result[x]
             for y in range(bpara_begin, save_end_cal_time):
@@ -419,7 +430,7 @@ for f in a:
 
         teams = max(savescore, seps, togs, neigs)
 
-        logger.write("\n\nThe solo peak is from" + str(pic1) + " to " + str(pic2))
+        logger.write("\nThe solo peak is from" + str(pic1) + " to " + str(pic2))
         logger.write("\nSolo index is " + str(pindex))
         time1 = timestamp[pic1]
         get_gif(Inputfolder + '/' + f, time1, "solo_begin", dir)
@@ -430,7 +441,7 @@ for f in a:
             if pic1 > pic3:
                 pic1, pic3 = pic3, pic1
                 pic2, pic4 = pic4, pic2
-            logger.write("SEPERATE! \nThe picture is from" + str(pic1) + " to " + str(pic2) + "\tThe second is from "
+            logger.write("\n\nSEPERATE! \nThe picture is from " + str(pic1) + " to " + str(pic2) + "\tThe second is from "
                          + str(pic3) + " to " + str(pic4))
             time1 = timestamp[pic1]
             get_gif(Inputfolder + '/' + f, time1, "sep1_begin", dir)
@@ -444,8 +455,8 @@ for f in a:
 
 
         elif teams == savescore:
-            logger.write("SAVE! \nThe picture is from" + str(xsave) + " to " + str(alength) + "\tand" +
-                         str(ysave + alength + blankt) + " to " + str(endframe))
+            logger.write("\n\nSAVE! \nThe picture is from " + str(xsave) + " to " + str(alength) + "\tand " +
+                         str(ysave) + " to " + str(endframe))
             time1 = timestamp[xsave]
             get_gif(Inputfolder + '/' + f, time1, "save1_begin", dir)
             time2 = showtime_ms
@@ -459,7 +470,7 @@ for f in a:
             if pic1 > pic3:
                 pic1, pic3 = pic3, pic1
                 pic2, pic4 = pic4, pic2
-            logger.write("If seperate, \nthe picture is from" + str(pic1) + " to " + str(pic2) + "\tThe second is from "
+            logger.write("If seperate, \nthe picture is from " + str(pic1) + " to " + str(pic2) + "\tThe second is from "
                          + str(pic3) + " to " + str(pic4))
             time1 = timestamp[pic1]
             get_gif(Inputfolder + '/' + f, time1, "sep1_begin", dir)
@@ -473,7 +484,7 @@ for f in a:
             logger.write("\nSave - Seperate = " + str(savescore-seps)+"\n")      #   Check difference between Seps and Saves
 
         elif teams == togs:
-            logger.write("TOGETHER!\n The picture is from" + str(pic5) + " to " + str(pic6))
+            logger.write("\n\nTOGETHER!\n The picture is from " + str(pic5) + " to " + str(pic6))
             time1 = timestamp[pic5]
             get_gif(Inputfolder + '/' + f, time1, "tog_begin", dir)
             time2 = timestamp[pic6]
@@ -481,7 +492,7 @@ for f in a:
             logger.write("\nTogether index is " + str(togindex)+"\n")
 
         elif teams == neigs:
-            logger.write("SEPERATE! \nThe picture is from" + str(pic1_1) + " to " + str(pic1_2) + "\tThe second is from "
+            logger.write("\n\nSEPERATE! \nThe picture is from " + str(pic1_1) + " to " + str(pic1_2) + "\tThe second is from "
                          + str(pic2_1) + " to " + str(pic2_2))
             time1 = timestamp[pic1_1]
             get_gif(Inputfolder + '/' + f, time1, "sep1_begin", dir)
@@ -493,7 +504,7 @@ for f in a:
             get_gif(Inputfolder + '/' + f, time4, "sep2_end", dir)
             logger.write("\nSeperate index is " + str(neigindex)+"\n")
 
-        logger.write("\n\nThe ssp peak is from" + str(pic5) + " to " + str(pic6))
+        logger.write("\n\nThe ssp peak is from " + str(pic5) + " to " + str(pic6))
         time1 = timestamp[pic5]
         get_gif(Inputfolder + '/' + f, time1, "ssp_begin", dir)
         time2 = timestamp[pic6]

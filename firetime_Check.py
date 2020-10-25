@@ -8,12 +8,20 @@ import numpy as np
 
 def firetime_Check(frame, name="a"):
     if name == "a":
+        frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)      #   edit for zc_d
+        roi = frame[1758:1918, 557:886, :]
+    elif name == "a1":
+        frame = cv2.rotate(frame, cv2.ROTATE_180)
         roi = frame[1758:1918, 557:886, :]
     elif name == "g":
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         roi = frame[369:594, 1176:1279, :]
     elif name == "y":
         roi = frame[251: 471, 1172: 1279, :]
+    elif name == "m":
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        roi = frame[555: 887, 1762: 1920, :]
     elif name == "m1":
         frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
@@ -36,6 +44,10 @@ def firetime_Check(frame, name="a"):
         roi = frame[338: 561, 1173: 1281, :]
     elif name == "x":
         roi = frame[435: 766, 1762: 1920, :]
+    elif name == "r":
+        roi = frame[70: 234, 375: 707, :]
+    elif name == "qx":
+        roi = frame[367: 591, 1173: 1279, :]
     else:
         return 0
 
