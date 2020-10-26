@@ -119,10 +119,10 @@ for f in a:
         name = "r"
         modeldir = "./model_r"
         stmax = 150
-    # elif f.startswith("qx_"):
-    #     name = "qx"
-    #     modeldir = "./model_qx"
-    #     stmax = 150
+    elif f.startswith("qx_"):
+        name = "qx"
+        modeldir = "./model_qx"
+        stmax = 150
     else:
         continue
 

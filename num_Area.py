@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-frame = cv2.imread("raw_img/8515.jpg")
+frame = cv2.imread("raw_img/2454.jpg")
 # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
 # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
 m,n =np.shape(frame)[:2]
