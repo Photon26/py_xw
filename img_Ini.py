@@ -12,8 +12,8 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     elif name == "d":
         frame_ = frame[5: 44, 928:1158, :]
     elif name == "z":
-        # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)          # edited for standup1
+        frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)          # edited for standup1
         frame_ = frame[194: 269, 1380: 1832, :]
     elif name == "s":
         frame_ = frame[8: 52, 968: 1229, :]
@@ -36,10 +36,10 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         frame_ = frame_[193: 268, 1413: 1835, :]
     elif name == "g":
-        # frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)    #   for low resolution
-        # frame_ = frame_[128: 179, 945: 1224, :]
-        frame_ = frame[1386: 1839, 1172: 1242, :]
-        frame_ = cv2.rotate(frame_, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)    #   for low resolution
+        frame_ = frame_[128: 179, 945: 1224, :]
+        # frame_ = frame[1386: 1839, 1172: 1242, :]
+        # frame_ = cv2.rotate(frame_, cv2.ROTATE_90_COUNTERCLOCKWISE)
     elif name == "m1":
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         frame_ = frame_[194: 267, 1413: 1835, :]
@@ -57,8 +57,8 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = frame[83: 496, 194: 266, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_90_CLOCKWISE)
     else:
-        frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-        frame_ = frame_[193: 268, 1413: 1835, :]     #   edit for zc_d
+        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)     #    edit for zc_d
+        frame_ = frame[193: 268, 1413: 1835, :]
     frame0 = cv2.cvtColor(frame_, cv2.COLOR_BGR2GRAY)
     _, frame0 = cv2.threshold(frame0, thres, 255, cv2.THRESH_BINARY)
     # kernel = np.ones((8, 8), np.uint8)
@@ -116,17 +116,17 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             ksize = 1
             ystart = 20
         elif name == "g":
-            # min_size = 100        #   low resolution
-            # min_height = 35
-            # max_height = 48
-            # ksize = 2
-            # ystart = 20
+            min_size = 100        #   low resolution
+            min_height = 35
+            max_height = 48
+            ksize = 2
+            ystart = 20
 
-            min_size = 100
-            min_height = 50
-            max_height = 70
-            ksize = 4
-            ystart = 18
+            # min_size = 100
+            # min_height = 50
+            # max_height = 70
+            # ksize = 4
+            # ystart = 18
         elif name == 'r':
             min_size = 100
             min_height = 50

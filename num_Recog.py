@@ -42,8 +42,8 @@ def num_Recog(frame0, model, name = "l"):
     elif name =="d":
         area = (40, 30)
     elif name =="g":
-        # area = (55, 35)     #   low resolution
-        area = (75, 55)
+        area = (55, 35)     #   low resolution
+        # area = (75, 55)
     elif name == "f":
         area = (80, 50)
     elif name == "q":

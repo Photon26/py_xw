@@ -49,8 +49,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'H:/vid/s11/ssp'
-Outputfolder = 'H:/data/ssp'
+Inputfolder = 'H:/vid/s10/jx'
+Outputfolder = 'H:/data/s10'
 a = os.listdir(Inputfolder)
 
 for f in a:
@@ -89,7 +89,7 @@ for f in a:
         stmax = 150
     elif f.startswith("g_"):
         name = "g"
-        modeldir = "./model_g"
+        modeldir = "./model_g_old"
         stmax = 150
     elif f.startswith("z_"):
         name = "z"
@@ -322,14 +322,14 @@ for f in a:
 
         logger.write(
             "\nThe second peak score is: " + str(result[dif_id]) + ", score is " + str((xs + ys).T) +
-            "the time is: " + str(timestamp[dif_id[0]] / 1000) + "to" + str(
+            ". The time is: " + str(timestamp[dif_id[0]] / 1000) + " to " + str(
                 (timestamp[dif_id[0]] + timea) / 1000))
         seps = (xs + ys).T[0][0]
         sepindex = round(seps / 3120, 1)
 
         logger.write(
             "\nThe score for neighbouring is: " + str(result[pic1_1]) + " and "+ str(result[pic2_1]) +", score is " + str(neigs) +
-            "the time is: " + str(timestamp[pic1_1] / 1000) + "to" + str(timestamp[pic1_2] / 1000) + " and "+
+            ". The time is: " + str(timestamp[pic1_1] / 1000) + " to " + str(timestamp[pic1_2] / 1000) + " and "+
         str(timestamp[pic2_1] / 1000) + "to" + str(timestamp[pic2_2] / 1000))
 
         #   Figure out the peak point(together)
@@ -349,7 +349,7 @@ for f in a:
         pic6 = (np.abs(timestamp - timestamp[pic5] - timea2)).argmin()
         logger.write(
             "\nThe peak score for together/ssp is: " + str(result[dif_id]) + ", score is " + str(dif[dif_id].T) +
-            "the time is:" + str(timestamp[dif_id[0]] / 1000) + " to " + str((timestamp[dif_id[0]] + timea2) / 1000))
+            ". The time is: " + str(timestamp[dif_id[0]] / 1000) + " to " + str((timestamp[dif_id[0]] + timea2) / 1000))
         togs = dif[dif_id].T[0][0]
         togindex = round(togs/3120, 1)
 
@@ -380,8 +380,8 @@ for f in a:
                 except:
                     break
         logger.write("\nThe peak score for saving is: " + str(xs) + " " + str(ys) + ", score is " + str(savescore) +
-                     "the filename is:" + str(xsave) + " and " + str(ysave + alength + blankt))
-        logger.write("\nEnding time for saving is:" + str(ends))
+                     ". The filename is: " + str(xsave) + " and " + str(ysave + alength + blankt))
+        logger.write("\nEnding score for saving is:" + str(ends))
         endframe = list(filter(lambda x: result[x] == ends, range(len(result))))[0]
         logger.write("\nBtime is:" + str(timea))
         saveindex = round(savescore/3120)
@@ -405,20 +405,6 @@ for f in a:
 
         logger.write("\nOverall time:" + str(time.time() - st))
 
-        if jxscore >= bqscore:
-            logger.write("\n\nThe skill is PERFECT!")
-        else:
-            logger.write("\n\nThe skill is FIRE!")
-        if jxscore2 > bqscore2:
-            logger.write("\n\nSkill for team is PERFECT!!!")
-
-        if bqscore_ssp < jxscore_ssp:
-            logger.write("\n\nSkill for ssp is PERFECT!!!")
-
-        save_Img(Inputfolder + '/' + f, showtime_ms / 1000, dir + "/" + "showtime.jpg")
-
-        fintime = timestamp[res_list1[0]]
-        save_Img(Inputfolder + '/' + f, fintime / 1000, dir + "/" + "final.jpg")
 
     except IndexError or NameError:
 
@@ -426,12 +412,27 @@ for f in a:
         shutil.move(Inputfolder + '/' + f, Inputfolder + '/bug/' + f)
 
     else:
-        logger.write("\n\n\nCONCULSION:\n")
+        logger.write("\n\n\n结论：\n")
+
+        if jxscore >= bqscore:
+            logger.write("\n\n单排技能：极限")
+        else:
+            logger.write("\n\n单排技能：爆气")
+        if jxscore2 > bqscore2:
+            logger.write("\n\n双排技能：极限")
+
+        if bqscore_ssp < jxscore_ssp:
+            logger.write("\n\nSSP技能：极限")
+
+        save_Img(Inputfolder + '/' + f, showtime_ms / 1000, dir + "/" + "showtime.jpg")
+
+        fintime = timestamp[res_list1[0]]
+        save_Img(Inputfolder + '/' + f, fintime / 1000, dir + "/" + "final.jpg")
 
         teams = max(savescore, seps, togs, neigs)
 
-        logger.write("\nThe solo peak is from" + str(pic1) + " to " + str(pic2))
-        logger.write("\nSolo index is " + str(pindex))
+        logger.write("\n单排爆点序列：" + str(pic1) + " 到 " + str(pic2))
+        logger.write("\n单排指数： " + str(pindex/1.11))
         time1 = timestamp[pic1]
         get_gif(Inputfolder + '/' + f, time1, "solo_begin", dir)
         time2 = timestamp[pic2]
@@ -441,8 +442,8 @@ for f in a:
             if pic1 > pic3:
                 pic1, pic3 = pic3, pic1
                 pic2, pic4 = pic4, pic2
-            logger.write("\n\nSEPERATE! \nThe picture is from " + str(pic1) + " to " + str(pic2) + "\tThe second is from "
-                         + str(pic3) + " to " + str(pic4))
+            logger.write("\n\n爆法：分开！ \n双排爆点序列：一爆从 " + str(pic1) + " 到 " + str(pic2) + "。\t二爆从 "
+                         + str(pic3) + " 到 " + str(pic4))
             time1 = timestamp[pic1]
             get_gif(Inputfolder + '/' + f, time1, "sep1_begin", dir)
             time2 = timestamp[pic2]
@@ -451,12 +452,12 @@ for f in a:
             get_gif(Inputfolder + '/' + f, time3, "sep2_begin", dir)
             time4 = timestamp[pic4]
             get_gif(Inputfolder + '/' + f, time4, "sep2_end", dir)
-            logger.write("\nSeperate index is " + str(sepindex)+"\n")
+            logger.write("\n双排指数： " + str(sepindex/1.11)+"\n")
 
 
         elif teams == savescore:
-            logger.write("\n\nSAVE! \nThe picture is from " + str(xsave) + " to " + str(alength) + "\tand " +
-                         str(ysave) + " to " + str(endframe))
+            logger.write("\n\n爆法：存气！ \n双排爆点序列：一爆从 " + str(xsave) + " 到 " + str(alength) + "。\t二爆从 " +
+                         str(ysave) + " 到 " + str(endframe))
             time1 = timestamp[xsave]
             get_gif(Inputfolder + '/' + f, time1, "save1_begin", dir)
             time2 = showtime_ms
@@ -465,13 +466,13 @@ for f in a:
             get_gif(Inputfolder + '/' + f, time3, "save2_begin", dir)
             time4 = timestamp[endframe]
             get_gif(Inputfolder + '/' + f, time4, "save2_end", dir)
-            logger.write("\nSave index is " + str(saveindex)+"\n")
+            logger.write("\n双排指数： " + str(saveindex/1.11)+"\n")
 
             if pic1 > pic3:
                 pic1, pic3 = pic3, pic1
                 pic2, pic4 = pic4, pic2
-            logger.write("If seperate, \nthe picture is from " + str(pic1) + " to " + str(pic2) + "\tThe second is from "
-                         + str(pic3) + " to " + str(pic4))
+            logger.write("若分开爆气, \n双排爆点序列：一爆从 " + str(pic1) + " 到 " + str(pic2) + "。\t二爆从 "
+                         + str(pic3) + " 到 " + str(pic4))
             time1 = timestamp[pic1]
             get_gif(Inputfolder + '/' + f, time1, "sep1_begin", dir)
             time2 = timestamp[pic2]
@@ -480,8 +481,8 @@ for f in a:
             get_gif(Inputfolder + '/' + f, time3, "sep2_begin", dir)
             time4 = timestamp[pic4]
             get_gif(Inputfolder + '/' + f, time4, "sep2_end", dir)
-            logger.write("\nSeperate index is " + str(sepindex))
-            logger.write("\nSave - Seperate = " + str(savescore-seps)+"\n")      #   Check difference between Seps and Saves
+            logger.write("\n分开指数： " + str(sepindex/1.11))
+            logger.write("\n存气分数-分开分数 = " + str(savescore-seps)+"\n")      #   Check difference between Seps and Saves
 
         elif teams == togs:
             logger.write("\n\nTOGETHER!\n The picture is from " + str(pic5) + " to " + str(pic6))
@@ -492,8 +493,8 @@ for f in a:
             logger.write("\nTogether index is " + str(togindex)+"\n")
 
         elif teams == neigs:
-            logger.write("\n\nSEPERATE! \nThe picture is from " + str(pic1_1) + " to " + str(pic1_2) + "\tThe second is from "
-                         + str(pic2_1) + " to " + str(pic2_2))
+            logger.write("\n\n爆法：分开！ \n双排爆点序列：一爆从 " + str(pic1_1) + " 到 " + str(pic1_2) + "。\t二爆从 "
+                         + str(pic2_1) + " 到 " + str(pic2_2))
             time1 = timestamp[pic1_1]
             get_gif(Inputfolder + '/' + f, time1, "sep1_begin", dir)
             time2 = timestamp[pic1_2]
@@ -502,16 +503,16 @@ for f in a:
             get_gif(Inputfolder + '/' + f, time3, "sep2_begin", dir)
             time4 = timestamp[pic2_2]
             get_gif(Inputfolder + '/' + f, time4, "sep2_end", dir)
-            logger.write("\nSeperate index is " + str(neigindex)+"\n")
+            logger.write("\n双排指数： " + str(neigindex/1.11)+"\n")
 
-        logger.write("\n\nThe ssp peak is from " + str(pic5) + " to " + str(pic6))
+        logger.write("\n\nSSP爆点序列：" + str(pic5) + " 到 " + str(pic6))
         time1 = timestamp[pic5]
         get_gif(Inputfolder + '/' + f, time1, "ssp_begin", dir)
         time2 = timestamp[pic6]
         get_gif(Inputfolder + '/' + f, time2, "ssp_end", dir)
-        logger.write("\nSSP index is " + str(togindex))
+        logger.write("\nSSP指数为： " + str(togindex/1.11))
 
         print(f)
-        logger.write("\n\nOverall runtime is:" + str(time.time() - st))
+        logger.write("\n\n总运行时间：" + str(time.time() - st))
         logger.close()
         shutil.move(Inputfolder + '/' + f, Inputfolder + '/done/' + f)
