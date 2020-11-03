@@ -3,20 +3,33 @@ import numpy as np
 
 def img_ini(frame, thres = 240, mode = "x", name = "l"):
     #   Rotate, Extract interest Area, Binarization
-    if name == "y":
-        frame_ = frame[8: 62, 949: 1223, :]
-    elif name =="m":
+    if name == "a1":
+        frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        frame_ = frame_[193: 268, 1413: 1835, :]
+    elif name == "d":
+        frame_ = frame[5: 44, 928:1158, :]
+    elif name == "f":
+        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        frame_ = frame[191:268, 1417: 1834, :]
+    elif name == "g":
+        frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)    #   for low resolution
+        frame_ = frame_[128: 179, 945: 1224, :]
+        # frame_ = frame[1386: 1839, 1172: 1242, :]
+        # frame_ = cv2.rotate(frame_, cv2.ROTATE_90_COUNTERCLOCKWISE)
+    elif name == "h":
+        frame_ = frame[96: 145, 934: 1225, :]
+    elif name == "k":
+        frame_ = frame[6: 36, 690: 879, :]
+    elif name == "l":
+        frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        frame_ = frame_[188: 263, 1413: 1835, :]
+    elif name == "m":
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         # frame_ = frame_[194: 267, 1413: 1835, :]
         frame_ = frame_[187: 260, 1413: 1835, :]
-    elif name == "d":
-        frame_ = frame[5: 44, 928:1158, :]
-    elif name == "z":
-        frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)          # edited for standup1
-        frame_ = frame[194: 269, 1380: 1832, :]
-    elif name == "s":
-        frame_ = frame[8: 52, 968: 1229, :]
+    elif name == "m1":
+        frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        frame_ = frame_[194: 267, 1413: 1835, :]
     elif name == "mz":
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         # frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)           # edited for single file xiashan_y
@@ -24,38 +37,25 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         # frame_ = frame_[11: 59, 1092: 1384, :]
         # frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         # frame_ = frame[5: 53, 1224: 1505, :]
-    elif name == "l":
-        frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-        frame_ = frame_[188: 263, 1413: 1835, :]
     elif name == "r":
         frame_ = frame[159: 590, 12: 88, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_90_CLOCKWISE)
-    elif name == "k":
-        frame_ = frame[6: 36, 690: 879, :]
-    elif name == "a1":
-        frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-        frame_ = frame_[193: 268, 1413: 1835, :]
-    elif name == "g":
-        frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)    #   for low resolution
-        frame_ = frame_[128: 179, 945: 1224, :]
-        # frame_ = frame[1386: 1839, 1172: 1242, :]
-        # frame_ = cv2.rotate(frame_, cv2.ROTATE_90_COUNTERCLOCKWISE)
-    elif name == "m1":
-        frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-        frame_ = frame_[194: 267, 1413: 1835, :]
-    elif name == "f":
-        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-        frame_ = frame[191:268, 1417: 1834, :]
+    elif name == "s":
+        frame_ = frame[8: 52, 968: 1229, :]
     elif name == "q":
         frame_ = frame[4: 49, 991: 1233, :]
-    elif name == "x":
-        frame_ = frame[72: 151, 1414: 1836, :]
-    elif name == "h":
-        frame_ = frame[96: 145, 934: 1225, :]
     elif name == "qx":
         # frame_ = frame[130: 179, 942: 1221, :]        #   low resolution
         frame_ = frame[83: 496, 194: 266, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_90_CLOCKWISE)
+    elif name == "x":
+        frame_ = frame[72: 151, 1414: 1836, :]
+    elif name == "y":
+        frame_ = frame[8: 62, 949: 1223, :]
+    elif name == "z":
+        frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)          # edited for standup1
+        frame_ = frame[194: 269, 1380: 1832, :]
     else:
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)     #    edit for zc_d
         frame_ = frame[193: 268, 1413: 1835, :]
@@ -67,52 +67,16 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
 
     if mode == "d":
         # find all your connected components (white blobs in your image)
-        if name == 'y':
-            min_size = 100
-            min_height = 30
-            max_height = 50
-            ksize = 2
-            ystart = 20
-        elif name == "m" or name == "m1":
-            min_size = 300
-            min_height = 50
-            max_height = 70
-            ksize = 3
-            ystart = 20
-        elif name == "z":
-            min_size = 300
-            min_height = 50
-            max_height = 70
-            ksize = 3
-            ystart = 20
-        elif name == "s":
-            min_size = 100
-            min_height = 30
-            max_height = 42
-            ksize = 2
-            ystart = 20
-        elif name =="mz":
-            min_size = 100
-            min_height = 35
-            max_height = 51
-            ksize = 2
-            ystart = 20
-        elif name == "l":
-            min_size = 300
-            min_height = 50
-            max_height = 70
-            ksize = 4
-            ystart = 20
-        elif name == "d":
+        if name == "d":
             min_size = 100
             min_height = 30
             max_height = 40
             ksize = 2
             ystart = 20
-        elif name == "k":
-            min_size = 0
-            min_height = 0
-            max_height = 30
+        elif name == "f":
+            min_size = 300
+            min_height = 50
+            max_height = 70
             ksize = 1
             ystart = 20
         elif name == "g":
@@ -127,11 +91,41 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             # max_height = 70
             # ksize = 4
             # ystart = 18
-        elif name == 'r':
+        elif name == "h":
             min_size = 100
-            min_height = 50
-            max_height = 75
+            min_height = 35
+            max_height = 48
             ksize = 2
+            ystart = 20
+        elif name == "k":
+            min_size = 0
+            min_height = 0
+            max_height = 30
+            ksize = 1
+            ystart = 20
+        elif name == "l":
+            min_size = 300
+            min_height = 50
+            max_height = 70
+            ksize = 4
+            ystart = 20
+        elif name == "m" or name == "m1":
+            min_size = 300
+            min_height = 50
+            max_height = 70
+            ksize = 3
+            ystart = 20
+        elif name =="mz":
+            min_size = 100
+            min_height = 35
+            max_height = 51
+            ksize = 2
+            ystart = 20
+        elif name == "q":
+            min_size = 50
+            min_height = 20
+            max_height = 42
+            ksize = 1
             ystart = 20
         elif name == 'qx':
             # min_size = 100    #   low resolution
@@ -145,17 +139,17 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             max_height = 70
             ksize = 4
             ystart = 18
-        elif name == "f":
-            min_size = 300
+        elif name == 'r':
+            min_size = 100
             min_height = 50
-            max_height = 70
-            ksize = 1
+            max_height = 75
+            ksize = 2
             ystart = 20
-        elif name == "q":
-            min_size = 50
-            min_height = 20
+        elif name == "s":
+            min_size = 100
+            min_height = 30
             max_height = 42
-            ksize = 1
+            ksize = 2
             ystart = 20
         elif name == "x":
             min_size = 500
@@ -163,11 +157,17 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             max_height = 75
             ksize = 2
             ystart = 20
-        elif name == "h":
+        elif name == 'y':
             min_size = 100
-            min_height = 35
-            max_height = 48
+            min_height = 30
+            max_height = 50
             ksize = 2
+            ystart = 20
+        elif name == "z":
+            min_size = 300
+            min_height = 50
+            max_height = 70
+            ksize = 3
             ystart = 20
         else:
             min_size = 100

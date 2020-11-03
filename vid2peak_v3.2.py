@@ -49,8 +49,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'H:/vid/s10'
-Outputfolder = 'H:/data/s10'
+Inputfolder = 'H:/vid/s11'
+Outputfolder = 'H:/data/s11'
 a = os.listdir(Inputfolder)
 
 for f in a:
@@ -63,9 +63,25 @@ for f in a:
         name = "a1"
         modeldir = "./model"
         stmax = 150
-    elif f.startswith("mz_"):
-        name = "mz"
-        modeldir = "./model_mz"
+    elif f.startswith("f_"):
+        name = "f"
+        modeldir = "./model_f"
+        stmax = 150
+    elif f.startswith("g_"):
+        name = "g"
+        modeldir = "./model_g_old"
+        stmax = 150
+    elif f.startswith("h_"):
+        name = "h"
+        modeldir = "./model_h"
+        stmax = 150
+    elif f.startswith("k_"):
+        name = "k"
+        modeldir = "./model_k"
+        stmax = 100
+    elif f.startswith("l_"):
+        name = "l"
+        modeldir = "./model_l"
         stmax = 150
     elif f.startswith("m_"):
         name = "m"
@@ -75,53 +91,37 @@ for f in a:
         name = "m1"
         modeldir = "./model_m"
         stmax = 100
-    elif f.startswith("y_"):
-        name = "y"
-        modeldir = "./model_y"
-        stmax = 50
-    elif f.startswith("s_"):
-        name = "s"
-        modeldir = "./model_s"
+    elif f.startswith("mz_"):
+        name = "mz"
+        modeldir = "./model_mz"
         stmax = 150
     elif f.startswith("q_"):
         name = "q"
         modeldir = "./model_q"
         stmax = 150
-    elif f.startswith("g_"):
-        name = "g"
-        modeldir = "./model_g_old"
-        stmax = 150
-    elif f.startswith("z_"):
-        name = "z"
-        modeldir = "./model_z"
-        stmax = 150
-    elif f.startswith("k_"):
-        name = "k"
-        modeldir = "./model_k"
-        stmax = 100
-    elif f.startswith("f_"):
-        name = "f"
-        modeldir = "./model_f"
-        stmax = 150
-    elif f.startswith("x_"):
-        name = "x"
-        modeldir = "./model_x"
-        stmax = 150
-    elif f.startswith("h_"):
-        name = "h"
-        modeldir = "./model_h"
-        stmax = 150
-    elif f.startswith("l_"):
-        name = "l"
-        modeldir = "./model_l"
+    elif f.startswith("qx_"):
+        name = "qx"
+        modeldir = "./model_qx"
         stmax = 150
     elif f.startswith("r_"):
         name = "r"
         modeldir = "./model_r"
         stmax = 150
-    elif f.startswith("qx_"):
-        name = "qx"
-        modeldir = "./model_qx"
+    elif f.startswith("s_"):
+        name = "s"
+        modeldir = "./model_s"
+        stmax = 150
+    elif f.startswith("x_"):
+        name = "x"
+        modeldir = "./model_x"
+        stmax = 150
+    elif f.startswith("y_"):
+        name = "y"
+        modeldir = "./model_y"
+        stmax = 50
+    elif f.startswith("z_"):
+        name = "z"
+        modeldir = "./model_z"
         stmax = 150
     else:
         continue
@@ -206,7 +206,7 @@ for f in a:
                     result[i - 1] = result[i - 2]
                 else:
                     result[i] = result[i - 1]
-            if result[i] - result[i - 1] > 10000:           #   edit for fanmade
+            if result[i] - result[i - 1] > 15000:           #   edit for fanmade
                 result[i] = result[i - 1]
             worksheet.write(count, 1, label=str(result[i]))
             count = count + 1
@@ -409,10 +409,13 @@ for f in a:
     except IndexError or NameError:
 
         cv2.destroyAllWindows()
-        shutil.move(Inputfolder + '/' + f, Inputfolder + '/bug/' + f)
+        movefolder = Inputfolder + '/bug'
+        if not os.path.exists(movefolder):
+            os.makedirs(movefolder)
+        shutil.move(Inputfolder + '/' + f, movefolder + '/' + f)
 
     else:
-        logger.write("\n\n\n结论：\n")
+        logger.write("\n\n\n结论：")
 
         if jxscore >= bqscore:
             logger.write("\n\n单排技能：极限")
@@ -515,7 +518,7 @@ for f in a:
         print(f)
         logger.write("\n\n总运行时间：" + str(time.time() - st))
         logger.close()
-        movefolder = Inputfolder + '/done/' + f
+        movefolder = Inputfolder + '/done'
         if not os.path.exists(movefolder):
             os.makedirs(movefolder)
-        shutil.move(Inputfolder + '/' + f, movefolder)
+        shutil.move(Inputfolder + '/' + f, movefolder + '/'+f)
