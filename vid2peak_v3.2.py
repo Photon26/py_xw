@@ -49,8 +49,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'H:/vid/s11'
-Outputfolder = 'H:/data/s11'
+Inputfolder = 'H:/vid/s12'
+Outputfolder = 'H:/data/s12'
 a = os.listdir(Inputfolder)
 
 for f in a:
@@ -206,7 +206,7 @@ for f in a:
                     result[i - 1] = result[i - 2]
                 else:
                     result[i] = result[i - 1]
-            if result[i] - result[i - 1] > 15000:           #   edit for fanmade
+            if result[i] - result[i - 1] > 10000:           #   edit for fanmade
                 result[i] = result[i - 1]
             worksheet.write(count, 1, label=str(result[i]))
             count = count + 1
