@@ -176,6 +176,10 @@ for f in a:
             img0 = img_ini(frame, mode=mode, name=name)
             num = num_Recog(img0, model, name=name)
 
+            # ttmp = cap.get(cv2.CAP_PROP_POS_MSEC)     #   for restarted
+            # if ttmp<60000:
+            #     continue
+
             # if num == 68:
             #     cv2.imwrite("bug.jpg", frame)     #   for debug
 
@@ -267,7 +271,7 @@ for f in a:
         #   Figure out the peak point(seperate)
         timelength = timestamp[-1]
         i = 0
-        timea = 20 * 60 * 1000 / bpm
+        timea = (20 ) * 60 * 1000 / bpm + 181       #   edited for lagging
         dif = np.zeros((length, 1))
 
         while timestamp[i] + timea < timelength:
