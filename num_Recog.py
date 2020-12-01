@@ -29,12 +29,14 @@ def num_Recog(frame0, model, name = "l"):
 
     if name == "y":
         area = (54, 40)
-    elif name == "m" or name == "m1":
-        area = (75, 55)
     elif name =="z":
         area = (75, 55)
     elif name == "s":
         area = (45, 42)
+    elif name == "j":
+        area = (55, 45)
+    elif name == "m":
+        area = (55, 35)
     elif name == "mz":
         area = (50, 45)
     elif name == "k":
@@ -46,14 +48,14 @@ def num_Recog(frame0, model, name = "l"):
         # area = (75, 55)
     elif name == "f":
         area = (80, 50)
-    elif name == "q":
-        area = (50, 30)
     elif name == "x":
         area = (80, 55)
     elif name == "h":
         area = (55, 35)
     elif name == "r":
         area = (80, 55)
+    elif name == "q":
+        area = (60, 40)
     elif name == "qx":
         # area = (55, 45)       #   low resolution
         area = (75, 55)
@@ -109,7 +111,7 @@ if __name__ == '__main__':
     from img_Ini import img_ini
     import os
 
-    modeldir = "./model_g"
+    modeldir = "./model_j"
     model = []
     for i in range(0, 10):
         img = cv2.imread(modeldir + '/' + str(i) + ".jpg")
@@ -124,6 +126,6 @@ if __name__ == '__main__':
     for f in a:
     # f = "7241.jpg"
         img = cv2.imread("./raw_img/"+f)
-        img_ = img_ini(img, mode="d", name="g")
-        num = num_Recog(img_, model, name="g")
+        img_ = img_ini(img, mode="d", name="j")
+        num = num_Recog(img_, model, name="j")
         print(num)

@@ -1,7 +1,7 @@
 import cv2
 import numpy as np
 
-frame = cv2.imread("raw_img/2454.jpg")
+frame = cv2.imread("raw_img/6184.jpg")
 # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
 # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
 m,n =np.shape(frame)[:2]
@@ -9,7 +9,7 @@ a = np.zeros((m, n)).astype(int)
 a[:, :] = frame[:, :, 0]
 center = np.array([100,1000])
 a1 = 100
-b1 = 94
+b1 = 100
 kstep = 1
 
 disIm = np.zeros((m,n,3)).astype('uint8')

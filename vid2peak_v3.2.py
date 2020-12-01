@@ -49,8 +49,11 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'H:/vid/s12'
-Outputfolder = 'H:/data/s12'
+# Inputfolder = 'H:/vid/s12'
+# Outputfolder = 'H:/data/s12'
+
+Inputfolder = 'D:/vid/s12'
+Outputfolder = 'D:/data/s12'
 a = os.listdir(Inputfolder)
 
 for f in a:
@@ -75,6 +78,10 @@ for f in a:
         name = "h"
         modeldir = "./model_h"
         stmax = 150
+    elif f.startswith("j_"):
+        name = "j"
+        modeldir = "./model_j"
+        stmax = 150
     elif f.startswith("k_"):
         name = "k"
         modeldir = "./model_k"
@@ -86,11 +93,7 @@ for f in a:
     elif f.startswith("m_"):
         name = "m"
         modeldir = "./model_m"
-        stmax = 100
-    elif f.startswith("m1_"):
-        name = "m1"
-        modeldir = "./model_m"
-        stmax = 100
+        stmax = 150
     elif f.startswith("mz_"):
         name = "mz"
         modeldir = "./model_mz"
@@ -101,6 +104,7 @@ for f in a:
         stmax = 150
     elif f.startswith("qx_"):
         name = "qx"
+        # modeldir = "./model_qx_old"
         modeldir = "./model_qx"
         stmax = 150
     elif f.startswith("r_"):
@@ -177,7 +181,7 @@ for f in a:
             num = num_Recog(img0, model, name=name)
 
             # ttmp = cap.get(cv2.CAP_PROP_POS_MSEC)     #   for restarted
-            # if ttmp<60000:
+            # if ttmp<56000:
             #     continue
 
             # if num == 68:
@@ -210,7 +214,7 @@ for f in a:
                     result[i - 1] = result[i - 2]
                 else:
                     result[i] = result[i - 1]
-            if result[i] - result[i - 1] > 10000:           #   edit for fanmade
+            if result[i] - result[i - 1] > 15000:           #   edit for fanmade
                 result[i] = result[i - 1]
             worksheet.write(count, 1, label=str(result[i]))
             count = count + 1
@@ -271,7 +275,9 @@ for f in a:
         #   Figure out the peak point(seperate)
         timelength = timestamp[-1]
         i = 0
-        timea = (20 ) * 60 * 1000 / bpm + 181       #   edited for lagging
+        bqtime = (20) * 60 * 1000 / bpm
+        lagging = 150
+        timea = bqtime + lagging     #   edited for lagging
         dif = np.zeros((length, 1))
 
         while timestamp[i] + timea < timelength:
@@ -337,7 +343,7 @@ for f in a:
         str(timestamp[pic2_1] / 1000) + "to" + str(timestamp[pic2_2] / 1000))
 
         #   Figure out the peak point(together)
-        timea2 = timea * 2
+        timea2 = bqtime*2+lagging
         dif = np.zeros((length, 1))
         i = 0
 
@@ -370,7 +376,7 @@ for f in a:
         for x in range(save_start_cal_time, alength):
             ascore = showtime - result[x]
             for y in range(bpara_begin, save_end_cal_time):
-                b_end_time = 2 * timea - (showtime_ms - timestamp[x]) + timestamp[y]
+                b_end_time = timea2 - (showtime_ms - timestamp[x]) + timestamp[y]
                 try:
                     b_end = (np.abs(timestamp - b_end_time)).argmin()
                     bscore = result[b_end] - result[y]

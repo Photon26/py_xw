@@ -17,16 +17,14 @@ def firetime_Check(frame, name="a"):
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         roi = frame[369:594, 1176:1279, :]
         # roi = frame[1761: 1918, 548: 883, :]
+    elif name == "j":
+        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        roi = frame[248: 474, 1453: 1560, :]
     elif name == "y":
         roi = frame[251: 471, 1172: 1279, :]
     elif name == "m":
-        # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-        roi = frame[555: 887, 1762: 1920, :]
-    elif name == "m1":
-        frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-        roi = frame[555: 887, 1762: 1920, :]
+        roi = frame[334: 553, 1170: 1279, :]
     elif name == "mz":
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         roi = frame[250: 472, 1454: 1559, :]
@@ -39,16 +37,16 @@ def firetime_Check(frame, name="a"):
     elif name == "f":
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         roi = frame[558: 885, 1759: 1919, :]
-    elif name == "q":
-        roi = frame[205: 401, 1185: 1279, :]
     elif name == "h":
         roi = frame[338: 561, 1173: 1281, :]
     elif name == "x":
         roi = frame[435: 766, 1762: 1920, :]
     elif name == "r":
         roi = frame[70: 234, 375: 707, :]
+    elif name == "q":
+        roi = frame[249: 475, 1174: 1278, :]
     elif name == "qx":
-        # roi = frame[367: 591, 1173: 1279, :]
+        # roi = frame[367: 591, 1173: 1279, :]    # low resolution
         roi = frame[4: 158, 552: 886, :]
     else:
         return 0

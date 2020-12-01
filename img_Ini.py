@@ -18,6 +18,9 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         # frame_ = cv2.rotate(frame_, cv2.ROTATE_90_COUNTERCLOCKWISE)
     elif name == "h":
         frame_ = frame[96: 145, 934: 1225, :]
+    elif name == "j":
+        frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        frame_ = frame_[7: 61, 1211: 1501, :]
     elif name == "k":
         frame_ = frame[6: 36, 690: 879, :]
     elif name == "l":
@@ -25,12 +28,8 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = frame_[188: 263, 1413: 1835, :]
     elif name == "m":
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-        # frame_ = frame_[194: 267, 1413: 1835, :]
-        frame_ = frame_[187: 260, 1413: 1835, :]
-    elif name == "m1":
-        frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-        frame_ = frame_[194: 267, 1413: 1835, :]
-    elif name == "mz":
+        frame_ = frame_[94: 145, 927: 1222, :]
+    elif name == "mz":         # mz_old
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         # frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)           # edited for single file xiashan_y
         frame_ = frame_[11: 59, 1224: 1505, :]
@@ -43,7 +42,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     elif name == "s":
         frame_ = frame[8: 52, 968: 1229, :]
     elif name == "q":
-        frame_ = frame[4: 49, 991: 1233, :]
+        frame_ = frame[5: 63, 924: 1227, :]
     elif name == "qx":
         # frame_ = frame[130: 179, 942: 1221, :]        #   low resolution
         frame_ = frame[83: 496, 194: 266, :]
@@ -97,6 +96,12 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             max_height = 48
             ksize = 2
             ystart = 20
+        elif name == "j":
+            min_size = 100
+            min_height = 35
+            max_height = 51
+            ksize = 2
+            ystart = 20
         elif name == "k":
             min_size = 0
             min_height = 0
@@ -109,11 +114,11 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             max_height = 70
             ksize = 4
             ystart = 20
-        elif name == "m" or name == "m1":
-            min_size = 300
-            min_height = 50
-            max_height = 70
-            ksize = 3
+        elif name =="m":
+            min_size = 100
+            min_height = 35
+            max_height = 51
+            ksize = 2
             ystart = 20
         elif name =="mz":
             min_size = 100
@@ -121,24 +126,24 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             max_height = 51
             ksize = 2
             ystart = 20
-        elif name == "q":
-            min_size = 50
-            min_height = 20
-            max_height = 42
-            ksize = 1
+        elif name == 'q':
+            min_size = 100
+            min_height = 30
+            max_height = 50
+            ksize = 3
             ystart = 20
         elif name == 'qx':
-            # min_size = 100    #   low resolution
-            # min_height = 30
-            # max_height = 55
-            # ksize = 2
-            # ystart = 20
+            min_size = 100    #   low resolution
+            min_height = 30
+            max_height = 55
+            ksize = 2
+            ystart = 20
 
-            min_size = 100
-            min_height = 50
-            max_height = 70
-            ksize = 4
-            ystart = 18
+            # min_size = 100
+            # min_height = 50
+            # max_height = 70
+            # ksize = 4
+            # ystart = 18
         elif name == 'r':
             min_size = 100
             min_height = 50
@@ -175,11 +180,11 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             max_height = 70
             ksize = 4
             ystart = 18
-
-        if name =="mz" or name == "q":
-            kernel = np.ones((6,6), np.uint8)
-            frame0 = cv2.dilate(frame0, kernel, iterations=1)
-            frame0 = cv2.erode(frame0, kernel, iterations=1)
+        #
+        # if name =="mz" or name == "q":
+        #     kernel = np.ones((6,6), np.uint8)
+        #     frame0 = cv2.dilate(frame0, kernel, iterations=1)
+        #     frame0 = cv2.erode(frame0, kernel, iterations=1)
         if name == "k":
             kernel = np.ones((2, 2), np.uint8)
             frame0 = cv2.dilate(frame0, kernel, iterations=1)
@@ -216,7 +221,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/8515.jpg")
-    pic_ = img_ini(pic, mode="d", name='g')
+    pic = cv2.imread("./raw_img/3628.jpg")
+    pic_ = img_ini(pic, mode="d", name='q')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

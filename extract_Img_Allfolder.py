@@ -3,18 +3,18 @@ import time
 import os
 import shutil
 
-Inputfolder = 'E:/vid/s11'
+Inputfolder = 'D:/vid/s12'
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 a = os.listdir(Inputfolder)
 
 for f in a:
-    if f.startswith("g"):
+    if f.startswith("q"):
         # Opens the Video file
         filen = f[:-4]
         cap = cv2.VideoCapture(Inputfolder+'/'+f)
         i = 0
         st = time.time()
-        dir = "E:/data/"+filen
+        dir = "D:/data/"+filen
         # dir = "/media/hlabbunri/GAO/data/" + filen
         if not os.path.exists(dir):
             os.makedirs(dir)

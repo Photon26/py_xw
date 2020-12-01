@@ -4,6 +4,7 @@ from moviepy.editor import *
 
 def save_Img(viddir, t, savedir):
     clip = (VideoFileClip(viddir).resize((560, 400)))
+    # clip = (VideoFileClip(viddir))
     clip.save_frame(savedir, t=t)
     clip.close()
 

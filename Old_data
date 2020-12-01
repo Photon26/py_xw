@@ -1,0 +1,69 @@
+Old users data
+including mt, sq
+
+1. mt:
+img_ini:
+    elif name == "m":
+        frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        # frame_ = frame_[194: 267, 1413: 1835, :]
+        frame_ = frame_[187: 260, 1413: 1835, :]
+    elif name == "m1":
+        frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        frame_ = frame_[194: 267, 1413: 1835, :]
+
+    elif name == "m" or name == "m1":
+        min_size = 300
+        min_height = 50
+        max_height = 70
+        ksize = 3
+        ystart = 20
+
+num_Recog:
+    elif name == "m" or name == "m1":
+        area = (75, 55)
+
+firetime_Check:
+    elif name == "m":
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        roi = frame[555: 887, 1762: 1920, :]
+    elif name == "m1":
+        frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        roi = frame[555: 887, 1762: 1920, :]
+
+vid2peak_v3.2:
+    elif f.startswith("m_"):
+        name = "m"
+        modeldir = "./model_m"
+        stmax = 100
+    elif f.startswith("m1_"):
+        name = "m1"
+        modeldir = "./model_m"
+        stmax = 100
+
+2. sq
+img_ini:
+    elif name == "q":
+        frame_ = frame[4: 49, 991: 1233, :]
+
+    elif name == "q":
+        min_size = 50
+        min_height = 20
+        max_height = 42
+        ksize = 1
+        ystart = 20
+
+num_Recog:
+    elif name == "q":
+        area = (50, 30)
+
+firetime_Check:
+    elif name == "q":
+        roi = frame[205: 401, 1185: 1279, :]
+
+vid2peak_v3.2:
+    elif f.startswith("q_"):
+        name = "q"
+        modeldir = "./model_q"
+        stmax = 150
