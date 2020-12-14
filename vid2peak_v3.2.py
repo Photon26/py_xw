@@ -66,6 +66,10 @@ for f in a:
         name = "a1"
         modeldir = "./model"
         stmax = 150
+    elif f.startswith("e_"):
+        name = "e"
+        modeldir = "./model_e"
+        stmax = 100
     elif f.startswith("f_"):
         name = "f"
         modeldir = "./model_f"
@@ -276,7 +280,7 @@ for f in a:
         timelength = timestamp[-1]
         i = 0
         bqtime = (20) * 60 * 1000 / bpm
-        lagging = 150
+        lagging = 120
         timea = bqtime + lagging     #   edited for lagging
         dif = np.zeros((length, 1))
 
