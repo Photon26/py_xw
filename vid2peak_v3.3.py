@@ -52,9 +52,11 @@ from firetime_Check import firetime_Check
 # Inputfolder = 'H:/vid/s12'
 # Outputfolder = 'H:/data/s12'
 
-Inputfolder = 'C:/vid'
-Outputfolder = 'C:/data'
+Inputfolder = 'D:/vid/s13'
+Outputfolder = 'D:/data/s13'
 a = os.listdir(Inputfolder)
+
+lagging = 167   # for all ios devices
 
 for f in a:
     #   Define name
@@ -102,6 +104,7 @@ for f in a:
         name = "mz"
         modeldir = "./model_mz"
         stmax = 150
+        lagging = 164
     elif f.startswith("q_"):
         name = "q"
         modeldir = "./model_q"
@@ -119,6 +122,7 @@ for f in a:
         name = "s"
         modeldir = "./model_s"
         stmax = 150
+        lagging = 240
     elif f.startswith("x_"):
         name = "x"
         modeldir = "./model_x"
@@ -127,6 +131,7 @@ for f in a:
         name = "y"
         modeldir = "./model_y"
         stmax = 50
+        lagging = 206
     elif f.startswith("z_"):
         name = "z"
         modeldir = "./model_z"
@@ -280,7 +285,6 @@ for f in a:
         timelength = timestamp[-1]
         i = 0
         bqtime = (20) * 60 * 1000 / bpm
-        lagging = 240
         timea = bqtime + lagging     #   edited for lagging
         dif = np.zeros((length, 1))
 
