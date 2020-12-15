@@ -52,8 +52,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = 'H:/vid/s12'
 # Outputfolder = 'H:/data/s12'
 
-Inputfolder = 'D:/vid/s12'
-Outputfolder = 'D:/data/s12'
+Inputfolder = 'C:/vid'
+Outputfolder = 'C:/data'
 a = os.listdir(Inputfolder)
 
 for f in a:
@@ -280,7 +280,7 @@ for f in a:
         timelength = timestamp[-1]
         i = 0
         bqtime = (20) * 60 * 1000 / bpm
-        lagging = 120
+        lagging = 240
         timea = bqtime + lagging     #   edited for lagging
         dif = np.zeros((length, 1))
 
