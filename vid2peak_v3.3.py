@@ -49,11 +49,14 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-# Inputfolder = 'H:/vid/s12'
-# Outputfolder = 'H:/data/s12'
+# Inputfolder = 'H:/vid/2021/s1'
+# Outputfolder = 'H:/data/2021/s1'
 
-Inputfolder = 'D:/vid/s13'
-Outputfolder = 'D:/data/s13'
+Inputfolder = 'H:/vid/debug'
+Outputfolder = 'H:/data/debug'
+
+# Inputfolder = 'D:/vid/s13'
+# Outputfolder = 'D:/data/s13'
 a = os.listdir(Inputfolder)
 
 lagging = 167   # for all ios devices
@@ -109,6 +112,7 @@ for f in a:
         name = "q"
         modeldir = "./model_q"
         stmax = 150
+        lagging = 166
     elif f.startswith("qx_"):
         name = "qx"
         # modeldir = "./model_qx_old"
@@ -140,7 +144,7 @@ for f in a:
         continue
 
     mode = "d"
-    lag = 180  # ms
+    lag = lagging  # ms
     filen = f[:-4]
     bpm = filen[-3:]
     if bpm[0] == "_":
@@ -299,13 +303,14 @@ for f in a:
         #   Solo peak
         dif_id = heapq.nlargest(5, range(len(dif)), key=dif.__getitem__)
         xs = dif[dif_id]
-        logger.write("\nThe peak score is:  " + str(result[dif_id]) + ". The time is:  " + str(
-            timestamp[dif_id[0]] / 1000) + " to " +
-                     str((timestamp[dif_id[0]] + timea) / 1000))
         pscore = xs[0][0]
         pic1 = dif_id[0]
         pic2 = (np.abs(timestamp - timestamp[pic1] - timea)).argmin()
-        pindex = round(pscore/3120, 1)
+        pindex = round(pscore / 3120, 1)
+        logger.write("\nThe peak score is:  " + str(result[dif_id]) + " to "
+                     + str(result[pic2]) + ". The time is:  " + str(
+            timestamp[dif_id[0]] / 1000) + " to " +
+                     str((timestamp[dif_id[0]] + timea) / 1000))
 
         #   Figure out the point for neighbouring fire(sep when solo peak is not one of the 2 points)
         neigs = 0
@@ -339,7 +344,8 @@ for f in a:
         pic4 = (np.abs(timestamp - timestamp[pic3] - timea)).argmin()
 
         logger.write(
-            "\nThe second peak score is: " + str(result[dif_id]) + ", score is " + str((xs + ys).T) +
+            "\nThe second peak score is: " + str(result[dif_id]) +
+            " to " + str(result[pic4]) + ", score is " + str((xs + ys).T) +
             ". The time is: " + str(timestamp[dif_id[0]] / 1000) + " to " + str(
                 (timestamp[dif_id[0]] + timea) / 1000))
         seps = (xs + ys).T[0][0]
@@ -366,7 +372,8 @@ for f in a:
         pic5 = dif_id[0]
         pic6 = (np.abs(timestamp - timestamp[pic5] - timea2)).argmin()
         logger.write(
-            "\nThe peak score for together/ssp is: " + str(result[dif_id]) + ", score is " + str(dif[dif_id].T) +
+            "\nThe peak score for together/ssp is: " + str(result[dif_id]) +
+            " to " + str(result[pic6]) + ", score is " + str(dif[dif_id].T) +
             ". The time is: " + str(timestamp[dif_id[0]] / 1000) + " to " + str((timestamp[dif_id[0]] + timea2) / 1000))
         togs = dif[dif_id].T[0][0]
         togindex = round(togs/3120, 1)
@@ -384,7 +391,7 @@ for f in a:
         for x in range(save_start_cal_time, alength):
             ascore = showtime - result[x]
             for y in range(bpara_begin, save_end_cal_time):
-                b_end_time = timea2 - (showtime_ms - timestamp[x]) + timestamp[y]
+                b_end_time = timea2 - (truest - timestamp[x]) + timestamp[y]       # test for saving(edited for d_left)
                 try:
                     b_end = (np.abs(timestamp - b_end_time)).argmin()
                     bscore = result[b_end] - result[y]
@@ -445,7 +452,7 @@ for f in a:
         if bqscore_ssp < jxscore_ssp:
             logger.write("\n\nSSP技能：极限")
 
-        save_Img(Inputfolder + '/' + f, showtime_ms / 1000, dir + "/" + "showtime.jpg")
+        save_Img(Inputfolder + '/' + f, truest / 1000, dir + "/" + "showtime.jpg")
 
         fintime = timestamp[res_list1[0]]
         save_Img(Inputfolder + '/' + f, fintime / 1000, dir + "/" + "final.jpg")

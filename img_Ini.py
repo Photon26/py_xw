@@ -29,7 +29,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame_[188: 263, 1413: 1835, :]
     elif name == "m":
-        frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         frame_ = frame_[94: 145, 927: 1222, :]
     elif name == "mz":         # mz_old
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
@@ -141,17 +141,17 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             ksize = 3
             ystart = 20
         elif name == 'qx':
-            min_size = 100    #   low resolution
-            min_height = 30
-            max_height = 55
-            ksize = 2
-            ystart = 20
+            # min_size = 100    #   low resolution
+            # min_height = 30
+            # max_height = 55
+            # ksize = 2
+            # ystart = 20
 
-            # min_size = 100
-            # min_height = 50
-            # max_height = 70
-            # ksize = 4
-            # ystart = 18
+            min_size = 100
+            min_height = 50
+            max_height = 70
+            ksize = 4
+            ystart = 18
         elif name == 'r':
             min_size = 100
             min_height = 50
