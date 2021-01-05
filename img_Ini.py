@@ -29,7 +29,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame_[188: 263, 1413: 1835, :]
     elif name == "m":
-        frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame_[94: 145, 927: 1222, :]
     elif name == "mz":         # mz_old
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)

@@ -25,7 +25,7 @@ def firetime_Check(frame, name="a"):
     elif name == "y":
         roi = frame[251: 471, 1172: 1279, :]
     elif name == "m":
-        frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         roi = frame[334: 553, 1170: 1279, :]
     elif name == "mz":
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)

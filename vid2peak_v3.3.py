@@ -30,7 +30,6 @@
         togindex: together fire index
         saveindex: save fire index
         neigindex: neighbouring fire index
-
 """
 
 import cv2
@@ -49,17 +48,16 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-# Inputfolder = 'H:/vid/2021/s1'
-# Outputfolder = 'H:/data/2021/s1'
+Inputfolder = 'H:/vid/2021/s2'
+Outputfolder = 'H:/data/2021/s2'
 
-Inputfolder = 'H:/vid/debug'
-Outputfolder = 'H:/data/debug'
+# Inputfolder = 'H:/vid/debug'
+# Outputfolder = 'H:/data/debug'
 
-# Inputfolder = 'D:/vid/s13'
-# Outputfolder = 'D:/data/s13'
 a = os.listdir(Inputfolder)
 
 lagging = 167   # for all ios devices
+nolagging_test = 0
 
 for f in a:
     #   Define name
@@ -143,6 +141,9 @@ for f in a:
     else:
         continue
 
+    if nolagging_test == 1:
+        lagging = 0
+
     mode = "d"
     lag = lagging  # ms
     filen = f[:-4]
@@ -221,6 +222,7 @@ for f in a:
         result[0] = 0
         length = np.shape(result)[0]
         showtime0 = 0
+        same = 0
         for i in range(1, length):
             if result[i] < result[i - 1]:
                 if i >= 2 and result[i] == result[i - 2]:
@@ -230,6 +232,18 @@ for f in a:
             if result[i] - result[i - 1] > 15000:           #   edit for fanmade
                 result[i] = result[i - 1]
             worksheet.write(count, 1, label=str(result[i]))
+
+            if same != -1 and result[i] > 100000:
+                if result[i] == result[i - 1]:
+                    same = same + 1
+                else:
+                    same = 0
+                if same == stmax:
+                    showtime_score = result[i]
+                    showtime_score_id = i
+                    showtime_score_time = timestamp[i]
+                    same = -1
+
             count = count + 1
 
             if i>1000:
@@ -247,7 +261,7 @@ for f in a:
                         aendflag = 0
                         showtime0 = 0
 
-        truest = timestamp[showtime0 - 1]  # The true ending time of a paragraph(excluding time lagging).
+        truest = timestamp[showtime0]  # The true ending time of a paragraph(excluding time lagging).
         showtime_ms = truest + lag  # According to the time lagging we have to postpone the showtime when calculating.
         alength = (np.abs(timestamp - showtime_ms)).argmin()
         showtime = result[alength]
@@ -289,7 +303,7 @@ for f in a:
         timelength = timestamp[-1]
         i = 0
         bqtime = (20) * 60 * 1000 / bpm
-        timea = bqtime + lagging     #   edited for lagging
+        timea = bqtime + lagging     # edited for lagging
         dif = np.zeros((length, 1))
 
         while timestamp[i] + timea < timelength:
@@ -409,7 +423,7 @@ for f in a:
         logger.write("\nEnding score for saving is:" + str(ends))
         endframe = list(filter(lambda x: result[x] == ends, range(len(result))))[0]
         logger.write("\nBtime is:" + str(timea))
-        saveindex = round(savescore/3120)
+        saveindex = round(savescore/3120, 1)
 
         #   Figure out the skill
         baoscore = pscore
@@ -452,7 +466,7 @@ for f in a:
         if bqscore_ssp < jxscore_ssp:
             logger.write("\n\nSSP技能：极限")
 
-        save_Img(Inputfolder + '/' + f, truest / 1000, dir + "/" + "showtime.jpg")
+        save_Img(Inputfolder + '/' + f, showtime_score_time / 1000, dir + "/" + "showtime.jpg")
 
         fintime = timestamp[res_list1[0]]
         save_Img(Inputfolder + '/' + f, fintime / 1000, dir + "/" + "final.jpg")
