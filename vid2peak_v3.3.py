@@ -235,13 +235,14 @@ for f in a:
 
             if same != -1 and result[i] > 100000:
                 if result[i] == result[i - 1]:
+                    if same == 0:
+                        showtime_score = result[i]
+                        showtime_score_id = i
+                        showtime_score_time = timestamp[i]
                     same = same + 1
                 else:
                     same = 0
                 if same == stmax:
-                    showtime_score = result[i]
-                    showtime_score_id = i
-                    showtime_score_time = timestamp[i]
                     same = -1
 
             count = count + 1
@@ -265,6 +266,7 @@ for f in a:
         showtime_ms = truest + lag  # According to the time lagging we have to postpone the showtime when calculating.
         alength = (np.abs(timestamp - showtime_ms)).argmin()
         showtime = result[alength]
+        # showtime_score_time = timestamp[(np.abs(result - showtime_score)).argmin()]
 
         # #   aend time method 2
         # count = 0
