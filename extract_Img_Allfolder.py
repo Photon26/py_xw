@@ -3,18 +3,18 @@ import time
 import os
 import shutil
 
-Inputfolder = 'D:/vid'
+Inputfolder = 'H:/vid/2021/s4'
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 a = os.listdir(Inputfolder)
 
 for f in a:
-    if f.startswith("8"):
+    if f.startswith("t"):
         # Opens the Video file
         filen = f[:-4]
         cap = cv2.VideoCapture(Inputfolder+'/'+f)
         i = 0
         st = time.time()
-        dir = "D:/data/"+filen
+        dir = "H:/data/"+filen
         # dir = "/media/hlabbunri/GAO/data/" + filen
         if not os.path.exists(dir):
             os.makedirs(dir)

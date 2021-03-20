@@ -48,8 +48,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'H:/vid/2021/s2'
-Outputfolder = 'H:/data/2021/s2'
+Inputfolder = 'H:/vid/2021/s4'
+Outputfolder = 'H:/data/2021/s4'
 
 # Inputfolder = 'H:/vid/debug'
 # Outputfolder = 'H:/data/debug'
@@ -144,7 +144,10 @@ for f in a:
     if nolagging_test == 1:
         lagging = 0
 
-    mode = "d"
+    mode = f.replace(name+"_", "", 1)[0]
+    if mode == "p" or mode == "d":
+        mode = "d"
+
     lag = lagging  # ms
     filen = f[:-4]
     bpm = filen[-3:]
@@ -335,17 +338,18 @@ for f in a:
         neig_start_cal_time = (np.abs(timestamp - (timestamp[pic1] - timea))).argmin()  # index of peak-t
         neig_end_cal_time = pic2  # index of peak + t
         for i in range(neig_start_cal_time, pic1):
-            second_neig_start_cal_time = (np.abs(timestamp - (timestamp[i] + timea))).argmin()  # index of i+t
+            second_neig_start_cal_time = (np.abs(timestamp - (timestamp[i] + timea))).argmin() + 2  # index of i+t
             for j in range(second_neig_start_cal_time, neig_end_cal_time):
                 if dif[i][0] + dif[j][0] > neigs:
                     neigs = dif[i][0] + dif[j][0]
                     neig_x = i
                     neig_y = j
-        pic1_1 = i
-        pic1_2 = (np.abs(timestamp - (timestamp[i] + timea))).argmin()
-        pic2_1 = j
-        pic2_2 = (np.abs(timestamp - (timestamp[j] + timea))).argmin()
+        pic1_1 = neig_x
+        pic1_2 = (np.abs(timestamp - (timestamp[neig_x] + timea))).argmin()
+        pic2_1 = neig_y
+        pic2_2 = (np.abs(timestamp - (timestamp[neig_y] + timea))).argmin()
         neigindex = round(neigs/3120, 1)
+        # neigs = 0
 
         #   Second peak
         head_time = max(0, timestamp[pic1] - timea)

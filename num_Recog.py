@@ -113,7 +113,7 @@ if __name__ == '__main__':
     from img_Ini import img_ini
     import os
 
-    modeldir = "./model_j"
+    modeldir = "./model_q"
     model = []
     for i in range(0, 10):
         img = cv2.imread(modeldir + '/' + str(i) + ".jpg")
@@ -128,6 +128,6 @@ if __name__ == '__main__':
     for f in a:
     # f = "7241.jpg"
         img = cv2.imread("./raw_img/"+f)
-        img_ = img_ini(img, mode="d", name="j")
-        num = num_Recog(img_, model, name="j")
+        img_ = img_ini(img, mode="d", name="q")
+        num = num_Recog(img_, model, name="q")
         print(num)

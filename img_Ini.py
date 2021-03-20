@@ -14,8 +14,8 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame[191:268, 1417: 1834, :]
     elif name == "g":
-        frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)    #   for low resolution
-        frame_ = frame_[128: 179, 945: 1224, :]
+        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)    #   for low resolution
+        frame_ = frame[128: 179, 945: 1224, :]
         # frame_ = frame[1386: 1839, 1172: 1242, :]
         # frame_ = cv2.rotate(frame_, cv2.ROTATE_90_COUNTERCLOCKWISE)
     elif name == "h":
@@ -29,8 +29,9 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame_[188: 263, 1413: 1835, :]
     elif name == "m":
-        frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-        frame_ = frame_[94: 145, 927: 1222, :]
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        frame_ = frame[94: 145, 927: 1222, :]
     elif name == "mz":         # mz_old
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         # frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)           # edited for single file xiashan_y
@@ -47,6 +48,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = frame[5: 63, 924: 1227, :]
     elif name == "qx":
         # frame_ = frame[130: 179, 942: 1221, :]        #   low resolution
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame[83: 496, 194: 266, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_90_CLOCKWISE)
     elif name == "x":
@@ -88,10 +90,10 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             ystart = 20
         elif name == "g":
             min_size = 100        #   low resolution
-            min_height = 35
+            min_height = 30
             max_height = 48
-            ksize = 2
-            ystart = 20
+            ksize = 1
+            ystart = 25
 
             # min_size = 100
             # min_height = 50
@@ -126,8 +128,8 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             min_size = 100
             min_height = 35
             max_height = 51
-            ksize = 2
-            ystart = 20
+            ksize = 1
+            ystart = 9
         elif name =="mz":
             min_size = 100
             min_height = 35
@@ -189,11 +191,11 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             ksize = 4
             ystart = 18
         #
-        # if name =="mz" or name == "q":
-        #     kernel = np.ones((6,6), np.uint8)
-        #     frame0 = cv2.dilate(frame0, kernel, iterations=1)
-        #     frame0 = cv2.erode(frame0, kernel, iterations=1)
-        if name == "k":
+        if name =="g":
+            kernel = np.ones((4,4), np.uint8)
+            frame0 = cv2.dilate(frame0, kernel, iterations=1)
+            frame0 = cv2.erode(frame0, kernel, iterations=1)
+        if name == "q":
             kernel = np.ones((2, 2), np.uint8)
             frame0 = cv2.dilate(frame0, kernel, iterations=1)
             frame0 = cv2.erode(frame0, kernel, iterations=1)
@@ -211,10 +213,12 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         # here, it's a fixed value, but you can set it as you want, eg the mean of the sizes or whatever
         # your answer image
         img2 = np.zeros((output.shape))
+        border = 1
+        imgh = output.shape[0]
         # print(stats)
         # for every component in the image, you keep it only if it's above min_size
         for i in range(0, nb_components):
-            if sizes[i] >= min_size and stats[i+1][3] > min_height and stats[i+1][3]<max_height and stats[i+1][0]>3 and stats[i+1][1]<ystart:
+            if sizes[i] >= min_size and stats[i+1][3] > min_height and stats[i+1][3]<max_height and stats[i+1][0]>3 and stats[i+1][1]<ystart:  # and stats[i+1][1]+stats[i+1][3]<imgh-border:
             # if sizes[i] >= min_size and stats[i + 1][3] > min_height and stats[i + 1][3] < max_height and stats[i + 1][0] > 20:
                 if name == "s":
                     if stats[i + 1][1] > 0:
@@ -229,7 +233,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/600.jpg")
-    pic_ = img_ini(pic, mode="d", name='e')
+    pic = cv2.imread("./raw_img/2276.jpg")
+    pic_ = img_ini(pic, mode="x", name='h')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)
