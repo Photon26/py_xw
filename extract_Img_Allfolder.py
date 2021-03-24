@@ -8,7 +8,7 @@ Inputfolder = 'H:/vid/2021/s4'
 a = os.listdir(Inputfolder)
 
 for f in a:
-    if f.startswith("t"):
+    if f.startswith("z"):
         # Opens the Video file
         filen = f[:-4]
         cap = cv2.VideoCapture(Inputfolder+'/'+f)

@@ -32,6 +32,9 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame[94: 145, 927: 1222, :]
+    elif name == "mj":         # mz_old
+        frame_ = frame[1391: 1839, 1166: 1253, :]
+        frame_ = cv2.rotate(frame_, cv2.ROTATE_90_COUNTERCLOCKWISE)
     elif name == "mz":         # mz_old
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         # frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)           # edited for single file xiashan_y
@@ -44,6 +47,9 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = cv2.rotate(frame_, cv2.ROTATE_90_CLOCKWISE)
     elif name == "s":
         frame_ = frame[8: 52, 968: 1229, :]
+    elif name == "t":
+        frame_ = frame[1115: 1203, 77: 531, :]
+        frame_ = cv2.rotate(frame_, cv2.ROTATE_180)
     elif name == "q":
         frame_ = frame[5: 63, 924: 1227, :]
     elif name == "qx":
@@ -51,13 +57,15 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame[83: 496, 194: 266, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_90_CLOCKWISE)
+    elif name == "w":
+        frame_ = frame[122: 183, 910: 1228, :]
     elif name == "x":
         frame_ = frame[72: 151, 1414: 1836, :]
     elif name == "y":
         frame_ = frame[8: 62, 949: 1223, :]
     elif name == "z":
-        frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)          # edited for standup1
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)          # edited for standup1
         frame_ = frame[194: 269, 1380: 1832, :]
     else:
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)     #    edit for zc_d
@@ -130,6 +138,12 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             max_height = 51
             ksize = 1
             ystart = 9
+        elif name == "mj":
+            min_size = 100
+            min_height = 53
+            max_height = 78
+            ksize = 2
+            ystart = 20
         elif name =="mz":
             min_size = 100
             min_height = 35
@@ -166,6 +180,18 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             max_height = 42
             ksize = 2
             ystart = 20
+        elif name == "t":
+            min_size = 300
+            min_height = 50
+            max_height = 70
+            ksize = 3
+            ystart = 20
+        elif name == 'w':
+            min_size = 100
+            min_height = 30
+            max_height = 50
+            ksize = 2
+            ystart = 20
         elif name == "x":
             min_size = 500
             min_height = 50
@@ -195,7 +221,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             kernel = np.ones((4,4), np.uint8)
             frame0 = cv2.dilate(frame0, kernel, iterations=1)
             frame0 = cv2.erode(frame0, kernel, iterations=1)
-        if name == "q":
+        if name == "q" or name == "w":
             kernel = np.ones((2, 2), np.uint8)
             frame0 = cv2.dilate(frame0, kernel, iterations=1)
             frame0 = cv2.erode(frame0, kernel, iterations=1)
@@ -227,13 +253,21 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
                     # print(stats[i+1])
                     # if sizes[i][0]+sizes[i][2] > sizes[i+1][0]
                     img2[output == i + 1] = 255
+            # else:
+            #     print(sizes[i], min_size)
+            #     print(stats[i+1][3] , min_height)
+            #     print(stats[i+1][3], max_height)
+            #     print(stats[i+1][0])
+            #     print(stats[i+1][1], ystart)
+
+
         img2 = cv2.dilate(img2, kernel, iterations=1)
         return img2
 
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/2276.jpg")
-    pic_ = img_ini(pic, mode="x", name='h')
+    pic = cv2.imread("./raw_img/813.jpg")
+    pic_ = img_ini(pic, mode="d", name='mj')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

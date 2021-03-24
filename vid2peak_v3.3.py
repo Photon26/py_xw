@@ -101,6 +101,10 @@ for f in a:
         name = "m"
         modeldir = "./model_m"
         stmax = 150
+    elif f.startswith("mj_"):
+        name = "mj"
+        modeldir = "./model_mj"
+        stmax = 150
     elif f.startswith("mz_"):
         name = "mz"
         modeldir = "./model_mz"
@@ -125,10 +129,19 @@ for f in a:
         modeldir = "./model_s"
         stmax = 150
         lagging = 240
+    elif f.startswith("t_"):
+        name = "t"
+        modeldir = "./model_t"
+        stmax = 150
     elif f.startswith("x_"):
         name = "x"
         modeldir = "./model_x"
         stmax = 150
+    elif f.startswith("w_"):
+        name = "w"
+        modeldir = "./model_w"
+        stmax = 50
+        lagging = 206
     elif f.startswith("y_"):
         name = "y"
         modeldir = "./model_y"
@@ -154,7 +167,7 @@ for f in a:
     if bpm[0] == "_":
         bpm = bpm[1:]
     bpm = int(bpm)
-    if f.startswith("mz_") or f.startswith("qx_"):
+    if f.startswith("mz_") or f.startswith("qx_") or f.startswith("mj_"):
         song = filen[3:]
     else:
         song = filen[2:]
@@ -198,7 +211,7 @@ for f in a:
             num = num_Recog(img0, model, name=name)
 
             # ttmp = cap.get(cv2.CAP_PROP_POS_MSEC)     #   for restarted
-            # if ttmp<56000:
+            # if ttmp<108000:
             #     continue
 
             # if num == 68:
