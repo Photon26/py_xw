@@ -9,7 +9,7 @@ a = os.listdir(Inputfolder)
 for f in a:
     # print(f)
     raw = cv2.imread(Inputfolder+'/'+f)
-    raw_ = img_ini(raw, mode="d", name="mj")
+    raw_ = img_ini(raw, mode="d", name="y")
 
     #   Segmentation
     colsum = np.sum(raw_, 0)

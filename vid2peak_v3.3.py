@@ -48,8 +48,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'H:/vid/2021/s4'
-Outputfolder = 'H:/data/2021/s4'
+Inputfolder = 'H:/vid/2021/s6'
+Outputfolder = 'H:/data/2021/s6'
 
 # Inputfolder = 'H:/vid/debug'
 # Outputfolder = 'H:/data/debug'
@@ -144,7 +144,7 @@ for f in a:
         lagging = 206
     elif f.startswith("y_"):
         name = "y"
-        modeldir = "./model_y"
+        modeldir = "./model_y_old"
         stmax = 50
         lagging = 206
     elif f.startswith("z_"):
@@ -245,7 +245,7 @@ for f in a:
                     result[i - 1] = result[i - 2]
                 else:
                     result[i] = result[i - 1]
-            if result[i] - result[i - 1] > 15000:           #   edit for fanmade
+            if result[i] - result[i - 1] > 20000:           #   edit for fanmade
                 result[i] = result[i - 1]
             worksheet.write(count, 1, label=str(result[i]))
 
@@ -263,7 +263,8 @@ for f in a:
 
             count = count + 1
 
-            if i>1000:
+            # if i>1000:
+            if result[i]>50000:
                 #   aend time method 1
                 if anti_aendflag == 0:
                     if fireflaglist[i] == 0 and fireflaglist[i - 1] == 1:

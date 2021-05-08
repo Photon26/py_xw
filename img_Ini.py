@@ -62,10 +62,12 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     elif name == "x":
         frame_ = frame[72: 151, 1414: 1836, :]
     elif name == "y":
+        # frame_ = frame[3: 64, 914: 1227, :]
+        #   old model
         frame_ = frame[8: 62, 949: 1223, :]
     elif name == "z":
-        # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)          # edited for standup1
+        frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)          # edited for standup1
         frame_ = frame[194: 269, 1380: 1832, :]
     else:
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)     #    edit for zc_d
@@ -199,6 +201,13 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             ksize = 2
             ystart = 20
         elif name == 'y':
+            # min_size = 200
+            # min_height = 30
+            # max_height = 59
+            # ksize = 2
+            # ystart = 20
+
+            #   old model
             min_size = 100
             min_height = 30
             max_height = 50
@@ -267,7 +276,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/813.jpg")
-    pic_ = img_ini(pic, mode="d", name='mj')
+    pic = cv2.imread("./raw_img/1019.jpg")
+    pic_ = img_ini(pic, mode="x", name='y')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

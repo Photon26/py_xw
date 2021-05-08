@@ -3,12 +3,12 @@ import time
 import os
 import shutil
 
-Inputfolder = 'H:/vid/2021/s4'
+Inputfolder = 'H:/vid/2021/s5'
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 a = os.listdir(Inputfolder)
 
 for f in a:
-    if f.startswith("z"):
+    if f.startswith("y"):
         # Opens the Video file
         filen = f[:-4]
         cap = cv2.VideoCapture(Inputfolder+'/'+f)

@@ -49,8 +49,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'H:/vid/ssp'
-Outputfolder = 'H:/data/ssp'
+Inputfolder = 'H:/vid/2021/s5'
+Outputfolder = 'H:/data/2021/s5'
 a = os.listdir(Inputfolder)
 
 for f in a:
