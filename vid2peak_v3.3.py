@@ -48,8 +48,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'H:/vid/2021/s6'
-Outputfolder = 'H:/data/2021/s6'
+Inputfolder = 'D:/vid/2021/s6'
+Outputfolder = 'D:/data/2021/s6'
 
 # Inputfolder = 'H:/vid/debug'
 # Outputfolder = 'H:/data/debug'
@@ -208,6 +208,8 @@ for f in a:
             # img0 = img_ini(frame, thres=120, mode=mode, name=name)      # edited for y
             fireflag = firetime_Check(frame, name)
             img0 = img_ini(frame, mode=mode, name=name)
+            # cv2.imshow("img0", img0)
+            # cv2.waitKey(0)
             num = num_Recog(img0, model, name=name)
 
             # ttmp = cap.get(cv2.CAP_PROP_POS_MSEC)     #   for restarted
@@ -221,6 +223,8 @@ for f in a:
             count = count + 1
             result.append(num)
             ttmp = cap.get(cv2.CAP_PROP_POS_MSEC)
+            if count > 10 and ttmp <= 0:
+                ttmp = timestamp[-1]+10
             timestamp.append(ttmp)
             worksheet.write(count, 2, label=str(ttmp))
             fireflaglist.append(fireflag)
@@ -465,7 +469,7 @@ for f in a:
         logger.write("\nOverall time:" + str(time.time() - st))
 
 
-    except IndexError or NameError:
+    except IndexError or NameError or ValueError:
 
         cv2.destroyAllWindows()
         movefolder = Inputfolder + '/bug'
@@ -496,6 +500,7 @@ for f in a:
         logger.write("\n单排爆点序列：" + str(pic1) + " 到 " + str(pic2))
         logger.write("\n单排指数： " + str(pindex))
         time1 = timestamp[pic1]
+        # print(time1)
         get_gif(Inputfolder + '/' + f, time1, "solo_begin", dir)
         time2 = timestamp[pic2]
         get_gif(Inputfolder + '/' + f, time2, "solo_end", dir)

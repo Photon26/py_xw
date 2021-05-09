@@ -14,7 +14,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame[191:268, 1417: 1834, :]
     elif name == "g":
-        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)    #   for low resolution
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)    #   for low resolution
         frame_ = frame[128: 179, 945: 1224, :]
         # frame_ = frame[1386: 1839, 1172: 1242, :]
         # frame_ = cv2.rotate(frame_, cv2.ROTATE_90_COUNTERCLOCKWISE)
@@ -33,6 +33,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame[94: 145, 927: 1222, :]
     elif name == "mj":         # mz_old
+        frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         frame_ = frame[1391: 1839, 1166: 1253, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_90_COUNTERCLOCKWISE)
     elif name == "mz":         # mz_old
@@ -48,13 +49,14 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     elif name == "s":
         frame_ = frame[8: 52, 968: 1229, :]
     elif name == "t":
+        frame = cv2.rotate(frame, cv2.ROTATE_180)
         frame_ = frame[1115: 1203, 77: 531, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_180)
     elif name == "q":
         frame_ = frame[5: 63, 924: 1227, :]
     elif name == "qx":
         # frame_ = frame[130: 179, 942: 1221, :]        #   low resolution
-        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame[83: 496, 194: 266, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_90_CLOCKWISE)
     elif name == "w":
@@ -66,11 +68,11 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         #   old model
         frame_ = frame[8: 62, 949: 1223, :]
     elif name == "z":
-        frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)          # edited for standup1
         frame_ = frame[194: 269, 1380: 1832, :]
     else:
-        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)     #    edit for zc_d
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)     #    edit for zc_d
         frame_ = frame[193: 268, 1413: 1835, :]
     frame0 = cv2.cvtColor(frame_, cv2.COLOR_BGR2GRAY)
     _, frame0 = cv2.threshold(frame0, thres, 255, cv2.THRESH_BINARY)
