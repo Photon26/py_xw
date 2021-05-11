@@ -63,10 +63,14 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = frame[122: 183, 910: 1228, :]
     elif name == "x":
         frame_ = frame[72: 151, 1414: 1836, :]
+    # elif name == "y":
+    #     # frame_ = frame[3: 64, 914: 1227, :]
+    #     #   old model
+    #     frame_ = frame[8: 62, 949: 1223, :]
     elif name == "y":
-        # frame_ = frame[3: 64, 914: 1227, :]
-        #   old model
-        frame_ = frame[8: 62, 949: 1223, :]
+        frame_ = frame[7: 95, 1771: 2233, :]
+    elif name == "y1":
+        frame_ = frame[74: 124, 914: 1189,:]
     elif name == "z":
         # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)          # edited for standup1
@@ -79,6 +83,9 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     # kernel = np.ones((8, 8), np.uint8)
     #
     # frame0 = cv2.erode(frame0, kernel, iterations=1)
+    if name == "y1":
+        kernel = np.ones((2, 2), np.uint8)
+        frame0 = cv2.dilate(frame0, kernel, iterations=1)
 
     if mode == "d":
         # find all your connected components (white blobs in your image)
@@ -203,18 +210,18 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             ksize = 2
             ystart = 20
         elif name == 'y':
-            # min_size = 200
-            # min_height = 30
-            # max_height = 59
-            # ksize = 2
-            # ystart = 20
+            min_size = 100
+            min_height = 45
+            max_height = 80
+            ksize = 2
+            ystart = 18
 
             #   old model
-            min_size = 100
-            min_height = 30
-            max_height = 50
-            ksize = 2
-            ystart = 20
+            # min_size = 100
+            # min_height = 30
+            # max_height = 50
+            # ksize = 2
+            # ystart = 20
         elif name == "z":
             min_size = 300
             min_height = 50
@@ -278,7 +285,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/1019.jpg")
-    pic_ = img_ini(pic, mode="x", name='y')
+    pic = cv2.imread("./raw_img/4685.jpg")
+    pic_ = img_ini(pic, mode="x", name='y1')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

@@ -131,6 +131,7 @@ for f in a:
         lagging = 240
     elif f.startswith("t_"):
         name = "t"
+
         modeldir = "./model_t"
         stmax = 150
     elif f.startswith("x_"):
@@ -144,7 +145,12 @@ for f in a:
         lagging = 206
     elif f.startswith("y_"):
         name = "y"
-        modeldir = "./model_y_old"
+        modeldir = "./model_y"
+        stmax = 150
+        lagging = 206
+    elif f.startswith("y1_"):
+        name = "y1"
+        modeldir = "./model_y1"
         stmax = 50
         lagging = 206
     elif f.startswith("z_"):
@@ -167,7 +173,7 @@ for f in a:
     if bpm[0] == "_":
         bpm = bpm[1:]
     bpm = int(bpm)
-    if f.startswith("mz_") or f.startswith("qx_") or f.startswith("mj_"):
+    if f.startswith("mz_") or f.startswith("qx_") or f.startswith("mj_") or f.startswith("y1_"):
         song = filen[3:]
     else:
         song = filen[2:]
@@ -200,6 +206,8 @@ for f in a:
         result = []
         timestamp = []
         fireflaglist = []
+
+        print("Start reading video...\n")
         while (cap.isOpened()):
             #   Read in img
             ret, frame = cap.read()
@@ -235,6 +243,7 @@ for f in a:
         fireflaglist = np.array(fireflaglist)
 
         #   Smooth and figure out the showtime
+        print("Start calculating st...")
         aendflag = 0
         anti_aendflag = 0
         count = 0
@@ -323,6 +332,7 @@ for f in a:
         logger.write("\nFinal pic is:" + str(res_list1[0] + 1))
 
         #   Figure out the peak point(seperate)
+        print("Start calculating fire point...")
         timelength = timestamp[-1]
         i = 0
         bqtime = (20) * 60 * 1000 / bpm

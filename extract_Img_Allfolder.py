@@ -8,7 +8,7 @@ Inputfolder = 'D:/vid/2021/s6'
 a = os.listdir(Inputfolder)
 
 for f in a:
-    if f.startswith("mj"):
+    if f.startswith("g_"):
         # Opens the Video file
         filen = f[:-4]
         cap = cv2.VideoCapture(Inputfolder+'/'+f)
@@ -27,7 +27,7 @@ for f in a:
             cv2.imwrite(dir+'/'+str(i)+'.jpg',frame)
             i += 1
 
-            if i == 2000:
+            if i == 10000:
                 break
 
         cap.release()

@@ -23,9 +23,11 @@ def firetime_Check(frame, name="a"):
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         roi = frame[248: 474, 1453: 1560, :]
     elif name == "y":
-        # roi = frame[244: 477, 1171: 1277, :]
+        roi = frame[373: 702, 2148: 2311, :]
         #   old model
-        roi = frame[251: 471, 1172: 1279, :]
+        # roi = frame[251: 471, 1172: 1279, :]
+    elif name == "y1":
+        roi = frame[270: 450, 1144: 1234, :]
     elif name == "m":
         # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
