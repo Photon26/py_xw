@@ -111,7 +111,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             min_size = 100        #   low resolution
             min_height = 30
             max_height = 48
-            ksize = 1
+            ksize = 3
             ystart = 25
 
             # min_size = 100
@@ -285,7 +285,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/4685.jpg")
-    pic_ = img_ini(pic, mode="x", name='y1')
+    pic = cv2.imread("./raw_img/3416.jpg")
+    pic_ = img_ini(pic, mode="d", name='g')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)
