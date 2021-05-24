@@ -45,11 +45,11 @@ from get_Gif import get_gif
 from save_Img import save_Img
 from firetime_Check import firetime_Check
 
-# Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
-# Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
+# Inputfolder = '/media/gao/GAO/vid/2021/s6'
+# Outputfolder = '/media/gao/GAO/data/2021/s6'
 
-Inputfolder = 'D:/vid/2021/s6'
-Outputfolder = 'D:/data/2021/s6'
+Inputfolder = 'D:/vid/2021/s7'
+Outputfolder = 'D:/data/2021/s7'
 
 # Inputfolder = 'H:/vid/debug'
 # Outputfolder = 'H:/data/debug'
@@ -68,6 +68,10 @@ for f in a:
     elif f.startswith("a1_"):
         name = "a1"
         modeldir = "./model"
+        stmax = 150
+    elif f.startswith("c_"):
+        name = "c"
+        modeldir = "./model_c"
         stmax = 150
     elif f.startswith("e_"):
         name = "e"
@@ -131,8 +135,11 @@ for f in a:
         lagging = 240
     elif f.startswith("t_"):
         name = "t"
-
         modeldir = "./model_t"
+        stmax = 150
+    elif f.startswith("t1_"):
+        name = "t1"
+        modeldir = "./model_t1"
         stmax = 150
     elif f.startswith("x_"):
         name = "x"
@@ -173,7 +180,7 @@ for f in a:
     if bpm[0] == "_":
         bpm = bpm[1:]
     bpm = int(bpm)
-    if f.startswith("mz_") or f.startswith("qx_") or f.startswith("mj_") or f.startswith("y1_"):
+    if f.startswith("mz_") or f.startswith("qx_") or f.startswith("mj_") or f.startswith("t1_") or f.startswith("y1_"):
         song = filen[3:]
     else:
         song = filen[2:]

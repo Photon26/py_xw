@@ -6,6 +6,8 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     if name == "a1":
         frame_ = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         frame_ = frame_[193: 268, 1413: 1835, :]
+    elif name == "c":
+        frame_ = frame[141: 219, 1397: 1845, :]
     elif name == "d":
         frame_ = frame[5: 44, 928:1158, :]
     elif name == "e":
@@ -52,6 +54,8 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame = cv2.rotate(frame, cv2.ROTATE_180)
         frame_ = frame[1115: 1203, 77: 531, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_180)
+    elif name == "t1":
+        frame_ = frame[186: 271, 1306: 1842, :]
     elif name == "q":
         frame_ = frame[5: 63, 924: 1227, :]
     elif name == "qx":
@@ -83,7 +87,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     # kernel = np.ones((8, 8), np.uint8)
     #
     # frame0 = cv2.erode(frame0, kernel, iterations=1)
-    if name == "y1":
+    if name == "y1"  or name == "t1":
         kernel = np.ones((2, 2), np.uint8)
         frame0 = cv2.dilate(frame0, kernel, iterations=1)
 
@@ -197,6 +201,12 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             max_height = 70
             ksize = 3
             ystart = 20
+        elif name == "t1":
+            min_size = 300
+            min_height = 50
+            max_height = 70
+            ksize = 2
+            ystart = 20
         elif name == 'w':
             min_size = 100
             min_height = 30
@@ -285,7 +295,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/3416.jpg")
-    pic_ = img_ini(pic, mode="d", name='g')
+    pic = cv2.imread("./raw_img/3875.jpg")
+    pic_ = img_ini(pic, mode="x", name='c')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)
