@@ -49,8 +49,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'H:/vid/2021/s5'
-Outputfolder = 'H:/data/2021/s5'
+Inputfolder = 'D:/vid/2021/s7'
+Outputfolder = 'D:/data/2021/s7'
 a = os.listdir(Inputfolder)
 
 for f in a:
@@ -59,6 +59,11 @@ for f in a:
         name = "a"
         modeldir = "./model"
         stmax = 150
+    elif f.startswith("w_"):
+        name = "w"
+        modeldir = "./model_w_2"
+        stmax = 50
+        lagging = 206
     elif f.startswith("a1_"):
         name = "a1"
         modeldir = "./model"
@@ -243,7 +248,7 @@ for f in a:
                     result[i - 1] = result[i - 2]
                 else:
                     result[i] = result[i - 1]
-            if result[i] - result[i - 1] > 10000:
+            if result[i] - result[i - 1] > 20000:
                 result[i] = result[i - 1]
             worksheet.write(count, 1, label=str(result[i]))
             count = count + 1
@@ -267,7 +272,7 @@ for f in a:
         logger.write("\nFinal pic is:" + str(res_list1[0] + 1))
 
         #   Figure out the peak point(seperate)
-        timelength = timestamp[-1]
+        timelength = np.max(timestamp)
         i = 0
         timea = 20 * 60 * 1000 / bpm
         dif = np.zeros((length, 1))

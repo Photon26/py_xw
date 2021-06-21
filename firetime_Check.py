@@ -48,6 +48,11 @@ def firetime_Check(frame, name="a"):
     elif name == "t1":
         frame = cv2.rotate(frame, cv2.ROTATE_180)
         roi = frame[548: 889, 1758: 1921, :]
+    # elif name
+    #     544
+    #     886
+    #     1757
+    #     1919
     elif name == "z":
         # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)

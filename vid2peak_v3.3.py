@@ -48,8 +48,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/gao/GAO/vid/2021/s6'
 # Outputfolder = '/media/gao/GAO/data/2021/s6'
 
-Inputfolder = 'D:/vid/2021/s7'
-Outputfolder = 'D:/data/2021/s7'
+Inputfolder = 'D:/vid/2021/s8'
+Outputfolder = 'D:/data/2021/s8'
 
 # Inputfolder = 'H:/vid/debug'
 # Outputfolder = 'H:/data/debug'
@@ -147,7 +147,7 @@ for f in a:
         stmax = 150
     elif f.startswith("w_"):
         name = "w"
-        modeldir = "./model_w"
+        modeldir = "./model_w_2"
         stmax = 50
         lagging = 206
     elif f.startswith("y_"):
@@ -265,7 +265,7 @@ for f in a:
                     result[i - 1] = result[i - 2]
                 else:
                     result[i] = result[i - 1]
-            if result[i] - result[i - 1] > 20000:           #   edit for fanmade
+            if result[i] - result[i - 1] > 12000:           #   edit for fanmade
                 result[i] = result[i - 1]
             worksheet.write(count, 1, label=str(result[i]))
 
@@ -569,7 +569,7 @@ for f in a:
             logger.write("\n存气分数-分开分数 = " + str(savescore-seps)+"\n")      #   Check difference between Seps and Saves
 
         elif teams == togs:
-            logger.write("\n\nTOGETHER!\n The picture is from " + str(pic5) + " to " + str(pic6))
+            logger.write("\n                                                                                                                             \nTOGETHER!\n The picture is from " + str(pic5) + " to " + str(pic6))
             time1 = timestamp[pic5]
             get_gif(Inputfolder + '/' + f, time1, "tog_begin", dir)
             time2 = timestamp[pic6]

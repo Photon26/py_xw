@@ -64,7 +64,8 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = frame[83: 496, 194: 266, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_90_CLOCKWISE)
     elif name == "w":
-        frame_ = frame[122: 183, 910: 1228, :]
+        # frame_ = frame[122: 183, 910: 1228, :]
+        frame_ = frame[70: 119, 733: 1009, :]
     elif name == "x":
         frame_ = frame[72: 151, 1414: 1836, :]
     # elif name == "y":
@@ -87,7 +88,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     # kernel = np.ones((8, 8), np.uint8)
     #
     # frame0 = cv2.erode(frame0, kernel, iterations=1)
-    if name == "y1"  or name == "t1":
+    if name == "y1"  or name == "t1" or name == "w":
         kernel = np.ones((2, 2), np.uint8)
         frame0 = cv2.dilate(frame0, kernel, iterations=1)
 
@@ -295,7 +296,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/3875.jpg")
-    pic_ = img_ini(pic, mode="x", name='c')
+    pic = cv2.imread("./raw_img/1844.jpg")
+    pic_ = img_ini(pic, mode="x", name='w')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

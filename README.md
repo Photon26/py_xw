@@ -1,14 +1,21 @@
 # py_xw
 
 This project recognizes the numbers of score from video file and calculate the peak score.
+
+Main program: `vid2peak_v3.3`
+
+
 Functions included:
 1. solo and duo fire-point figuration.
 2. ssp fire-point figuration.
 3. output: gif file showing the time of fire-point.(supported by moviepy)
 
 Model files are included in model_x folders.
+
 User list：
+
 Name:
+
 · a/a1 -> 隼（事务所）
 
 · d -> 豆豆
@@ -29,6 +36,8 @@ Name:
 
 · m -> 明哲（ios）
 
+· mj -> 貓鯦
+
 · mz -> 明哲（安卓）
 
 · q -> 千弦（安卓）
@@ -39,10 +48,12 @@ Name:
 
 · s -> 书香
 
+· t -> 甜汤
+
 · x -> 七夜
 
 · y -> 严言
 
 · z -> 真理
 
-Updated by Photon on Dec. 16th. 2020
+Updated by Photon on May 24th. 2021
