@@ -15,6 +15,8 @@ def firetime_Check(frame, name="a"):
         roi = frame[1758:1918, 557:886, :]
     elif name == "c":
         roi = frame[503: 839, 1760: 1915, :]
+    elif name == "d":
+        roi = frame[502: 840, 1760: 1919, :]
     elif name == "e":
         roi = frame[247: 472, 1172: 1281, :]
     elif name == "g":
@@ -62,8 +64,10 @@ def firetime_Check(frame, name="a"):
         roi = frame[558: 885, 1759: 1919, :]
     elif name == "h":
         roi = frame[338: 561, 1173: 1281, :]
+    # elif name == "x":
+    #     roi = frame[435: 766, 1762: 1920, :]
     elif name == "x":
-        roi = frame[435: 766, 1762: 1920, :]
+        roi = frame[365: 592, 1173: 1281, :]
     elif name == "r":
         roi = frame[70: 234, 375: 707, :]
     elif name == "q":

@@ -79,7 +79,7 @@ for f in a:
         stmax = 150
     elif f.startswith("x_"):
         name = "x"
-        modeldir = "./model_x"
+        modeldir = "./model_x_qyxj"
         stmax = 150
     else:
         continue

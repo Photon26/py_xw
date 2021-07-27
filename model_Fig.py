@@ -2,14 +2,16 @@ import cv2
 import numpy as np
 import os
 
-name = "w"
-dir = "./model_w_2"
+name = "g"
+dir = "./model_g_old"
 if not os.path.exists(dir):
     os.makedirs(dir)
 
 if name == "y":
     # area = (63, 40)
     area = (88, 55)
+elif name == "d":
+    area = (85, 55)
 elif name == "m":
     area = (55, 35)
 elif name == "q":
@@ -33,12 +35,12 @@ elif name == "d":
 elif name == "e":
     area = (55, 35)
 elif name == "g":
-    # area = (55, 35)    #   low resolution
-    area = (75, 55)
+    area = (55, 35)    #   low resolution
+    # area = (75, 55)
 elif name == "f":
     area = (80, 50)
-elif name == "x":
-    area = (80, 55)
+# elif name == "x":
+#     area = (80, 55)
 elif name == "h":
     area = (55, 35)
 elif name == "r":
@@ -47,6 +49,8 @@ elif name == "t":
     area = (90, 55)
 elif name == "t1":
     area = (90, 55)
+elif name == "x":
+    area = (70, 35)
 elif name == "y1":
     area = (50, 35)
 elif name == "w":

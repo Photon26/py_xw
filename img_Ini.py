@@ -8,8 +8,11 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = frame_[193: 268, 1413: 1835, :]
     elif name == "c":
         frame_ = frame[141: 219, 1397: 1845, :]
-    elif name == "d":
-        frame_ = frame[5: 44, 928:1158, :]
+    #   sidou
+    # elif name == "d":
+    #     frame_ = frame[5: 44, 928:1158, :]
+    if name == "d":
+        frame_ = frame[141: 221, 1350: 1846, :]
     elif name == "e":
         frame_ = frame[8: 59, 928:1230, :]
     elif name == "f":
@@ -66,8 +69,11 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     elif name == "w":
         # frame_ = frame[122: 183, 910: 1228, :]
         frame_ = frame[70: 119, 733: 1009, :]
+    # elif name == "x":     #   七夜
+    #     # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)    #   for low resolution
+    #     frame_ = frame[128: 179, 945: 1224, :]
     elif name == "x":
-        frame_ = frame[72: 151, 1414: 1836, :]
+        frame_ = frame[123: 181, 924: 1230, :]
     # elif name == "y":
     #     # frame_ = frame[3: 64, 914: 1227, :]
     #     #   old model
@@ -91,14 +97,27 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     if name == "y1"  or name == "t1" or name == "w":
         kernel = np.ones((2, 2), np.uint8)
         frame0 = cv2.dilate(frame0, kernel, iterations=1)
+    if name == "g":
+        kernel = np.ones((3, 3), np.uint8)
+        frame0 = cv2.dilate(frame0, kernel, iterations=1)
+        kernel = np.ones((2, 2), np.uint8)
+        frame0 = cv2.erode(frame0, kernel, iterations=1)
 
     if mode == "d":
         # find all your connected components (white blobs in your image)
+        #   sidou
+        # if name == "d":
+        #     min_size = 100
+        #     min_height = 30
+        #     max_height = 40
+        #     ksize = 2
+        #     ystart = 20
+        #   dongye
         if name == "d":
-            min_size = 100
-            min_height = 30
-            max_height = 40
-            ksize = 2
+            min_size = 300
+            min_height = 50
+            max_height = 70
+            ksize = 3
             ystart = 20
         elif name == "e":
             min_size = 100
@@ -214,12 +233,19 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             max_height = 50
             ksize = 2
             ystart = 20
+        # elif name == "x":
+        #     min_size = 500
+        #     min_height = 50
+        #     max_height = 75
+        #     ksize = 2
+        #     ystart = 20
+
         elif name == "x":
-            min_size = 500
-            min_height = 50
-            max_height = 75
+            min_size = 100
+            min_height = 35
+            max_height = 48
             ksize = 2
-            ystart = 20
+            ystart = 15
         elif name == 'y':
             min_size = 100
             min_height = 45
@@ -296,7 +322,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/1844.jpg")
-    pic_ = img_ini(pic, mode="x", name='w')
+    pic = cv2.imread("./raw_img/2563.jpg")
+    pic_ = img_ini(pic, mode="x", name='g')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

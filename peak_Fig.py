@@ -69,7 +69,7 @@ elif name == "k":
     modeldir = "./model_k"
     stmax = 100
 elif name == "d":
-    modeldir = "./model_d"
+    modeldir = "./model_d_sidou"
     stmax = 100
 else:
     modeldir = "./model"

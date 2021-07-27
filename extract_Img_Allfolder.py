@@ -8,7 +8,7 @@ Inputfolder = 'D:/vid/2021/s7'
 a = os.listdir(Inputfolder)
 
 for f in a:
-    if f.startswith("w_"):
+    if f.startswith("g_"):
         # Opens the Video file
         filen = f[:-4]
         cap = cv2.VideoCapture(Inputfolder+'/'+f)

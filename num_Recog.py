@@ -30,6 +30,8 @@ def num_Recog(frame0, model, name = "l"):
     if name == "y":
         area = (88, 55)
         # area = (54, 40)
+    elif name == "d":
+        area = (85, 55)
     elif name =="y1":
         area = (50, 35)
     elif name =="z":
@@ -61,8 +63,10 @@ def num_Recog(frame0, model, name = "l"):
         area = (90, 55)
     elif name == "t1":
         area = (90, 55)
+    # elif name == "x":
+    #     area = (80, 55)
     elif name == "x":
-        area = (80, 55)
+        area = (70, 35)
     elif name == "h":
         area = (55, 35)
     elif name == "r":
@@ -126,7 +130,7 @@ if __name__ == '__main__':
     from img_Ini import img_ini
     import os
 
-    modeldir = "./model_t1"
+    modeldir = "./model_g_old"
     model = []
     for i in range(0, 10):
         img = cv2.imread(modeldir + '/' + str(i) + ".jpg")
@@ -141,6 +145,6 @@ if __name__ == '__main__':
     for f in a:
     # f = "7241.jpg"
         img = cv2.imread("./raw_img/"+f)
-        img_ = img_ini(img, mode="x", name="t1")
-        num = num_Recog(img_, model, name="t1")
+        img_ = img_ini(img, mode="x", name="g")
+        num = num_Recog(img_, model, name="g")
         print(num)
