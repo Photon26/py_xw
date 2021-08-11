@@ -273,7 +273,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             ystart = 18
         #
         if name =="g":
-            kernel = np.ones((4,4), np.uint8)
+            kernel = np.ones((2,2), np.uint8)
             frame0 = cv2.dilate(frame0, kernel, iterations=1)
             frame0 = cv2.erode(frame0, kernel, iterations=1)
         if name == "q" or name == "w":
@@ -322,7 +322,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/2563.jpg")
-    pic_ = img_ini(pic, mode="x", name='g')
+    pic = cv2.imread("./raw_img/4591.jpg")
+    pic_ = img_ini(pic, mode="d", name='g')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

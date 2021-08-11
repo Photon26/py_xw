@@ -1,0 +1,425 @@
+      <Note Bar="9" length="1" level="1" />
+      <Note Bar="10" length="1" level="1" />
+      <Note Bar="11" length="1" level="1" />
+      <Note Bar="12" length="1" level="1" />
+      <Note Bar="13" length="1" level="1" />
+      <Note Bar="14" length="1" level="1" />
+      <Note Bar="15" length="1" level="1" />
+      <Note Bar="16" length="1" level="1" />
+      <Note Bar="17" length="1" level="1" />
+      <Note Bar="18" length="1" level="1" />
+      <Note Bar="19" length="1" level="1" />
+      <Note Bar="20" length="1" level="1" />
+      <Note Bar="21" length="1" level="1" />
+      <Note Bar="22" length="1" level="1" />
+      <Note Bar="23" length="1" level="1" />
+      <Note Bar="24" length="1" level="1" />
+      <Note Bar="25" length="1" level="1" />
+      <Note Bar="26" length="1" level="1" />
+      <Note Bar="27" length="1" level="1" />
+      <Note Bar="28" length="1" level="1" />
+      <Note Bar="29" length="1" level="1" />
+      <Note Bar="30" length="1" level="1" />
+      <Note Bar="31" length="1" level="1" />
+      <Note Bar="32" length="1" level="1" />
+      <Note Bar="33" length="1" level="1" />
+      <Note Bar="34" length="1" level="1" />
+      <Note Bar="35" length="1" level="1" />
+      <Note Bar="36" length="1" level="1" />
+      <Note Bar="37" length="1" level="1" />
+      <Note Bar="38" length="1" level="1" />
+      <Note Bar="39" length="1" level="1" />
+      <Note Bar="40" length="1" level="1" />
+      <Note Bar="41" length="1" level="1" />
+      <Note Bar="42" length="1" level="1" />
+      <Note Bar="43" length="1" level="1" />
+      <Note Bar="44" length="1" level="1" />
+      <Note Bar="45" length="1" level="1" />
+      <Note Bar="46" length="1" level="1" />
+      <Note Bar="47" length="1" level="1" />
+      <Note Bar="48" length="1" level="1" />
+      <Note Bar="49" length="1" level="1" />
+      <Note Bar="50" length="1" level="1" />
+      <Note Bar="51" length="1" level="1" />
+      <Note Bar="52" length="1" level="1" />
+      <Note Bar="53" length="1" level="1" />
+      <Note Bar="54" length="1" level="1" />
+      <Note Bar="55" length="1" level="1" />
+      <Note Bar="56" length="1" level="1" />
+      <Note Bar="57" length="1" level="1" />
+      <Note Bar="58" length="1" level="1" />
+      <Note Bar="59" length="1" level="1" />
+      <Note Bar="60" length="1" level="1" />
+      <Note Bar="61" length="1" level="1" />
+      <Note Bar="62" length="1" level="1" />
+      <Note Bar="63" length="1" level="1" />
+      <Note Bar="64" length="1" level="1" />
+      <Note Bar="65" length="1" level="1" />
+      <Note Bar="66" length="1" level="1" />
+      <Note Bar="67" length="1" level="1" />
+      <Note Bar="68" length="1" level="1" />
+      <Note Bar="69" length="1" level="1" />
+      <Note Bar="70" length="1" level="1" />
+      <Note Bar="71" length="1" level="1" />
+      <Note Bar="72" length="1" level="1" />
+      <Note Bar="73" length="1" level="1" />
+      <Note Bar="74" length="1" level="1" />
+      <Note Bar="75" length="1" level="1" />
+      <Note Bar="76" length="1" level="1" />
+      <Note Bar="77" length="1" level="1" />
+      <Note Bar="78" length="1" level="1" />
+      <Note Bar="79" length="1" level="1" />
+      <Note Bar="80" length="1" level="1" />
+      <Note Bar="81" length="1" level="1" />
+      <Note Bar="82" length="1" level="1" />
+      <Note Bar="83" length="1" level="1" />
+      <Note Bar="84" length="1" level="1" />
+      <Note Bar="85" length="1" level="1" />
+      <Note Bar="86" length="1" level="1" />
+      <Note Bar="87" length="1" level="1" />
+      <Note Bar="88" length="1" level="1" />
+      <Note Bar="89" length="1" level="1" />
+      <Note Bar="90" length="1" level="1" />
+      <Note Bar="91" length="1" level="1" />
+      <Note Bar="92" length="1" level="1" />
+      <Note Bar="93" length="1" level="1" />
+      <Note Bar="94" length="1" level="1" />
+      <Note Bar="95" length="1" level="1" />
+      <Note Bar="96" length="1" level="1" />
+      <Note Bar="97" length="1" level="1" />
+      <Note Bar="98" length="1" level="1" />
+      <Note Bar="99" length="1" level="1" />
+      <Note Bar="100" length="1" level="1" />
+      <Note Bar="101" length="1" level="1" />
+      <Note Bar="102" length="1" level="1" />
+      <Note Bar="103" length="1" level="1" />
+      <Note Bar="104" length="1" level="1" />
+      <Note Bar="105" length="1" level="1" />
+      <Note Bar="106" length="1" level="1" />
+      <Note Bar="107" length="1" level="1" />
+      <Note Bar="108" length="1" level="1" />
+      <Note Bar="109" length="1" level="1" />
+      <Note Bar="110" length="1" level="1" />
+      <Note Bar="111" length="1" level="1" />
+      <Note Bar="112" length="1" level="1" />
+      <Note Bar="113" length="1" level="1" />
+      <Note Bar="114" length="1" level="1" />
+      <Note Bar="115" length="1" level="1" />
+      <Note Bar="116" length="1" level="1" />
+      <Note Bar="117" length="1" level="1" />
+      <Note Bar="118" length="1" level="1" />
+      <Note Bar="119" length="1" level="1" />
+      <Note Bar="120" length="1" level="1" />
+      <Note Bar="121" length="1" level="1" />
+      <Note Bar="122" length="1" level="1" />
+      <Note Bar="123" length="1" level="1" />
+      <Note Bar="124" length="1" level="1" />
+      <Note Bar="125" length="1" level="1" />
+      <Note Bar="126" length="1" level="1" />
+      <Note Bar="127" length="1" level="1" />
+      <Note Bar="128" length="1" level="1" />
+      <Note Bar="129" length="1" level="1" />
+      <Note Bar="130" length="1" level="1" />
+      <Note Bar="131" length="1" level="1" />
+      <Note Bar="132" length="1" level="1" />
+      <Note Bar="133" length="1" level="1" />
+      <Note Bar="134" length="1" level="1" />
+      <Note Bar="135" length="1" level="1" />
+      <Note Bar="136" length="1" level="1" />
+      <Note Bar="137" length="1" level="1" />
+      <Note Bar="138" length="1" level="1" />
+      <Note Bar="139" length="1" level="1" />
+      <Note Bar="140" length="1" level="1" />
+      <Note Bar="141" length="1" level="1" />
+      <Note Bar="142" length="1" level="1" />
+      <Note Bar="143" length="1" level="1" />
+      <Note Bar="144" length="1" level="1" />
+      <Note Bar="145" length="1" level="1" />
+      <Note Bar="146" length="1" level="1" />
+      <Note Bar="147" length="1" level="1" />
+      <Note Bar="148" length="1" level="1" />
+      <Note Bar="149" length="1" level="1" />
+      <Note Bar="150" length="1" level="1" />
+
+
+
+      <ActionList start_bar="9" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="10" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="11" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="12" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="13" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="14" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="15" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="16" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="17" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="18" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="19" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="20" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="21" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="22" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="23" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="24" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="25" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="26" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="27" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="28" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="29" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="30" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="31" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="32" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="33" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="34" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="35" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="36" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="37" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="38" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="39" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="40" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="41" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="42" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="43" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="44" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="45" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="46" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="47" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="48" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="49" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="50" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="51" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="52" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="53" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="54" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="55" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="56" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="57" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="58" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="59" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="60" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="61" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="62" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="63" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="64" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="65" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="66" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="67" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="68" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="69" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="70" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="71" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="72" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="73" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="74" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="75" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="76" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="77" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="78" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="79" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="80" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="81" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="82" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="83" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="84" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="85" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="86" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="87" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="88" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="89" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="90" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="91" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="92" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="93" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="94" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="95" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="96" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="97" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="98" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="99" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="100" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="101" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="102" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="103" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="104" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="105" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="106" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="107" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="108" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="109" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="110" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="111" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="112" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="113" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="114" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="115" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="116" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="117" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="118" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="119" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="120" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="121" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="122" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="123" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="124" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="125" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="126" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="127" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="128" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="129" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="130" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="131" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="132" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="133" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="134" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="135" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="136" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="137" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="138" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="139" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="140" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="141" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="142" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="143" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="144" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="145" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="146" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="147" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="148" dance_len="1" seq_len="1" level="2" type="" />
+      <ActionList start_bar="149" dance_len="1" seq_len="1" level="2" type="" />
+    <ActionList start_bar="150" dance_len="4" seq_len="4" level="2" type="" />
+
+
+
+    <Bar>14</Bar>
+    <Bar>15</Bar>
+    <Bar>16</Bar>
+    <Bar>17</Bar>
+    <Bar>18</Bar>
+    <Bar>19</Bar>
+    <Bar>20</Bar>
+    <Bar>21</Bar>
+    <Bar>22</Bar>
+    <Bar>23</Bar>
+    <Bar>24</Bar>
+    <Bar>25</Bar>
+    <Bar>26</Bar>
+    <Bar>27</Bar>
+    <Bar>28</Bar>
+    <Bar>29</Bar>
+    <Bar>30</Bar>
+    <Bar>31</Bar>
+    <Bar>32</Bar>
+    <Bar>33</Bar>
+    <Bar>34</Bar>
+    <Bar>35</Bar>
+    <Bar>36</Bar>
+    <Bar>37</Bar>
+    <Bar>38</Bar>
+    <Bar>39</Bar>
+    <Bar>40</Bar>
+    <Bar>41</Bar>
+    <Bar>42</Bar>
+    <Bar>43</Bar>
+    <Bar>44</Bar>
+    <Bar>45</Bar>
+    <Bar>46</Bar>
+    <Bar>47</Bar>
+    <Bar>48</Bar>
+    <Bar>49</Bar>
+    <Bar>50</Bar>
+    <Bar>51</Bar>
+    <Bar>52</Bar>
+    <Bar>53</Bar>
+    <Bar>54</Bar>
+    <Bar>55</Bar>
+    <Bar>56</Bar>
+    <Bar>57</Bar>
+    <Bar>58</Bar>
+    <Bar>59</Bar>
+    <Bar>60</Bar>
+    <Bar>61</Bar>
+    <Bar>62</Bar>
+    <Bar>63</Bar>
+    <Bar>64</Bar>
+    <Bar>65</Bar>
+    <Bar>66</Bar>
+    <Bar>67</Bar>
+    <Bar>68</Bar>
+    <Bar>69</Bar>
+    <Bar>70</Bar>
+    <Bar>71</Bar>
+    <Bar>72</Bar>
+    <Bar>73</Bar>
+    <Bar>74</Bar>
+    <Bar>75</Bar>
+    <Bar>76</Bar>
+    <Bar>77</Bar>
+    <Bar>78</Bar>
+    <Bar>79</Bar>
+    <Bar>80</Bar>
+    <Bar>81</Bar>
+    <Bar>82</Bar>
+    <Bar>83</Bar>
+    <Bar>84</Bar>
+    <Bar>85</Bar>
+    <Bar>86</Bar>
+    <Bar>87</Bar>
+    <Bar>88</Bar>
+    <Bar>89</Bar>
+    <Bar>90</Bar>
+    <Bar>91</Bar>
+    <Bar>92</Bar>
+    <Bar>93</Bar>
+    <Bar>94</Bar>
+    <Bar>95</Bar>
+    <Bar>96</Bar>
+    <Bar>97</Bar>
+    <Bar>98</Bar>
+    <Bar>99</Bar>
+    <Bar>100</Bar>
+    <Bar>101</Bar>
+    <Bar>102</Bar>
+    <Bar>103</Bar>
+    <Bar>104</Bar>
+    <Bar>105</Bar>
+    <Bar>106</Bar>
+    <Bar>107</Bar>
+    <Bar>108</Bar>
+    <Bar>109</Bar>
+    <Bar>110</Bar>
+    <Bar>111</Bar>
+    <Bar>112</Bar>
+    <Bar>113</Bar>
+    <Bar>114</Bar>
+    <Bar>115</Bar>
+    <Bar>116</Bar>
+    <Bar>117</Bar>
+    <Bar>118</Bar>
+    <Bar>119</Bar>
+    <Bar>120</Bar>
+    <Bar>121</Bar>
+    <Bar>122</Bar>
+    <Bar>123</Bar>
+    <Bar>124</Bar>
+    <Bar>125</Bar>
+    <Bar>126</Bar>
+    <Bar>127</Bar>
+    <Bar>128</Bar>
+    <Bar>129</Bar>
+    <Bar>130</Bar>
+    <Bar>131</Bar>
+    <Bar>132</Bar>
+    <Bar>133</Bar>
+    <Bar>134</Bar>
+    <Bar>135</Bar>
+    <Bar>136</Bar>
+    <Bar>137</Bar>
+    <Bar>138</Bar>
+    <Bar>139</Bar>
+    <Bar>140</Bar>
+    <Bar>141</Bar>
+    <Bar>142</Bar>
+    <Bar>143</Bar>
+    <Bar>144</Bar>
+    <Bar>145</Bar>
+    <Bar>146</Bar>
+    <Bar>147</Bar>
+    <Bar>148</Bar>

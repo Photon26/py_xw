@@ -3,7 +3,7 @@ import time
 import os
 import shutil
 
-Inputfolder = 'D:/vid/2021/s7'
+Inputfolder = 'D:/vid/2021/s9'
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 a = os.listdir(Inputfolder)
 

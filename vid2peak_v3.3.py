@@ -556,21 +556,36 @@ for f in a:
             get_gif(Inputfolder + '/' + f, time4, "save2_end", dir)
             logger.write("\n双排指数： " + str(saveindex)+"\n")
 
-            if pic1 > pic3:
-                pic1, pic3 = pic3, pic1
-                pic2, pic4 = pic4, pic2
-            logger.write("若分开爆气, \n双排爆点序列：一爆从 " + str(pic1) + " 到 " + str(pic2) + "。\t二爆从 "
-                         + str(pic3) + " 到 " + str(pic4))
-            time1 = timestamp[pic1]
-            get_gif(Inputfolder + '/' + f, time1, "sep1_begin", dir)
-            time2 = timestamp[pic2]
-            get_gif(Inputfolder + '/' + f, time2, "sep1_end", dir)
-            time3 = timestamp[pic3]
-            get_gif(Inputfolder + '/' + f, time3, "sep2_begin", dir)
-            time4 = timestamp[pic4]
-            get_gif(Inputfolder + '/' + f, time4, "sep2_end", dir)
-            logger.write("\n分开指数： " + str(sepindex))
-            logger.write("\n存气分数-分开分数 = " + str(savescore-seps)+"\n")      #   Check difference between Seps and Saves
+            if neigs > seps:
+                logger.write("若分开爆气, \n双排爆点序列：一爆从 " + str(pic1_1) + " 到 " + str(pic1_2) + "。\t二爆从 "
+                             + str(pic2_1) + " 到 " + str(pic2_2))
+                time1 = timestamp[pic1_1]
+                get_gif(Inputfolder + '/' + f, time1, "sep1_begin", dir)
+                time2 = timestamp[pic1_2]
+                get_gif(Inputfolder + '/' + f, time2, "sep1_end", dir)
+                time3 = timestamp[pic2_1]
+                get_gif(Inputfolder + '/' + f, time3, "sep2_begin", dir)
+                time4 = timestamp[pic2_2]
+                get_gif(Inputfolder + '/' + f, time4, "sep2_end", dir)
+                logger.write("\n分开指数： " + str(neigindex))
+                logger.write("\n存气分数-分开分数 = " + str(savescore - neigindex) + "\n")  # Check difference between Seps and Saves
+
+            else:
+                if pic1 > pic3:
+                    pic1, pic3 = pic3, pic1
+                    pic2, pic4 = pic4, pic2
+                logger.write("若分开爆气, \n双排爆点序列：一爆从 " + str(pic1) + " 到 " + str(pic2) + "。\t二爆从 "
+                             + str(pic3) + " 到 " + str(pic4))
+                time1 = timestamp[pic1]
+                get_gif(Inputfolder + '/' + f, time1, "sep1_begin", dir)
+                time2 = timestamp[pic2]
+                get_gif(Inputfolder + '/' + f, time2, "sep1_end", dir)
+                time3 = timestamp[pic3]
+                get_gif(Inputfolder + '/' + f, time3, "sep2_begin", dir)
+                time4 = timestamp[pic4]
+                get_gif(Inputfolder + '/' + f, time4, "sep2_end", dir)
+                logger.write("\n分开指数： " + str(sepindex))
+                logger.write("\n存气分数-分开分数 = " + str(savescore-seps)+"\n")      #   Check difference between Seps and Saves
 
         elif teams == togs:
             logger.write("\n                                                                                                                             \nTOGETHER!\n The picture is from " + str(pic5) + " to " + str(pic6))
