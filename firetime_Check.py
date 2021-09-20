@@ -10,6 +10,8 @@ def firetime_Check(frame, name="a"):
     if name == "a":
         frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)      #   edit for zc_d
         roi = frame[1758:1918, 557:886, :]
+    elif name == "l":
+        roi = frame[554: 886, 1762: 1919,:]
     elif name == "a1":
         frame = cv2.rotate(frame, cv2.ROTATE_180)
         roi = frame[1758:1918, 557:886, :]
@@ -77,7 +79,7 @@ def firetime_Check(frame, name="a"):
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         roi = frame[4: 158, 552: 886, :]
     elif name == "w":
-        roi = frame[365: 597, 1172: 1278, :]
+        roi = frame[445: 704, 1321: 1440, :]
     else:
         return 0
 

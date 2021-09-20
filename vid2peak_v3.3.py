@@ -48,8 +48,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/gao/GAO/vid/2021/s6'
 # Outputfolder = '/media/gao/GAO/data/2021/s6'
 
-Inputfolder = 'D:/vid/2021/s9'
-Outputfolder = 'D:/data/2021/s9'
+Inputfolder = 'D:/vid/2021/s11'
+Outputfolder = 'D:/data/2021/s11'
 
 # Inputfolder = 'H:/vid/debug'
 # Outputfolder = 'H:/data/debug'
@@ -151,7 +151,7 @@ for f in a:
         stmax = 150
     elif f.startswith("w_"):
         name = "w"
-        modeldir = "./model_w_2"
+        modeldir = "./model_w1"
         stmax = 50
         lagging = 206
     elif f.startswith("y_"):
@@ -168,6 +168,11 @@ for f in a:
         name = "z"
         modeldir = "./model_z"
         stmax = 150
+    # elif f.startswith("RP_"):
+    #     name = "mj"
+    #     modeldir = "./model_mj"
+    #     stmax = 150
+    #     f = "mj_x_xxyy_152.MP4"
     else:
         continue
 

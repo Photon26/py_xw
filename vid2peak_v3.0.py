@@ -37,7 +37,7 @@ import cv2
 import time
 import os
 import shutil
-from img_Ini import img_ini
+from img_Ini_old import img_ini
 from num_Recog import num_Recog
 import numpy as np
 import heapq
@@ -49,8 +49,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'H:/vid/s10'
-Outputfolder = 'H:/data/s10/1022'
+Inputfolder = 'D:/vid/s10'
+Outputfolder = 'D:/data/s10/1022'
 a = os.listdir(Inputfolder)
 
 for f in a:

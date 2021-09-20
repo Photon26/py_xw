@@ -37,7 +37,7 @@ import cv2
 import time
 import os
 import shutil
-from img_Ini import img_ini
+from img_Ini_old import img_ini
 from num_Recog import num_Recog
 import numpy as np
 import heapq

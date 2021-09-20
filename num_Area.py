@@ -1,13 +1,13 @@
 import cv2
 import numpy as np
 
-frame = cv2.imread("raw_img/6069.jpg")
+frame = cv2.imread("raw_img/3043.jpg")
 # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-# frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
 m,n =np.shape(frame)[:2]
 a = np.zeros((m, n)).astype(int)
 a[:, :] = frame[:, :, 0]
-center = np.array([100,1000])
+center = np.array([100,100])
 a1 = 100
 b1 = 100
 kstep = 1

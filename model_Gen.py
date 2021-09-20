@@ -1,6 +1,6 @@
 import cv2
 import numpy as np
-from img_Ini import img_ini
+from img_Ini_old import img_ini
 import os
 
 count = 0
@@ -9,7 +9,7 @@ a = os.listdir(Inputfolder)
 for f in a:
     # print(f)
     raw = cv2.imread(Inputfolder+'/'+f)
-    raw_ = img_ini(raw, mode="x", name="g")
+    raw_ = img_ini(raw, mode="x", name="mj")
 
     #   Segmentation
     colsum = np.sum(raw_, 0)

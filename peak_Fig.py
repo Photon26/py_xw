@@ -1,5 +1,5 @@
 import cv2
-from img_Ini import img_ini
+from img_Ini_old import img_ini
 from num_Recog import num_Recog
 import os
 import numpy as np
