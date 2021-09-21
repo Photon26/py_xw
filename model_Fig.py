@@ -2,8 +2,8 @@ import cv2
 import numpy as np
 import os
 
-name = "mj"
-dir = "./model_mj"
+name = "h"
+dir = "./model_h"
 if not os.path.exists(dir):
     os.makedirs(dir)
 

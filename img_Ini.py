@@ -25,7 +25,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     elif name == "qx":
         # frame_ = frame[130: 179, 942: 1221, :]        #   low resolution
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-        frame_ = frame[83: 496, 189: 261, :]
+        frame_ = frame[83: 496, 187: 261, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_90_CLOCKWISE)
     elif name == "w":
         # frame_ = frame[122: 183, 910: 1228, :]
@@ -172,7 +172,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/3043.jpg")
-    pic_ = img_ini(pic, mode="x", name='qx')
+    pic = cv2.imread("./raw_img/3535.jpg")
+    pic_ = img_ini(pic, mode="p", name='d')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)
