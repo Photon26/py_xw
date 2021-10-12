@@ -5,10 +5,13 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     #   Rotate, Extract interest Area, Binarization
     if name == "d":
         frame_ = frame[132: 212, 1350: 1846, :]
+        # frame_ = frame[502: 840, 1760: 1919, :]
     elif name == "g":
         frame_ = frame[123: 174, 945: 1224, :]
     elif name == "h":
         frame_ = frame[91: 140, 934: 1225, :]
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        # roi = frame[558: 885, 1759: 1919, :]
     elif name == "l":
         # frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         frame_ = frame[188: 263, 1413: 1835, :]
@@ -25,7 +28,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     elif name == "qx":
         # frame_ = frame[130: 179, 942: 1221, :]        #   low resolution
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-        frame_ = frame[83: 496, 187: 261, :]
+        frame_ = frame[83: 526, 187: 261, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_90_CLOCKWISE)
     elif name == "w":
         # frame_ = frame[122: 183, 910: 1228, :]
@@ -172,7 +175,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/3535.jpg")
-    pic_ = img_ini(pic, mode="p", name='d')
+    pic = cv2.imread("./raw_img/6819.jpg")
+    pic_ = img_ini(pic, mode="x", name='d')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

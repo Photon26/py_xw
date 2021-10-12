@@ -9,7 +9,7 @@ a = os.listdir(Inputfolder)
 
 for f in a:
     print(f)
-    if f.startswith("qx_"):
+    if f.startswith("MZ"):
         # Opens the Video file
         filen = f[:-4]
         cap = cv2.VideoCapture(Inputfolder+'/'+f)

@@ -293,7 +293,7 @@ for f in a:
             count = count + 1
 
             # if i>1000:
-            if result[i]>50000:
+            if result[i]>120000:
                 #   aend time method 1
                 if anti_aendflag == 0:
                     if fireflaglist[i] == 0 and fireflaglist[i - 1] == 1:

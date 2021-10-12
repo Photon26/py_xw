@@ -65,7 +65,7 @@ def firetime_Check(frame, name="a"):
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         roi = frame[558: 885, 1759: 1919, :]
     elif name == "h":
-        roi = frame[338: 561, 1173: 1281, :]
+        roi = frame[337: 561, 1173: 1278, :]
     # elif name == "x":
     #     roi = frame[435: 766, 1762: 1920, :]
     elif name == "x":
