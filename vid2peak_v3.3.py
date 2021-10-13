@@ -57,7 +57,7 @@ Outputfolder = 'D:/data/2021/s11'
 a = os.listdir(Inputfolder)
 
 lagging = 167   # for all ios devices
-nolagging_test = 0
+nolagging_test = 1
 
 for f in a:
     #   Define name
@@ -293,7 +293,7 @@ for f in a:
             count = count + 1
 
             # if i>1000:
-            if result[i]>120000:
+            if result[i]>50000:
                 #   aend time method 1
                 if anti_aendflag == 0:
                     if fireflaglist[i] == 0 and fireflaglist[i - 1] == 1:
@@ -351,7 +351,7 @@ for f in a:
         print("Start calculating fire point...")
         timelength = timestamp[-1]
         i = 0
-        bqtime = (20) * 60 * 1000 / bpm
+        bqtime = (20+1/8) * 60 * 1000 / bpm
         timea = bqtime + lagging     # edited for lagging
         dif = np.zeros((length, 1))
 
