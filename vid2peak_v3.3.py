@@ -48,8 +48,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/gao/GAO/vid/2021/s6'
 # Outputfolder = '/media/gao/GAO/data/2021/s6'
 
-Inputfolder = 'D:/vid/2021/s11'
-Outputfolder = 'D:/data/2021/s11'
+Inputfolder = 'D:/vid/2021/s13'
+Outputfolder = 'D:/data/2021/s13'
 
 # Inputfolder = 'H:/vid/debug'
 # Outputfolder = 'H:/data/debug'
@@ -202,7 +202,7 @@ for f in a:
         dir = Outputfolder + '/' + song
         if not os.path.exists(dir):
             os.makedirs(dir)
-        logger = open(dir + "/backup.txt", "w")
+        logger = open(dir + "/backup.txt", "w", encoding="utf-8")
         logger.write("Calculation of " + song + ":\n")
         workbook = xlwt.Workbook(encoding='utf-8')
         worksheet = workbook.add_sheet('raw')
@@ -293,7 +293,7 @@ for f in a:
             count = count + 1
 
             # if i>1000:
-            if result[i]>50000:
+            if result[i]>120000:
                 #   aend time method 1
                 if anti_aendflag == 0:
                     if fireflaglist[i] == 0 and fireflaglist[i - 1] == 1:
@@ -593,7 +593,7 @@ for f in a:
                 logger.write("\n存气分数-分开分数 = " + str(savescore-seps)+"\n")      #   Check difference between Seps and Saves
 
         elif teams == togs:
-            logger.write("\n                                                                                                                             \nTOGETHER!\n The picture is from " + str(pic5) + " to " + str(pic6))
+            logger.write("\n\nTOGETHER!\n The picture is from " + str(pic5) + " to " + str(pic6))
             time1 = timestamp[pic5]
             get_gif(Inputfolder + '/' + f, time1, "tog_begin", dir)
             time2 = timestamp[pic6]
