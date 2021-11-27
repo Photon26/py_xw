@@ -34,16 +34,17 @@ def firetime_Check(frame, name="a"):
         # roi = frame[251: 471, 1172: 1279, :]
     elif name == "y1":
         roi = frame[270: 450, 1144: 1234, :]
-    elif name == "m":
-        # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
-        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-        roi = frame[334: 553, 1170: 1279, :]
+    # elif name == "m":
+    #     # frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
+    #     frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+    #     roi = frame[334: 553, 1170: 1279, :]
     elif name == "mj":
         frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         roi = frame[1752: 1918, 503: 925, :]
-    elif name == "mz":
-        frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-        roi = frame[250: 472, 1454: 1559, :]
+    elif name == "m":  # ios
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        # roi = frame[250: 472, 1454: 1559, :]
+        roi = frame[331: 558, 1173: 1279, :]
     elif name == "s":
         roi = frame[222: 420, 1185: 1280, :]
     elif name == "t":

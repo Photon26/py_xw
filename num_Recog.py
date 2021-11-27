@@ -41,7 +41,7 @@ def num_Recog(frame0, model, name = "l"):
     elif name == "j":
         area = (55, 45)
     elif name == "m":
-        area = (55, 35)
+        area = (60, 45)
     elif name == "mj":
         area = (90, 55)
     elif name == "mz":
@@ -130,7 +130,7 @@ if __name__ == '__main__':
     from img_Ini import img_ini
     import os
 
-    modeldir = "./model_qx"
+    modeldir = "./model_m"
     model = []
     for i in range(0, 10):
         img = cv2.imread(modeldir + '/' + str(i) + ".jpg")
@@ -146,6 +146,6 @@ if __name__ == '__main__':
     # f = "7241.jpg"
     #     print(f)
         img = cv2.imread("./raw_img/"+f)
-        img_ = img_ini(img, mode="d", name="qx")
-        num = num_Recog(img_, model, name="qx")
+        img_ = img_ini(img, mode="d", name="m")
+        num = num_Recog(img_, model, name="m")
         print(num)
