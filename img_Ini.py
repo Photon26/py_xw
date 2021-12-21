@@ -6,6 +6,8 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     if name == "d":
         frame_ = frame[132: 212, 1350: 1846, :]
         # frame_ = frame[502: 840, 1760: 1919, :]
+    elif name == "b":
+        frame_ = frame[132: 214, 1351: 1831, :]
     elif name == "g":
         frame_ = frame[123: 174, 945: 1224, :]
     elif name == "h":
@@ -35,7 +37,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     elif name == "w":
         # frame_ = frame[122: 183, 910: 1228, :]
         # frame_ = frame[70: 119, 733: 1009, :]
-        frame_ = frame[175: 239, 1024: 1385, :]
+        frame_ = frame[207: 265, 1017: 1341, :]
     # elif name == "x":     #   七夜
     #     # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)    #   for low resolution
     #     frame_ = frame[128: 179, 945: 1224, :]
@@ -54,7 +56,13 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame0 = cv2.erode(frame0, kernel, iterations=1)
     if mode == "d":
         # find all your connected components (white blobs in your image)
-        if name == "d":
+        if name == "b":
+            min_size = 300
+            min_height = 50
+            max_height = 70
+            ksize = 3
+            ystart = 20
+        elif name == "d":
             min_size = 300
             min_height = 50
             max_height = 70
@@ -165,6 +173,9 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
                 if name == "s":
                     if stats[i + 1][1] > 0:
                         img2[output == i + 1] = 255
+                elif name == "m":
+                    if stats[i+1][2]<35:
+                        img2[output == i + 1] = 255
                 else:
                     # print(stats[i+1])
                     # if sizes[i][0]+sizes[i][2] > sizes[i+1][0]
@@ -183,7 +194,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/2567.jpg")
-    pic_ = img_ini(pic, mode="d", name='m')
+    pic = cv2.imread("./raw_img/8913.jpg")
+    pic_ = img_ini(pic, mode="d", name='b')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

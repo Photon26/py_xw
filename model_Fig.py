@@ -2,14 +2,16 @@ import cv2
 import numpy as np
 import os
 
-name = "m"
-dir = "./model_m"
+name = "b"
+dir = "./model_b"
 if not os.path.exists(dir):
     os.makedirs(dir)
 
 if name == "y":
     # area = (63, 40)
     area = (88, 55)
+elif name == "b":
+    area = (85, 55)
 elif name == "d":
     area = (85, 55)
 # elif name == "m":

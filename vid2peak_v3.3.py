@@ -48,8 +48,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/gao/GAO/vid/2021/s6'
 # Outputfolder = '/media/gao/GAO/data/2021/s6'
 
-Inputfolder = 'D:/vid/2021/s13'
-Outputfolder = 'D:/data/2021/s13'
+Inputfolder = 'D:/vid/2022/s1'
+Outputfolder = 'D:/data/2022/s1'
 
 # Inputfolder = 'H:/vid/debug'
 # Outputfolder = 'H:/data/debug'
@@ -57,13 +57,17 @@ Outputfolder = 'D:/data/2021/s13'
 a = os.listdir(Inputfolder)
 
 lagging = 167   # for all ios devices
-nolagging_test = 1
+nolagging_test = 0
 
 for f in a:
     #   Define name
     if f.startswith("a_"):
         name = "a"
         modeldir = "./model"
+        stmax = 150
+    if f.startswith("b_"):
+        name = "b"
+        modeldir = "./model_b"
         stmax = 150
     elif f.startswith("a1_"):
         name = "a1"
@@ -153,7 +157,7 @@ for f in a:
         name = "w"
         modeldir = "./model_w1"
         stmax = 50
-        lagging = 206
+        lagging = 166
     elif f.startswith("y_"):
         name = "y"
         modeldir = "./model_y"
@@ -274,7 +278,7 @@ for f in a:
                     result[i - 1] = result[i - 2]
                 else:
                     result[i] = result[i - 1]
-            if result[i] - result[i - 1] > 12000:           #   edit for fanmade
+            if result[i] - result[i - 1] > 15000:           #   edit for fanmade
                 result[i] = result[i - 1]
             worksheet.write(count, 1, label=str(result[i]))
 
