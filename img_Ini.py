@@ -24,9 +24,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = frame[1391: 1839, 1176: 1253, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_90_COUNTERCLOCKWISE)
     elif name == "t":
-        frame = cv2.rotate(frame, cv2.ROTATE_180)
-        frame_ = frame[1115: 1203, 77: 531, :]
-        frame_ = cv2.rotate(frame_, cv2.ROTATE_180)
+        frame_ = frame[185: 257, 1340: 1833, :]
     elif name == "t1":
         frame_ = frame[186: 271, 1306: 1842, :]
     elif name == "qx":
@@ -41,6 +39,10 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     # elif name == "x":     #   七夜
     #     # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)    #   for low resolution
     #     frame_ = frame[128: 179, 945: 1224, :]
+    elif name == "y":
+        # frame_ = frame[122: 183, 910: 1228, :]
+        # frame_ = frame[70: 119, 733: 1009, :]
+        frame_ = frame[41: 94, 897: 1226, :]
     frame0 = cv2.cvtColor(frame_, cv2.COLOR_BGR2GRAY)
     _, frame0 = cv2.threshold(frame0, thres, 255, cv2.THRESH_BINARY)
     # kernel = np.ones((8, 8), np.uint8)
@@ -49,7 +51,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     if name == "y1"  or name == "t1" or name == "w":
         kernel = np.ones((2, 2), np.uint8)
         frame0 = cv2.dilate(frame0, kernel, iterations=1)
-    if name == "g":
+    if name == "g" or name == "t":
         kernel = np.ones((3, 3), np.uint8)
         frame0 = cv2.dilate(frame0, kernel, iterations=1)
         kernel = np.ones((2, 2), np.uint8)
@@ -114,7 +116,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             min_size = 300
             min_height = 50
             max_height = 70
-            ksize = 3
+            ksize = 2
             ystart = 20
         elif name == "t1":
             min_size = 300
@@ -145,7 +147,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             kernel = np.ones((2,2), np.uint8)
             frame0 = cv2.dilate(frame0, kernel, iterations=1)
             frame0 = cv2.erode(frame0, kernel, iterations=1)
-        if name == "q" or name == "w":
+        if name == "q" or name == "w" or name == "t":
             kernel = np.ones((2, 2), np.uint8)
             frame0 = cv2.dilate(frame0, kernel, iterations=1)
             frame0 = cv2.erode(frame0, kernel, iterations=1)
@@ -194,7 +196,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/8913.jpg")
-    pic_ = img_ini(pic, mode="d", name='b')
+    pic = cv2.imread("./raw_img/4732.jpg")
+    pic_ = img_ini(pic, mode="x", name='y')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

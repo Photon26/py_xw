@@ -32,15 +32,17 @@
         neigindex: neighbouring fire index
 """
 
-import cv2
 import time
 import os
 import shutil
-from img_Ini import img_ini
-from num_Recog import num_Recog
+
+import cv2
 import numpy as np
 import heapq
 import xlwt
+
+from img_Ini import img_ini
+from num_Recog import num_Recog
 from get_Gif import get_gif
 from save_Img import save_Img
 from firetime_Check import firetime_Check
@@ -48,8 +50,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/gao/GAO/vid/2021/s6'
 # Outputfolder = '/media/gao/GAO/data/2021/s6'
 
-Inputfolder = 'D:/vid/2022/s1'
-Outputfolder = 'D:/data/2022/s1'
+Inputfolder = 'D:/vid/2022/s3'
+Outputfolder = 'D:/data/2022/s3'
 
 # Inputfolder = 'H:/vid/debug'
 # Outputfolder = 'H:/data/debug'
@@ -57,7 +59,7 @@ Outputfolder = 'D:/data/2022/s1'
 a = os.listdir(Inputfolder)
 
 lagging = 167   # for all ios devices
-nolagging_test = 0
+nolagging_test = 1
 
 for f in a:
     #   Define name
@@ -145,6 +147,7 @@ for f in a:
         name = "t"
         modeldir = "./model_t"
         stmax = 150
+        lagging = 166
     elif f.startswith("t1_"):
         name = "t1"
         modeldir = "./model_t1"
@@ -160,7 +163,7 @@ for f in a:
         lagging = 166
     elif f.startswith("y_"):
         name = "y"
-        modeldir = "./model_y"
+        modeldir = "./model_ym"
         stmax = 150
         lagging = 206
     elif f.startswith("y1_"):
@@ -278,7 +281,7 @@ for f in a:
                     result[i - 1] = result[i - 2]
                 else:
                     result[i] = result[i - 1]
-            if result[i] - result[i - 1] > 15000:           #   edit for fanmade
+            if result[i] - result[i - 1] > 23000:           #   edit for fanmade
                 result[i] = result[i - 1]
             worksheet.write(count, 1, label=str(result[i]))
 

@@ -37,7 +37,7 @@ import cv2
 import time
 import os
 import shutil
-from img_Ini_old import img_ini
+from img_Ini import img_ini
 from num_Recog import num_Recog
 import numpy as np
 import heapq
@@ -49,8 +49,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 # Outputfolder = '/media/hlabbunri/GAO/data/s10/tst'
 
-Inputfolder = 'D:/vid/2021/s7'
-Outputfolder = 'D:/data/2021/s7'
+Inputfolder = 'D:/vid/2022/s1'
+Outputfolder = 'D:/data/2022/s1'
 a = os.listdir(Inputfolder)
 
 for f in a:
@@ -119,6 +119,10 @@ for f in a:
     elif f.startswith("l_"):
         name = "l"
         modeldir = "./model_l"
+        stmax = 150
+    elif f.startswith("t_"):
+        name = "t"
+        modeldir = "./model_t"
         stmax = 150
     elif f.startswith("r_"):
         name = "r"
