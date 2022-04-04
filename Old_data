@@ -67,3 +67,23 @@ vid2peak_v3.2:
         name = "q"
         modeldir = "./model_q"
         stmax = 150
+
+
+3. hk
+    elif name == "h":
+        frame_ = frame[91: 140, 934: 1225, :]
+        # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
+        # roi = frame[558: 885, 1759: 1919, :]
+
+        elif name == "h":
+            min_size = 100
+            min_height = 35
+            max_height = 48
+            ksize = 2
+            ystart = 20
+
+    elif name == "h":
+        area = (55, 35)
+
+    elif name == "h":
+        roi = frame[337: 561, 1173: 1278, :]

@@ -11,7 +11,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     elif name == "g":
         frame_ = frame[123: 174, 945: 1224, :]
     elif name == "h":
-        frame_ = frame[91: 140, 934: 1225, :]
+        frame_ = frame[185: 263, 1376: 1832, :]
         # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         # roi = frame[558: 885, 1759: 1919, :]
     elif name == "l":
@@ -78,9 +78,9 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             ystart = 25
         elif name == "h":
             min_size = 100
-            min_height = 35
-            max_height = 48
-            ksize = 2
+            min_height = 53
+            max_height = 78
+            ksize = 3
             ystart = 20
         elif name == "l":
             min_size = 300
@@ -196,7 +196,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/4732.jpg")
-    pic_ = img_ini(pic, mode="x", name='y')
+    pic = cv2.imread("./raw_img/1779.jpg")
+    pic_ = img_ini(pic, mode="d", name='h')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

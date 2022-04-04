@@ -3,13 +3,13 @@ import time
 import os
 import shutil
 
-Inputfolder = 'D:/vid/2022/s1-补'
+Inputfolder = 'D:/vid/2022/s4'
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 a = os.listdir(Inputfolder)
 
 for f in a:
     print(f)
-    if f.startswith("He"):
+    if f.startswith("h_"):
         # Opens the Video file
         filen = f[:-4]
         cap = cv2.VideoCapture(Inputfolder+'/'+f)
