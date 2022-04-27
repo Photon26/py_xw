@@ -13,7 +13,7 @@ def firetime_Check(frame, name="a"):
     elif name == "b":
         roi = frame[504: 838, 1760: 1919, :]
     elif name == "l":
-        roi = frame[554: 886, 1762: 1919,:]
+        roi = frame[504: 840, 1759: 1920,:]
     elif name == "a1":
         frame = cv2.rotate(frame, cv2.ROTATE_180)
         roi = frame[1758:1918, 557:886, :]

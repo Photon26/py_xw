@@ -3,13 +3,13 @@ import time
 import os
 import shutil
 
-Inputfolder = 'D:/vid/2022/s4'
+Inputfolder = 'D:/vid/2022/s3'
 # Inputfolder = '/media/hlabbunri/GAO/vid/s10/tst'
 a = os.listdir(Inputfolder)
 
 for f in a:
     print(f)
-    if f.startswith("h_"):
+    if f.startswith("qx_"):
         # Opens the Video file
         filen = f[:-4]
         cap = cv2.VideoCapture(Inputfolder+'/'+f)
@@ -22,10 +22,12 @@ for f in a:
 
         while(cap.isOpened()):
             ret, frame = cap.read()
+            ttmp = cap.get(cv2.CAP_PROP_POS_MSEC)
             if ret == False:
                 break
             # frame = cv2.rotate(frame,cv2.ROTATE_90_COUNTERCLOCKWISE)
-            cv2.imwrite(dir+'/'+str(i)+'.jpg',frame)
+            # cv2.imwrite(dir+'/'+str(i)+'.jpg',frame)
+            cv2.imwrite(f'{dir}/{i}({ttmp}).jpg', frame)
             i += 1
 
             # if i == 10000:
@@ -35,4 +37,4 @@ for f in a:
         cv2.destroyAllWindows()
         print(time.time()-st)
         print(filen)
-        # shutil.move(Inputfolder + '/' + f, Inputfolder + '/done/' + f)
+        shutil.move(Inputfolder + '/' + f, Inputfolder + '/done/' + f)

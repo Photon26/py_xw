@@ -77,11 +77,11 @@ def num_Recog(frame0, model, name = "l"):
         area = (60, 40)
     elif name == "qx":
         # area = (55, 45)       #   low resolution
-        area = (75, 55)
+        area = (78, 55)
     elif name == "w":
         area = (70, 55)
     else:
-        area = (75, 55)
+        area = (90, 55)
     for i in range(0, len(colsum)):
         if colsum[i] == 1 and flag != 1:
             if i == len(colsum):
@@ -127,12 +127,14 @@ def num_Recog(frame0, model, name = "l"):
                     recog_num = 10*recog_num+index
     return recog_num
 
+
 if __name__ == '__main__':
+
     import cv2
     from img_Ini import img_ini
     import os
 
-    modeldir = "./model_h"
+    modeldir = "./model/model_qx"
     model = []
     for i in range(0, 10):
         img = cv2.imread(modeldir + '/' + str(i) + ".jpg")
@@ -143,13 +145,14 @@ if __name__ == '__main__':
         model.append(img)
     model = np.array(model)
     a = os.listdir("raw_img")
-    a.sort(key=lambda x: int(x.split('.')[0]))
-    for f in a:
+    # a.sort(key=lambda x: int(x.split('.')[0]))
+    img_list = sorted(a)
+    for f in img_list:
     # f = "7241.jpg"
     #     print(f)
         img = cv2.imread("./raw_img/"+f)
-        img_ = img_ini(img, mode="d", name="h")
+        img_ = img_ini(img, mode="d", name="qx")
         # cv2.imshow("tst", img_)
         # cv2.waitKey(0)
-        num = num_Recog(img_, model, name="h")
+        num = num_Recog(img_, model, name="qx")
         print(num)

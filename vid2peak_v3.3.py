@@ -35,7 +35,6 @@
 import time
 import os
 import shutil
-
 import cv2
 import numpy as np
 import heapq
@@ -65,119 +64,119 @@ for f in a:
     #   Define name
     if f.startswith("a_"):
         name = "a"
-        modeldir = "./model"
+        modeldir = "./model/model"
         stmax = 150
     if f.startswith("b_"):
         name = "b"
-        modeldir = "./model_b"
+        modeldir = "./model/model_b"
         stmax = 150
     elif f.startswith("a1_"):
         name = "a1"
-        modeldir = "./model"
+        modeldir = "./model/model"
         stmax = 150
     elif f.startswith("c_"):
         name = "c"
-        modeldir = "./model_c"
+        modeldir = "./model/model_c"
         stmax = 150
     elif f.startswith("d_"):
         name = "d"
-        modeldir = "./model_d"
+        modeldir = "./model/model_d"
         stmax = 150
     elif f.startswith("e_"):
         name = "e"
-        modeldir = "./model_e"
+        modeldir = "./model/model_e"
         stmax = 100
     elif f.startswith("f_"):
         name = "f"
-        modeldir = "./model_f"
+        modeldir = "./model/model_f"
         stmax = 150
     elif f.startswith("g_"):
         name = "g"
-        modeldir = "./model_g_old"
+        modeldir = "./model/model_g_old"
         stmax = 150
     elif f.startswith("h_"):
         name = "h"
-        modeldir = "./model_h"
+        modeldir = "./model/model_h"
         stmax = 150
     elif f.startswith("j_"):
         name = "j"
-        modeldir = "./model_j"
+        modeldir = "./model/model_j"
         stmax = 150
     elif f.startswith("k_"):
         name = "k"
-        modeldir = "./model_k"
+        modeldir = "./model/model_k"
         stmax = 100
     elif f.startswith("l_"):
         name = "l"
-        modeldir = "./model_l"
+        modeldir = "./model/model_l"
         stmax = 150
     elif f.startswith("m_"):
         name = "m"
-        modeldir = "./model_m"
+        modeldir = "./model/model_m"
         stmax = 150
     elif f.startswith("mj_"):
         name = "mj"
-        modeldir = "./model_mj"
+        modeldir = "./model/model_mj"
         stmax = 150
     elif f.startswith("mz_"):
         name = "mz"
-        modeldir = "./model_mz"
+        modeldir = "./model/model_mz"
         stmax = 150
         lagging = 164
     elif f.startswith("q_"):
         name = "q"
-        modeldir = "./model_q"
+        modeldir = "./model/model_q"
         stmax = 150
         lagging = 166
     elif f.startswith("qx_"):
         name = "qx"
-        # modeldir = "./model_qx_old"
-        modeldir = "./model_qx"
+        # modeldir = "./model/model_qx_old"
+        modeldir = "./model/model_qx"
         stmax = 150
     elif f.startswith("r_"):
         name = "r"
-        modeldir = "./model_r"
+        modeldir = "./model/model_r"
         stmax = 150
     elif f.startswith("s_"):
         name = "s"
-        modeldir = "./model_s"
+        modeldir = "./model/model_s"
         stmax = 150
         lagging = 240
     elif f.startswith("t_"):
         name = "t"
-        modeldir = "./model_t"
+        modeldir = "./model/model_t"
         stmax = 150
         lagging = 166
     elif f.startswith("t1_"):
         name = "t1"
-        modeldir = "./model_t1"
+        modeldir = "./model/model_t1"
         stmax = 150
     elif f.startswith("x_"):
         name = "x"
-        modeldir = "./model_x"
+        modeldir = "./model/model_x"
         stmax = 150
     elif f.startswith("w_"):
         name = "w"
-        modeldir = "./model_w1"
+        modeldir = "./model/model_w1"
         stmax = 50
         lagging = 166
     elif f.startswith("y_"):
         name = "y"
-        modeldir = "./model_ym"
+        modeldir = "./model/model_ym"
         stmax = 150
         lagging = 206
     elif f.startswith("y1_"):
         name = "y1"
-        modeldir = "./model_y1"
+        modeldir = "./model/model_y1"
         stmax = 50
         lagging = 206
     elif f.startswith("z_"):
         name = "z"
-        modeldir = "./model_z"
+        modeldir = "./model/model_z"
         stmax = 150
     # elif f.startswith("RP_"):
     #     name = "mj"
-    #     modeldir = "./model_mj"
+    #     modeldir = "./model/model_mj"
     #     stmax = 150
     #     f = "mj_x_xxyy_152.MP4"
     else:

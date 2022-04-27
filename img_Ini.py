@@ -15,8 +15,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         # roi = frame[558: 885, 1759: 1919, :]
     elif name == "l":
-        # frame_ = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-        frame_ = frame[188: 263, 1413: 1835, :]
+        frame_ = frame[135: 213, 1367: 1834, :]
     elif name == "m":
         frame_ = frame[86: 139, 920: 1220, :]
     elif name == "mj":         # mz_old
@@ -30,7 +29,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     elif name == "qx":
         # frame_ = frame[130: 179, 942: 1221, :]        #   low resolution
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
-        frame_ = frame[83: 526, 187: 261, :]
+        frame_ = frame[83: 526, 187: 265, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_90_CLOCKWISE)
     elif name == "w":
         # frame_ = frame[122: 183, 910: 1228, :]
@@ -175,6 +174,9 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
                 if name == "s":
                     if stats[i + 1][1] > 0:
                         img2[output == i + 1] = 255
+                elif name == "qx":
+                    if stats[i+1][1]+stats[i+1][3]<74:
+                        img2[output == i + 1] = 255
                 elif name == "m":
                     if stats[i+1][2]<35:
                         img2[output == i + 1] = 255
@@ -196,7 +198,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/1779.jpg")
-    pic_ = img_ini(pic, mode="d", name='h')
+    pic = cv2.imread("./raw_img/5715(95343.33333333333).jpg")
+    pic_ = img_ini(pic, mode="d", name='qx')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)
