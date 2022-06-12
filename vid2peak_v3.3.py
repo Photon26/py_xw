@@ -49,8 +49,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/gao/GAO/vid/2021/s6'
 # Outputfolder = '/media/gao/GAO/data/2021/s6'
 
-Inputfolder = 'D:/vid/2022/s4'
-Outputfolder = 'D:/data/2022/s4'
+Inputfolder = 'F:/vid/2022/s6'
+Outputfolder = 'F:/data/2022/s6'
 
 # Inputfolder = 'H:/vid/debug'
 # Outputfolder = 'H:/data/debug'
@@ -185,9 +185,11 @@ for f in a:
     if nolagging_test == 1:
         lagging = 0
 
-    mode = f.replace(name+"_", "", 1)[0]
-    if mode == "p" or mode == "d":
+    true_mode = f.replace(name+"_", "", 1)[0]
+    if true_mode == "p" or true_mode == "d":
         mode = "d"
+    else:
+        mode = "x"
 
     lag = lagging  # ms
     filen = f[:-4]
@@ -357,7 +359,7 @@ for f in a:
         print("Start calculating fire point...")
         timelength = timestamp[-1]
         i = 0
-        bqtime = (20+1/8) * 60 * 1000 / bpm
+        bqtime = (20+3/16) * 60 * 1000 / bpm
         timea = bqtime + lagging     # edited for lagging
         dif = np.zeros((length, 1))
 
@@ -380,6 +382,23 @@ for f in a:
                      + str(result[pic2]) + ". The time is:  " + str(
             timestamp[dif_id[0]] / 1000) + " to " +
                      str((timestamp[dif_id[0]] + timea) / 1000))
+
+        alter_id = None
+        if true_mode == "x" or true_mode == "d":
+            dif_alter = dif.copy()
+            # print(type(dif_alter))
+            #   alternative peak
+            max_id = np.argmax(dif_alter)
+            alter_id = max_id
+            while(abs(result[max_id]-result[alter_id])<10000):
+                dif_alter[alter_id] = 0
+                alter_id = np.argmax(dif_alter)
+                pscore_alter = np.max(dif_alter)
+            pic1_alter = alter_id
+            pic2_alter = (np.abs(timestamp - timestamp[pic1_alter] - timea)).argmin()
+            pindex_alter = round(pscore_alter / 3120, 1)
+            logger.write(f'\nAn alternative peak score is: {result[pic1_alter]} to {result[pic2_alter]}. The time is: '
+                         f'{timestamp[pic1_alter]/1000} to {timestamp[pic2_alter]/1000}.')
 
         #   Figure out the point for neighbouring fire(sep when solo peak is not one of the 2 points)
         neigs = 0
@@ -536,6 +555,17 @@ for f in a:
         get_gif(Inputfolder + '/' + f, time1, "solo_begin", dir)
         time2 = timestamp[pic2]
         get_gif(Inputfolder + '/' + f, time2, "solo_end", dir)
+
+        if alter_id is not None:
+            if pindex - pindex_alter <= 0.3:
+                jxs_alter = fins * 1.11 + pscore_alter * 0.5 * 1.11
+                bqscore = fins + pscore_alter * 1.7
+                logger.write(f'\n备用爆点序列：{pic1_alter} 到 {pic2_alter}')
+                logger.write(f'\n单排指数：{pindex_alter}')
+                time1_alter = timestamp[pic1_alter]
+                get_gif(Inputfolder + '/' + f, time1_alter, "备用_solo_begin", dir)
+                time2_alter = timestamp[pic2_alter]
+                get_gif(Inputfolder + '/' + f, time2_alter, "备用_solo_end", dir)
 
         if teams == seps:
             if pic1 > pic3:

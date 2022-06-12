@@ -6,6 +6,11 @@ import shutil
 import os
 import random as r
 import pickle
+import asposecells
+import jpype
+jpype.startJVM()
+from asposecells.api import *
+import win32com.client as win32
 
 def copy(num, filename, root, mode):
     """
@@ -49,7 +54,26 @@ def add_pic(workbook, img_path, place_lst = ['A1']):
             # print(pos)
             ws.add_image(img)
 
-def make_watermark(num, img_name, width = 1375, height = 8000, x_step = 500, y_step = 400, size = 100):
+def add_watermark_wordart(workbook, num, ws_num, row):
+    sheet = workbook.getWorksheets().get(ws_num)
+    for x in range(1, 10, 6):
+        for y in range(1, row, 5):
+            wordart = sheet.getShapes().addTextEffect(MsoPresetTextEffect.TEXT_EFFECT_2, str(num),
+                                                      "Arial Black", 50, False, False, y, 100, x, 1, 250, 600)
+            # Get the fill format of the word art
+            wordArtFormat = wordart.getFill()
+
+            # print(type(sheet.getShapes()))
+            # wordArtFormat.RotationAngle = 45
+            # # Set the color
+            wordArtFormat.setOneColorGradient((Color.getSilver()), 1, GradientStyleType.UNKNOWN, 2);
+            # Set the transparency
+            wordArtFormat.setTransparency(0.8)
+            wordart.setHasLine(False)
+            wordart.setLocked(False)
+    return workbook
+
+def make_watermark(num, img_name, width = 1375, height = 11000, x_step = 500, y_step = 400, size = 100):
     font = ImageFont.truetype("simhei.ttf", size)
     img = Image.new('RGBA', (x_step, y_step), (0, 0, 0, 0))  # make transparent background
     draw = ImageDraw.Draw(img)
@@ -116,36 +140,36 @@ if __name__ == "__main__":
     # wb.save('out.xlsx')
 
     #  set mode number and root folder
-    # num_xd = 130
-    # num_xx = 20
-    # num_xp = 20
-    # num_dx = 30
-    # num_dp = 20
-    # num_px = 40
-    # num_4 = 60
-    # num_p = 40
+    num_xd = 120
+    num_xx = 20
+    num_xp = 10
+    num_dx = 25
+    num_dp = 20
+    num_px = 30
+    num_4 = 80
+    num_p = 25
 
-    #  small num set for test
-    num_xd = 5
-    num_xx = 5
-    num_xp = 5
-    num_dx = 5
-    num_dp = 5
-    num_px = 5
-    num_4 = 5
-    num_p = 5
+    # #  small num set for test
+    # num_xd = 5
+    # num_xx = 5
+    # num_xp = 5
+    # num_dx = 5
+    # num_dp = 5
+    # num_px = 5
+    # num_4 = 5
+    # num_p = 5
 
-    root_folder = "D:/Photon/Desktop/S4-2022"
-    season = "S4-"
-    num_sum = num_xd+num_xx+num_xp+num_dx+num_dp+num_px+num_4
+    root_folder = "C:/Users/gao/Desktop/S5-2022"
+    season = "S5-"
+    num_sum = num_xd+num_xx+num_xp+num_dx+num_dp+num_px+num_4+num_p
 
-    #  generate dst
-    code_dst_gen(num_sum, 6, "2022-s4")  # TODO: delete it when once generated the dst
+    # #  generate dst
+    # code_dst_gen(num_sum, 6, "2022-s5")  # TODO: comment it when once generated the dst
 
     mode = ""
-    dst = pickle.load(open("2022-s4.pkl", "rb"))
+    dst = pickle.load(open("2022-s5.pkl", "rb"))
     dst = list(dst)
-    for i in range(0, num_sum):
+    for i in range(515, num_sum):
         #  classify mode and copy files
         if i < num_xd:
             mode = "xd"
@@ -173,8 +197,33 @@ if __name__ == "__main__":
             filepath = copy_single(season+"泡泡.xlsx", root_folder, season+"泡泡/"+str(i))
 
         #  add watermark
-        wb = openpyxl.load_workbook(filepath)
+        wb1 = openpyxl.load_workbook(filepath)
+        ws_num = len(wb1.sheetnames)
+        print(ws_num)
         num = dst[i]
-        make_watermark(num, "tst", x_step=250, y_step=200, size=70)
-        add_pic(wb, "tst.png")
+        wb = Workbook(filepath)
+
+        for ws_id in range(1, ws_num):
+            row = 1
+            ws = wb1.worksheets[ws_id]
+            while (ws['B' + str(row)].value) is not None:
+                row = row + 1
+            wb = add_watermark_wordart(wb, num, ws_id, row)
+            # print(ws_id)
+            # make_watermark(num, "tst", x_step=250, y_step=200, size=70)
+            # add_pic(wb, "tst.png")
+            # wb.save(filepath)
         wb.save(filepath)
+        del wb
+        print(filepath)
+
+        # delete the last sheet
+        excel = win32.gencache.EnsureDispatch('Excel.Application')
+        excel.Visible = False
+        excel.DisplayAlerts = False
+        wb2 = excel.Workbooks.Open(filepath)
+        i = wb2.Worksheets.Count
+        wb2.Worksheets(i).Delete()
+        wb2.Save()
+        excel.DisplayAlerts = True
+        excel.Application.Quit()
