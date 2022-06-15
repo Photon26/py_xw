@@ -556,10 +556,9 @@ for f in a:
         time2 = timestamp[pic2]
         get_gif(Inputfolder + '/' + f, time2, "solo_end", dir)
 
-        logger.write(f'\n备用爆点序列：{pic1_alter} 到 {pic2_alter}')
-        logger.write(f'\n单排指数：{pindex_alter}')
-
         if alter_id is not None:
+            logger.write(f'\n备用爆点序列：{pic1_alter} 到 {pic2_alter}')
+            logger.write(f'\n单排指数：{pindex_alter}')
             if pindex - pindex_alter <= 0.3:
                 jxs_alter = fins * 1.11 + pscore_alter * 0.5 * 1.11
                 bqscore = fins + pscore_alter * 1.7

@@ -2,8 +2,9 @@ import openpyxl
 import numpy as np
 import xlsxwriter
 
-def readin(fileroot, sheetn, colnum = 18):
-    # colnum = 18 when mode is y or p
+def readin(fileroot, sheetn, colnum = 21):
+    # colnum = 19 when mode is y or p (season included)
+    # colnum = 21 when mode is x or d (season included)
     wb = openpyxl.load_workbook(fileroot)
     ws = wb.worksheets[sheetn]
     song_count = 0
@@ -18,12 +19,43 @@ def readin(fileroot, sheetn, colnum = 18):
             if ws.cell(row + 1, col).value is None:
                 value = ''
             rowlst.append(value)
-        songlst.append(rowlst)
+        if not rowlst[16] == '无':
+            songlst.append(rowlst)
     songlst = np.array(songlst)
     song_count = song_count - 1
     return songlst, song_count
 
-def writein_format(songlst, workbook, mode, name):
+def readin_all(fileroot, colnum = 21):
+    # colnum = 19 when mode is y or p (season included)
+    # colnum = 21 when mode is x or d (season included)
+    # Note that in openpyxl, col num is from 1
+    wb = openpyxl.load_workbook(fileroot)
+    song_count = 0
+    songlst = []
+    for i in range(1, 5):
+        # 1 is x, 2 is d, 3 is y, 4 is p
+        ws = wb.worksheets[i]
+        for row in range(ws.max_row):
+            song_count = song_count + 1
+            if ws.cell(row + 1, 3).value == "歌名":
+                continue
+            rowlst = []
+            for col in range(1, colnum):
+                value = ws.cell(row + 1, col).value
+                if ws.cell(row + 1, col).value is None:
+                    value = ''
+                rowlst.append(value)
+            if i in [3, 4]:
+                rowlst[17] = ''
+                rowlst[18] = ''
+                rowlst[19] = ''
+            rowlst.append(i)    # rowlst[20] = mode
+            if not rowlst[16] == '无':
+                songlst.append(rowlst)
+        song_count = song_count - 1
+    return songlst
+
+def writein_format(songlst, workbook, mode, name, sspflag = 0):
     """
     lst[0]: alpha
     lst[1]: level
@@ -45,16 +77,16 @@ def writein_format(songlst, workbook, mode, name):
     """
     color_first = 'black'
     color_conditional = 'white'
-    if mode == "x":
+    if mode == "星":
         color_first = '#d0d0d0'
         color_conditional = '#f0f0f0'
-    if mode == "d":
+    if mode == "弹":
         color_first = '#c4a8ee'
         color_conditional = '#f6efff'
-    if mode == "y":
+    if mode == "弦":
         color_first = '#f4b183'
         color_conditional = '#fdf1e9'
-    if mode == "p":
+    if mode == "泡":
         color_first = '#6eaaf2'
         color_conditional = '#e5f1ff'
 
@@ -134,22 +166,29 @@ def writein_format(songlst, workbook, mode, name):
     })
 
     format_bgc = workbook.add_format({'bg_color': color_conditional})
-    head = ['音序', '星级', '歌名', 'cb1', '描述1', 'cb2', '描述2', '指数', '单排cb', '单排技能', '单排描述', '指数', 'SSPcb', 'SSP描述', '指数', '半cb']
+    if sspflag == 0:
+        head = ['音序', '星级', '歌名', 'cb1', '描述1', 'cb2', '描述2', '指数', '单排cb', '单排技能', '单排描述', '指数', '半cb']
+    else:
+        head = ['音序', '星级', '歌名', 'SSPcb', 'SSP描述', '指数', '半cb']
 
     worksheet = workbook.add_worksheet(name)
     count = 0
     for item in head:
         worksheet.write(0, count, item, cell_format_head)
         count = count+1
-    for format in workbook.formats:
-        format.set_font_name('DengXian')
-    worksheet.set_column("C:C", 20)
-    worksheet.set_column("E:E", 23.33)
-    worksheet.set_column("G:G", 23.33)
-    worksheet.set_column("K:K", 23.33)
-    worksheet.set_column("N:N", 23.33)
+    for format_ in workbook.formats:
+        format_.set_font_name('DengXian')
+    if sspflag == 0:
+        worksheet.set_column("C:C", 20)
+        worksheet.set_column("E:E", 23.33)
+        worksheet.set_column("G:G", 23.33)
+        worksheet.set_column("K:K", 23.33)
+    else:
+        worksheet.set_column("C:C", 35)
+        worksheet.set_column("D:D", 26)
+        worksheet.set_column("E:E", 44)
     row = 0
-    start_v = 'faferwefwq'
+    start_v = 'sdfdf'   # TODO: change it to ''
     start = 0
     for song in songlst:  # 处理 row+1 行的数据
         if not song[0] == start_v:
@@ -160,36 +199,64 @@ def writein_format(songlst, workbook, mode, name):
             start = row
             start_v = song[0]
             # print(cell1, cell2)
-
-        if song[9] == "爆气":
-            flag = 1
-        else:
-            flag = 0
-        for col in range(0, 17):
-            if col in [1, 3, 5, 7, 11, 12, 14, 15]:
-                if song[col].isdigit():
-                    worksheet.write_number(row + 1, col, int(song[col]), cell_format_bdfhlmop)
+        if sspflag == 0:
+            #   单双排
+            if song[9] == "爆气":
+                flag = 1
+            else:
+                flag = 0
+            for col in [1, 3, 5, 7, 11, 15]:
+                if col == 15:
+                    wcol = 12
+                else:
+                    wcol = col
+                if isinstance(song[col], int) or isinstance(song[col], float):
+                    worksheet.write_number(row + 1, wcol, int(song[col]), cell_format_bdfhlmop)
+                elif song[col].isdigit():
+                    worksheet.write_number(row + 1, wcol, int(song[col]), cell_format_bdfhlmop)
                 else:
                     try:
-                        worksheet.write_number(row + 1, col, float(song[col]), cell_format_bdfhlmop)
+                        worksheet.write_number(row + 1, wcol, float(song[col]), cell_format_bdfhlmop)
                     except:
-                        worksheet.write(row + 1, col, song[col], cell_format_bdfhlmop)
-            if col == 0:
-                worksheet.write(row + 1, col, song[col], cell_format_a)
-            if col == 2:
-                if flag == 1:
-                    worksheet.write(row + 1, col, song[col], cell_format_c2)
-                else:
-                    worksheet.write(row + 1, col, song[col], cell_format_c1)
-            if col in [4, 6, 10, 13]:
+                        worksheet.write(row + 1, wcol, song[col], cell_format_bdfhlmop)
+            worksheet.write(row + 1, 0, song[0], cell_format_a)   # 音序
+            if flag == 1:   # 歌名
+                worksheet.write(row + 1, 2, song[2], cell_format_c2)
+            else:
+                worksheet.write(row + 1, 2, song[2], cell_format_c1)
+            for col in [4, 6, 10]:  # 描述
                 worksheet.write(row + 1, col, song[col], cell_format_egkn)
-            if col in [8, 9]:
+            for col in [8, 9]:  # 技能、cb
                 if flag == 1:
                     worksheet.write(row + 1, col, song[col], cell_format_ij)
                 else:
                     worksheet.write(row + 1, col, song[col], cell_format_bdfhlmop)
-        str_long, str_len = str_maxlen(song[4], song[6])
-        rowlen = int((str_long.count('\n')+(str_len-str_long.count('\n'))//22+1)/3*50)
+            str_long, str_len = str_maxlen(song[4], song[6])
+            rowlen = int((str_long.count('\n')+(str_len-str_long.count('\n'))//22+1)/3*50)
+        else:
+            #   SSP
+            for col in [1, 14, 15]:
+                if col == 1:
+                    wcol = 1    # 星级
+                elif col == 14:
+                    wcol = 5    # 指数
+                elif col == 15:
+                    wcol = 6    # 半cb
+                if song[col].isdigit():
+                    worksheet.write_number(row + 1, wcol, int(song[col]), cell_format_bdfhlmop)
+                else:
+                    try:
+                        worksheet.write_number(row + 1, wcol, float(song[col]), cell_format_bdfhlmop)
+                    except:
+                        worksheet.write(row + 1, wcol, song[col], cell_format_bdfhlmop)
+            worksheet.write(row + 1, 0, song[0], cell_format_a)     # 音序
+            worksheet.write(row + 1, 2, song[2], cell_format_c2)    # 歌名
+            worksheet.write(row + 1, 4, song[13], cell_format_egkn)     # 描述
+            worksheet.write(row + 1, 3, song[12], cell_format_ij)       # cb
+
+            str_long, str_len = str_maxlen('', song[13])
+            rowlen = int((str_long.count('\n')+(str_len-str_long.count('\n'))//40+1)/3*48)
+
         worksheet.set_row(row+1, rowlen)
         row = row + 1
     cell1 = 'A' + str(start + 2)
@@ -197,18 +264,22 @@ def writein_format(songlst, workbook, mode, name):
     if start < row - 1:
         worksheet.merge_range(cell1 + ':' + cell2, start_v, cell_format_a)
 
-    worksheet.conditional_format('B2:P'+str(row+1),
-        {'type':     'formula',
-         'criteria': '=MOD(ROW(),2)=0',
-         'format':   format_bgc
-        })
+    if sspflag ==0:
+        cond_str = 'B2:M'
+    else:
+        cond_str = 'B2:G'
+    worksheet.conditional_format(cond_str+str(row+1),
+    {'type':     'formula',
+     'criteria': '=MOD(ROW(),2)=0',
+     'format':   format_bgc
+    })
     worksheet.freeze_panes(1, 1)
     worksheet.protect()
 
 def str_maxlen(str1, str2):
     len1 = int((len(str1.encode('utf-8'))-len(str1))/2+len(str1))
     len2 = int((len(str2.encode('utf-8'))-len(str2))/2+len(str2))
-    if len1>len2:
+    if len1 > len2:
         return str1, len1
     else:
         return str2, len2
@@ -228,25 +299,108 @@ def separate(lst):
     return lst_67, lst_810
 
 
-if __name__ == "__main__":
-    workbook = xlsxwriter.Workbook("demo.xlsx")
-    llst = []
-    for i in range(1, 5):
-        lst, _ = readin("test1.xlsx", i)
-        lst = lst[lst[:, 2].argsort()]
-        lst = lst[lst[:, 0].argsort()]
-        lst_67, lst_810 = separate(lst)
-        llst.append(lst_67)
-        llst.append(lst_810)
+def gen_all_songlst_modified(lst_ini, num_required):
+    # TODO: make sure num_required is smaller than power(2, spare_num)
+    # song_spare_lst = []
+    spare_id = []
+    count = 0
+    num_spare = 0
+    for song in lst_ini:
+        if not song[17] == '':   # make sure all None has been converted to ''
+            # song_spare_lst.append(song)
+            spare_id.append(count)
+            num_spare = num_spare + 1
+            # print(song[17], song[2])
+        count = count + 1
+    # num_spare = len(song_spare_lst)
+    # print(num_spare)
 
+    dst = []
 
-    writein_format(llst[0], workbook, "x", "星6-7")
-    writein_format(llst[1], workbook, "x", "星8-10")
-    writein_format(llst[2], workbook, "d", "弹6-7")
-    writein_format(llst[3], workbook, "d", "弹8-10")
-    writein_format(llst[4], workbook, "y", "弦6-7")
-    writein_format(llst[5], workbook, "y", "弦8-10")
-    writein_format(llst[6], workbook, "p", "泡6-7")
-    writein_format(llst[7], workbook, "p", "泡8-10")
+    str_b = '{0:0' + str(num_spare) + 'b}'
+    # point_select_matrix = []
+    modified_songllst = []
+    for i in range(0, num_required):
+        modified_songlst = lst_ini.copy()
+        point_select_array = np.zeros(num_spare)
+        point_select_str = str_b.format(i)
+        songnamelst = []
+        for j in range(len(point_select_str)):
+            point_select_array[j] = int(point_select_str[j])
+            if point_select_array[j] == 1:
+                modified_songlst[spare_id[j]][8] = lst_ini[spare_id[j]][17]
+                modified_songlst[spare_id[j]][10] = lst_ini[spare_id[j]][18]
+                modified_songlst[spare_id[j]][11] = lst_ini[spare_id[j]][19]
+                songnamelst.append(lst_ini[spare_id[j]][2])
+            else:
+                songnamelst.append('')
+        # point_select_array = np.array(point_select_array)
+        # point_select_matrix.append(point_select_array)
+        modified_songllst.append(modified_songlst)
+        dst.append(songnamelst)
+    return modified_songllst, dst
+
+def gen_file_with_fulllst(cata, full_lst, output_root, sspflag):
+    # Given a songlst with all mode and all level,
+    # Generate file with name.
+    xl = []
+    dl = []
+    yl = []
+    pl = []
+    for item in full_lst:
+        mode = item[20]
+        if mode == 1:
+            xl.append(item)
+        elif mode == 2:
+            dl.append(item)
+        elif mode == 3:
+            yl.append(item)
+        elif mode == 4:
+            pl.append(item)
+    lst_4 = [xl, dl, yl, pl]
+
+    if cata == "xd":
+        q = [0, 1]
+    elif cata == "xx":
+        q = [0, 2]
+    elif cata == "xp":
+        q = [0, 3]
+    elif cata == "dx":
+        q = [1, 2]
+    elif cata == "dp":
+        q = [1, 3]
+    elif cata == "px":
+        q = [2, 3]
+    elif cata == "p":
+        q = [3]
+    elif cata == "4":
+        q = [0, 1, 2, 3]
+
+    name = ["星", "弹", "弦", "泡"]
+    workbook = xlsxwriter.Workbook(output_root)
+    for m in q:
+        lst_m = lst_4[m]
+        lst_m = np.array(lst_m)
+        lst_m = lst_m[lst_m[:, 2].argsort()]
+        lst_m = lst_m[lst_m[:, 0].argsort()]
+        lst67, lst810 = separate(lst_m)
+        writein_format(lst67, workbook, name[m], name[m]+"6-7", sspflag)
+        writein_format(lst810, workbook, name[m], name[m] + "8-10", sspflag)
 
     workbook.close()
+
+
+if __name__ == "__main__":
+    songlst_all = readin_all("test.xlsx")
+
+    songdst, dst = gen_all_songlst_modified(songlst_all, 10)
+
+    songlst = songdst[0]
+    print(dst[0])
+    print(songdst[1]==songlst_all)
+    print(dst)
+
+    gen_file_with_fulllst("xd", songlst, "filetst.xlsx", 0)
+
+
+
