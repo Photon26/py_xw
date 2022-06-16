@@ -210,22 +210,3 @@
 # #         pass
 
 
-
-for i in range(0, num_required):
-    modified_songlst = lst_ini[:]
-    point_select_array = np.zeros(num_spare)
-    point_select_str = str_b.format(i)
-    songnamelst = []
-    for j in range(len(point_select_str)):
-        point_select_array[j] = int(point_select_str[j])
-        if point_select_array[j] == 1:
-            modified_songlst[spare_id[j]][8] = lst_ini[spare_id[j]][17]
-            modified_songlst[spare_id[j]][10] = lst_ini[spare_id[j]][18]
-            modified_songlst[spare_id[j]][11] = lst_ini[spare_id[j]][19]
-            songnamelst.append(lst_ini[spare_id[j]][2])
-        else:
-            songnamelst.append('')
-    # point_select_array = np.array(point_select_array)
-    # point_select_matrix.append(point_select_array)
-    modified_songllst.append(modified_songlst)
-    dst.append(songnamelst)

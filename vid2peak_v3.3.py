@@ -390,7 +390,7 @@ for f in a:
             #   alternative peak
             max_id = np.argmax(dif_alter)
             alter_id = max_id
-            while(abs(result[max_id]-result[alter_id])<3000):
+            while(abs(result[max_id]-result[alter_id])<6000):
                 dif_alter[alter_id] = 0
                 alter_id = np.argmax(dif_alter)
                 pscore_alter = np.max(dif_alter)
@@ -557,13 +557,13 @@ for f in a:
         get_gif(Inputfolder + '/' + f, time2, "solo_end", dir)
 
         if alter_id is not None:
-            logger.write(f'\n备用爆点序列：{pic1_alter} 到 {pic2_alter}')
-            logger.write(f'\n单排指数：{pindex_alter}')
+            # logger.write(f'\n备用爆点序列：{pic1_alter} 到 {pic2_alter}')
+            # logger.write(f'\n单排指数：{pindex_alter}')
             if pindex - pindex_alter <= 0.3:
                 jxs_alter = fins * 1.11 + pscore_alter * 0.5 * 1.11
                 bqscore = fins + pscore_alter * 1.7
-                # logger.write(f'\n备用爆点序列：{pic1_alter} 到 {pic2_alter}')
-                # logger.write(f'\n单排指数：{pindex_alter}')
+                logger.write(f'\n备用爆点序列：{pic1_alter} 到 {pic2_alter}')
+                logger.write(f'\n单排指数：{pindex_alter}')
                 time1_alter = timestamp[pic1_alter]
                 get_gif(Inputfolder + '/' + f, time1_alter, "备用_solo_begin", dir)
                 time2_alter = timestamp[pic2_alter]

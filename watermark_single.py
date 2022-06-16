@@ -54,4 +54,3 @@ excel.DisplayAlerts = True
 excel.Application.Quit()
 
 pickle.dump(list, open(name + "_1.pkl", 'wb'))
-

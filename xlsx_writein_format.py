@@ -1,6 +1,9 @@
+# 函数默认值不能给lst
+
 import openpyxl
 import numpy as np
 import xlsxwriter
+import copy
 
 def readin(fileroot, sheetn, colnum = 21):
     # colnum = 19 when mode is y or p (season included)
@@ -321,7 +324,7 @@ def gen_all_songlst_modified(lst_ini, num_required):
     # point_select_matrix = []
     modified_songllst = []
     for i in range(0, num_required):
-        modified_songlst = lst_ini.copy()
+        modified_songlst = copy.deepcopy(lst_ini)
         point_select_array = np.zeros(num_spare)
         point_select_str = str_b.format(i)
         songnamelst = []
@@ -359,21 +362,21 @@ def gen_file_with_fulllst(cata, full_lst, output_root, sspflag):
             pl.append(item)
     lst_4 = [xl, dl, yl, pl]
 
-    if cata == "xd":
+    if cata == "星弹":
         q = [0, 1]
-    elif cata == "xx":
+    elif cata == "星弦":
         q = [0, 2]
-    elif cata == "xp":
+    elif cata == "星泡":
         q = [0, 3]
-    elif cata == "dx":
+    elif cata == "弹弦":
         q = [1, 2]
-    elif cata == "dp":
+    elif cata == "弹泡":
         q = [1, 3]
-    elif cata == "px":
+    elif cata == "弦泡":
         q = [2, 3]
-    elif cata == "p":
+    elif cata == "泡泡":
         q = [3]
-    elif cata == "4":
+    elif cata == "四模":
         q = [0, 1, 2, 3]
 
     name = ["星", "弹", "弦", "泡"]
@@ -391,16 +394,47 @@ def gen_file_with_fulllst(cata, full_lst, output_root, sspflag):
 
 
 if __name__ == "__main__":
+    # from win32com.client import Dispatch
+    import win32com.client as win32
+
+    # xl = Dispatch("Excel.Application")
+    xl = win32.gencache.EnsureDispatch('Excel.Application')
+    xl.Visible = False  # You can remove this line if you don't want the Excel application to be visible
+
     songlst_all = readin_all("test.xlsx")
 
     songdst, dst = gen_all_songlst_modified(songlst_all, 10)
 
     songlst = songdst[0]
-    print(dst[0])
-    print(songdst[1]==songlst_all)
-    print(dst)
+    # print(dst[0])
+    # print(songdst[0]==songlst_all)
+    root = 'F:/py_xw/'
+    # print(dst)
 
-    gen_file_with_fulllst("xd", songlst, "filetst.xlsx", 0)
+    for name in ['星弹', '星弦', '星泡', '弹弦', '弹泡', '弦泡', '四模', '泡泡']:
+
+        gen_file_with_fulllst(name, songlst, name + ".xlsx", 0)
+        gen_file_with_fulllst(name, songlst, name + "SSP.xlsx", 1)
+        wb1 = xl.Workbooks.Open(root + "test.xlsx")
+        wb2 = xl.Workbooks.Open(root+name + ".xlsx")
+        wb3 = xl.Workbooks.Open(root+name + "SSP.xlsx")
+        ws1 = wb1.Worksheets(1)
+        ws1.Copy(Before=wb2.Worksheets(1))
+        ws1.Copy(Before=wb3.Worksheets(1))
+        wb2.Close(SaveChanges=True)
+        wb3.Close(SaveChanges=True)
+
+        title1 = '2022年S5赛季' + name + '爆气表说明'
+        title2 = '2022年S5赛季' + name + 'SSP爆气表说明'
+
+        wb2 = openpyxl.load_workbook(root+name + ".xlsx")
+        wb2.worksheets[0].cell(1, 1).value = title1
+        wb2.save(root+name + ".xlsx")
+        wb3 = openpyxl.load_workbook(root + name + "SSP.xlsx")
+        wb3.worksheets[0].cell(1, 1).value = title2
+        wb3.save(root + name + "SSP.xlsx")
+
+    xl.Quit()
 
 
 
