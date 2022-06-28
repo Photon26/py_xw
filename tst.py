@@ -1,25 +1,19 @@
-# a = ['aas',[3,2,1],[7,4,5]]
-# b =a.copy()
-# b[2][0] = 1
-# print(a,b)
-# print(id(a[2]), id(b[2]))
-#
-#
-# def change(lst):
-#     llst = []
-#     for i in range(0,3):
-#         k =lst.copy()
-#         k[0]='9'
-#         llst.append(k)
-#     return llst
-#
-# b = change(a)
-# print(a,b)
-def foo():
-    a = []
-    a.append(5)
-    print(a)
-    return a
-foo()
-foo()
-foo()
+from xlsx_writein_format import *
+from wps_utils import *
+import pickle as pkl
+import asposecells
+import jpype
+from asposecells.api import *
+import win32com.client as win32
+
+root_folder = "C:/Users/gao/Desktop/S6-2022"
+season = "S6"
+origin_file = "C:/Users/gao/Desktop/总表v4.16.xlsx"
+
+# get the full songlst
+songlst_all = readin_all(origin_file, 21, '7')
+
+# copy the files
+st_num = 0
+mode = '星弹'
+gen_file_with_fulllst(mode, songlst_all, root_folder, 0, season + '-')

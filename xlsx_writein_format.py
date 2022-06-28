@@ -1,11 +1,13 @@
 # 函数默认值不能给lst
+import os.path
 
 import openpyxl
 import numpy as np
 import xlsxwriter
 import copy
+import random as r
 
-def readin(fileroot, sheetn, colnum = 21):
+def readin(fileroot, sheetn, colnum = 21, f_season = 's7'):
     # colnum = 19 when mode is y or p (season included)
     # colnum = 21 when mode is x or d (season included)
     wb = openpyxl.load_workbook(fileroot)
@@ -22,13 +24,13 @@ def readin(fileroot, sheetn, colnum = 21):
             if ws.cell(row + 1, col).value is None:
                 value = ''
             rowlst.append(value)
-        if not rowlst[16] == '无':
+        if not rowlst[16] == '无' or rowlst[16] == f_season:
             songlst.append(rowlst)
     songlst = np.array(songlst)
     song_count = song_count - 1
     return songlst, song_count
 
-def readin_all(fileroot, colnum = 21):
+def readin_all(fileroot, colnum = 21, f_season = '7'):
     # colnum = 19 when mode is y or p (season included)
     # colnum = 21 when mode is x or d (season included)
     # Note that in openpyxl, col num is from 1
@@ -53,7 +55,7 @@ def readin_all(fileroot, colnum = 21):
                 rowlst[18] = ''
                 rowlst[19] = ''
             rowlst.append(i)    # rowlst[20] = mode
-            if not rowlst[16] == '无':
+            if not rowlst[16] == '无' and not rowlst[16] == 'S'+f_season and not rowlst[16] == 's'+f_season:
                 songlst.append(rowlst)
         song_count = song_count - 1
     return songlst
@@ -323,7 +325,12 @@ def gen_all_songlst_modified(lst_ini, num_required):
     str_b = '{0:0' + str(num_spare) + 'b}'
     # point_select_matrix = []
     modified_songllst = []
-    for i in range(0, num_required):
+
+    list = set("")
+    while len(list) < num_required:
+        x = r.randint(0, pow(2, num_spare)-1)
+        list.add(x)
+    for i in list:
         modified_songlst = copy.deepcopy(lst_ini)
         point_select_array = np.zeros(num_spare)
         point_select_str = str_b.format(i)
@@ -334,7 +341,7 @@ def gen_all_songlst_modified(lst_ini, num_required):
                 modified_songlst[spare_id[j]][8] = lst_ini[spare_id[j]][17]
                 modified_songlst[spare_id[j]][10] = lst_ini[spare_id[j]][18]
                 modified_songlst[spare_id[j]][11] = lst_ini[spare_id[j]][19]
-                songnamelst.append(lst_ini[spare_id[j]][2])
+                songnamelst.append(lst_ini[spare_id[j]][2] + str(lst_ini[spare_id[j]][20]))
             else:
                 songnamelst.append('')
         # point_select_array = np.array(point_select_array)
@@ -343,7 +350,7 @@ def gen_all_songlst_modified(lst_ini, num_required):
         dst.append(songnamelst)
     return modified_songllst, dst
 
-def gen_file_with_fulllst(cata, full_lst, output_root, sspflag):
+def gen_file_with_fulllst(cata, full_lst, output_root, sspflag, season = ''):
     # Given a songlst with all mode and all level,
     # Generate file with name.
     xl = []
@@ -380,7 +387,13 @@ def gen_file_with_fulllst(cata, full_lst, output_root, sspflag):
         q = [0, 1, 2, 3]
 
     name = ["星", "弹", "弦", "泡"]
-    workbook = xlsxwriter.Workbook(output_root)
+    if not (os.path.exists(output_root)):
+        os.makedirs(output_root)
+    if sspflag == 1:
+        output_file = output_root + '/' + season + cata + 'SSP' + '.xlsx'
+    else:
+        output_file = output_root + '/' + season + cata + '.xlsx'
+    workbook = xlsxwriter.Workbook(output_file)
     for m in q:
         lst_m = lst_4[m]
         lst_m = np.array(lst_m)
@@ -435,6 +448,3 @@ if __name__ == "__main__":
         wb3.save(root + name + "SSP.xlsx")
 
     xl.Quit()
-
-
-

@@ -12,7 +12,7 @@ jpype.startJVM()
 from asposecells.api import *
 import win32com.client as win32
 
-def copy(num, filename, root, mode):
+def copy_all(num, filename, root, mode, st_num = 0):
     """
     input:
     · root->file1, file2, ...
@@ -22,10 +22,10 @@ def copy(num, filename, root, mode):
     dir = root+"/"+mode
     if not os.path.exists(dir):
         os.makedirs(dir)
-    for i in range(0, num):
-        if not os.path.exists(dir+"/"+str(i+1)):
-            os.makedirs(dir+"/"+str(i+1))
-            shutil.copyfile(root+"/"+filename, dir+"/"+str(i+1)+"/"+filename)
+    for i in range(st_num, num+st_num):
+        if not os.path.exists(dir+"/"+str(i)):
+            os.makedirs(dir+"/"+str(i))
+            shutil.copyfile(root+"/"+filename, dir+"/"+str(i)+"/"+filename)
 
 def copy_single(filename, root, target):
     """
