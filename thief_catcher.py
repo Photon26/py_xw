@@ -5,7 +5,7 @@ import heapq
 season = 'S6'
 
 dst = pickle.load(open("2022-s6.pkl", "rb"))
-num = 535945  # enter the number
+num = 375087  # enter the number
 lst = list(dst)
 thief_num = lst.index(num)
 print(thief_num)

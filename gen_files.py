@@ -31,44 +31,48 @@ season = "S6"
 origin_file = "C:/Users/gao/Desktop/总表v4.16.xlsx"
 num_sum = num_xd+num_xx+num_xp+num_dx+num_dp+num_px+num_4+num_p
 
-# get the full songlst
-songlst_all = readin_all(origin_file, 21, '7')
+# # ---------------- Comment from this ----------------
+# # get the full songlst
+# songlst_all = readin_all(origin_file, 21, '7')
+#
+# # copy the files
+# st_num = 0
+# m = ['星弦', '星泡', '弹弦', '弹泡', '弦泡', '泡泡']
+# n = [num_xx, num_xp, num_dx, num_dp, num_px, num_p]
+# for i in range(0, len(m)):
+#     mode = m[i]
+#     num = n[i]
+#     gen_file_with_fulllst(mode, songlst_all, root_folder, 0, season + '-')
+#     copy_all(num, season + '-' + mode + '.xlsx', root_folder, mode, st_num)
+#     st_num = st_num + num
+#
+# # generate songlst for xd and 4
+# num_req = num_xd + num_4
+# songlst, dst = gen_all_songlst_modified(songlst_all, num_req)
+# pkl.dump(dst, open(season+'-'+"songlst.pkl", "wb"))
+# for i in range(0, num_xd):
+#     index = i + st_num
+#     gen_file_with_fulllst('星弹', songlst[i], root_folder + '/星弹/'+str(index), 0, season+ '-')
+# st_num = st_num+num_xd
+# for i in range(0, num_4):
+#     index = i + st_num
+#     gen_file_with_fulllst('四模', songlst[i+num_xd], root_folder + '/四模/'+str(index), 0, season+ '-')
+#
+#
+#
+# #  generate dst
+# code_dst_gen(num_sum, 6, "2022-s6")  # TODO: comment it when once generated the dst
+#
+# #  add watermark
+# # jpype.startJVM()
+# mode = ""
+# # ---------------- Comment to this ----------------
 
-# copy the files
-st_num = 0
-m = ['星弦', '星泡', '弹弦', '弹泡', '弦泡', '泡泡']
-n = [num_xx, num_xp, num_dx, num_dp, num_px, num_p]
-for i in range(0, len(m)):
-    mode = m[i]
-    num = n[i]
-    gen_file_with_fulllst(mode, songlst_all, root_folder, 0, season + '-')
-    copy_all(num, season + '-' + mode + '.xlsx', root_folder, mode, st_num)
-    st_num = st_num + num
-
-# generate songlst for xd and 4
-num_req = num_xd + num_4
-songlst, dst = gen_all_songlst_modified(songlst_all, num_req)
-pkl.dump(dst, open(season+'-'+"songlst.pkl", "wb"))
-for i in range(0, num_xd):
-    index = i + st_num
-    gen_file_with_fulllst('星弹', songlst[i], root_folder + '/星弹/'+str(index), 0, season+ '-')
-st_num = st_num+num_xd
-for i in range(0, num_4):
-    index = i + st_num
-    gen_file_with_fulllst('四模', songlst[i+num_xd], root_folder + '/四模/'+str(index), 0, season+ '-')
-
-
-
-#  generate dst
-code_dst_gen(num_sum, 6, "2022-s6")  # TODO: comment it when once generated the dst
-
-#  add watermark
-# jpype.startJVM()
-mode = ""
 dst = pickle.load(open("2022-s6.pkl", "rb"))
 dst = list(dst)
 
-for i in range(0, num_sum):
+#   TODO: change the start num and comment the above part
+for i in range(300, num_sum):
     #  classify mode and copy files
     flst = os.listdir(root_folder)
     for folder in flst:
