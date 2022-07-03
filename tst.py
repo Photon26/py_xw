@@ -18,23 +18,24 @@ songlst_all = readin_all(origin_file, 21, '7')
 st_num = 0
 mode = '四模'
 gen_file_with_fulllst(mode, songlst_all, root_folder, 0, season + '-')
-
 filepath = root_folder + '/' + season + '-' + mode + '.xlsx'
-wb1 = openpyxl.load_workbook(filepath)
-ws_num = len(wb1.sheetnames)
-print(ws_num)
-num = 375087
-wb = Workbook(filepath)
 
-for ws_id in range(0, ws_num):
-    row = 1
-    ws = wb1.worksheets[ws_id]
-    while (ws['B' + str(row)].value) is not None:
-        row = row + 1
-    wb = add_watermark_wordart(wb, num, ws_id, row)
-wb.save(filepath)
-del wb
-print(filepath)
+# #   watermark
+# wb1 = openpyxl.load_workbook(filepath)
+# ws_num = len(wb1.sheetnames)
+# print(ws_num)
+# num = 375087
+# wb = Workbook(filepath)
+#
+# for ws_id in range(0, ws_num):
+#     row = 1
+#     ws = wb1.worksheets[ws_id]
+#     while (ws['B' + str(row)].value) is not None:
+#         row = row + 1
+#     wb = add_watermark_wordart(wb, num, ws_id, row)
+# wb.save(filepath)
+# del wb
+# print(filepath)
 
 # change the title
 title = '2022年' + season + '赛季' + mode + '爆气表说明'

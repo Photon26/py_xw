@@ -4,15 +4,18 @@ import heapq
 
 season = 'S6'
 
-dst = pickle.load(open("2022-s6.pkl", "rb"))
-num = 375087  # enter the number
+dst = pickle.load(open("2022-s6_add.pkl", "rb"))
+num = 145240  # enter the number
 lst = list(dst)
-thief_num = lst.index(num)
-print(thief_num)
+try:
+    thief_num = lst.index(num)
+    print(thief_num)
+except:
+    print("No found.")
 
 
 dst = pickle.load(open(season+'-'+"songlst.pkl", "rb"))
-# print(dst[0])
+print(dst[0])
 slist = []
 anti_slist = []
 while True:

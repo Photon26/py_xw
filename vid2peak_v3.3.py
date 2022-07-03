@@ -49,8 +49,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/gao/GAO/vid/2021/s6'
 # Outputfolder = '/media/gao/GAO/data/2021/s6'
 
-Inputfolder = 'F:/vid/2022/s6'
-Outputfolder = 'F:/data/2022/s6'
+Inputfolder = 'F:/vid/2022/s7'
+Outputfolder = 'F:/data/2022/s7'
 
 # Inputfolder = 'H:/vid/debug'
 # Outputfolder = 'H:/data/debug'
@@ -390,7 +390,7 @@ for f in a:
             #   alternative peak
             max_id = np.argmax(dif_alter)
             alter_id = max_id
-            while(abs(result[max_id]-result[alter_id])<6000):
+            while(abs(result[max_id]-result[alter_id])<6240):
                 dif_alter[alter_id] = 0
                 alter_id = np.argmax(dif_alter)
                 pscore_alter = np.max(dif_alter)
@@ -559,7 +559,7 @@ for f in a:
         if alter_id is not None:
             # logger.write(f'\n备用爆点序列：{pic1_alter} 到 {pic2_alter}')
             # logger.write(f'\n单排指数：{pindex_alter}')
-            if pindex - pindex_alter <= 0.3:
+            if pindex - pindex_alter <= 0.15:
                 jxs_alter = fins * 1.11 + pscore_alter * 0.5 * 1.11
                 bqscore = fins + pscore_alter * 1.7
                 logger.write(f'\n备用爆点序列：{pic1_alter} 到 {pic2_alter}')
