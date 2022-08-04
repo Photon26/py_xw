@@ -49,8 +49,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/gao/GAO/vid/2021/s6'
 # Outputfolder = '/media/gao/GAO/data/2021/s6'
 
-Inputfolder = 'F:/vid/2022/s7'
-Outputfolder = 'F:/data/2022/s7'
+Inputfolder = 'D:/vid/2022/s8'
+Outputfolder = 'D:/data/2022/s8'
 
 # Inputfolder = 'H:/vid/debug'
 # Outputfolder = 'H:/data/debug'

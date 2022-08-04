@@ -4,8 +4,8 @@ import heapq
 
 season = 'S6'
 
-dst = pickle.load(open("2022-s6_add.pkl", "rb"))
-num = 145240  # enter the number
+dst = pickle.load(open("2022-s6.pkl", "rb"))
+num = 398548  # enter the number
 lst = list(dst)
 try:
     thief_num = lst.index(num)
@@ -15,9 +15,12 @@ except:
 
 
 dst = pickle.load(open(season+'-'+"songlst.pkl", "rb"))
-print(dst[0])
-slist = []
-anti_slist = []
+# print(dst[577-370])
+# print(dst[578-370])
+# print(dst[559-370])
+# print(dst[563-370])
+slist = ['窗前明月光2']
+anti_slist = ['N8PM2','Don\'t Go2','昭阳2','West Coast1','星夜愿景1','STAY1']
 while True:
     print("Please enter the song name that has changed(e.g. song1): ")
     name = input()
@@ -33,6 +36,8 @@ while True:
     anti_slist.append(name)
 
 sim = []
+
+print("---------------------")
 for i in range(0, len(dst)):
     sum = 0
     for song in slist:
@@ -45,5 +50,6 @@ for i in range(0, len(dst)):
 
 sim = np.array(sim)
 max_id = heapq.nlargest(5, range(len(sim)), key=sim.__getitem__)
+new_list = [x+150 for x in max_id]
 score = sim[max_id]
-print(max_id, score)
+print(new_list, score)

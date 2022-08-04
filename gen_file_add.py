@@ -7,14 +7,14 @@ from asposecells.api import *
 import win32com.client as win32
 
 #  set mode number and root folder
-num_xd = 0
-num_xx = 10
-num_xp = 10
+num_xd = 10
+num_xx = 0
+num_xp = 0
 num_dx = 0
 num_dp = 0
 num_px = 0
 num_4 = 0
-num_p = 15
+num_p = 0
 
 # #  small num set for test
 # num_xd = 5
@@ -41,7 +41,7 @@ len_origin = len(dst)
 # copy the files
 st_num = len_origin
 m = ['星弦', '星泡', '弹弦', '弹泡', '弦泡', '泡泡']
-n = [num_xx, num_xp, num_dx, num_dp, num_px, num_p]
+n = [num_xx, num_xp, num_dx, num_dp, num_px, num_p, num_xd]
 for i in range(0, len(m)):
     mode = m[i]
     num = n[i]

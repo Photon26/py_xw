@@ -304,14 +304,14 @@ def separate(lst):
     return lst_67, lst_810
 
 
-def gen_all_songlst_modified(lst_ini, num_required):
+def gen_all_songlst_modified(lst_ini, num_required, c_season = '7'):
     # TODO: make sure num_required is smaller than power(2, spare_num)
     # song_spare_lst = []
     spare_id = []
     count = 0
     num_spare = 0
     for song in lst_ini:
-        if not song[17] == '':   # make sure all None has been converted to ''
+        if (song[16] == 's' + c_season or song[16] == 'S' + c_season) and not song[17] == '':   # make sure all None has been converted to ''
             # song_spare_lst.append(song)
             spare_id.append(count)
             num_spare = num_spare + 1

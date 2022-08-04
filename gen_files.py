@@ -7,14 +7,14 @@ from asposecells.api import *
 import win32com.client as win32
 
 #  set mode number and root folder
-num_xd = 120
-num_xx = 20
-num_xp = 10
-num_dx = 25
-num_dp = 20
-num_px = 50
-num_4 = 80
-num_p = 25
+num_xd = 180
+num_xx = 50
+num_xp = 50
+num_dx = 50
+num_dp = 40
+num_px = 100
+num_4 = 100
+num_p = 80
 
 # #  small num set for test
 # num_xd = 5
@@ -26,14 +26,14 @@ num_p = 25
 # num_4 = 5
 # num_p = 5
 
-root_folder = "C:/Users/gao/Desktop/S6-2022"
-season = "S6"
+root_folder = "C:/Users/gao/Desktop/S7-2022"
+season = "S7"
 origin_file = "C:/Users/gao/Desktop/总表v4.16.xlsx"
 num_sum = num_xd+num_xx+num_xp+num_dx+num_dp+num_px+num_4+num_p
 
 # # ---------------- Comment from this ----------------
 # # get the full songlst
-# songlst_all = readin_all(origin_file, 21, '7')
+# songlst_all = readin_all(origin_file, 21, '8')
 #
 # # copy the files
 # st_num = 0
@@ -48,7 +48,7 @@ num_sum = num_xd+num_xx+num_xp+num_dx+num_dp+num_px+num_4+num_p
 #
 # # generate songlst for xd and 4
 # num_req = num_xd + num_4
-# songlst, dst = gen_all_songlst_modified(songlst_all, num_req)
+# songlst, dst = gen_all_songlst_modified(songlst_all, num_req, c_season='7')
 # pkl.dump(dst, open(season+'-'+"songlst.pkl", "wb"))
 # for i in range(0, num_xd):
 #     index = i + st_num
@@ -61,18 +61,18 @@ num_sum = num_xd+num_xx+num_xp+num_dx+num_dp+num_px+num_4+num_p
 #
 #
 # #  generate dst
-# code_dst_gen(num_sum, 6, "2022-s6")  # TODO: comment it when once generated the dst
+# code_dst_gen(num_sum, 6, "2022-s7")  # TODO: comment it when once generated the dst
 #
 # #  add watermark
 # # jpype.startJVM()
 # mode = ""
 # # ---------------- Comment to this ----------------
 
-dst = pickle.load(open("2022-s6.pkl", "rb"))
+dst = pickle.load(open("2022-s7.pkl", "rb"))
 dst = list(dst)
 
 #   TODO: change the start num and comment the above part
-for i in range(300, num_sum):
+for i in range(600, num_sum):
     #  classify mode and copy files
     flst = os.listdir(root_folder)
     for folder in flst:

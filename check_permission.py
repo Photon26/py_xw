@@ -1,7 +1,7 @@
 import openpyxl
 import os
 
-Inputfolder = "C:/Users/gao/OneDrive/S6-2022/S6-星弦"
+Inputfolder = "C:/Users/gao/OneDrive/S7-2022"
 a = os.listdir(Inputfolder)
 # print(a)
 for mode in a:
@@ -16,5 +16,5 @@ for mode in a:
             wb = openpyxl.load_workbook(book)
             print("-----" ,num,"-----")
         except:
-            print("permission denied: ", num)
+            # print("permission denied: ", num)
             pass
