@@ -48,12 +48,12 @@ import jpype
 from asposecells.api import *
 import win32com.client as win32
 
-root_folder = "C:/Users/gao/Desktop/S7-2022"
-season = "S7"
+root_folder = "C:/Users/gao/Desktop/S8-2022"
+season = "S8"
 origin_file = "C:/Users/gao/Desktop/总表v4.16.xlsx"
 
 # get the full songlst
-songlst_all = readin_all(origin_file, 21, '8')
+songlst_all = readin_all(origin_file, 21, '9')
 
 m = ['四模']
 for i in range(0, len(m)):
@@ -73,18 +73,18 @@ for i in range(0, len(m)):
     wb1 = openpyxl.load_workbook(filepath)
     ws_num = len(wb1.sheetnames)
     print(ws_num)
-    num = 791048
-    wb = Workbook(filepath)
-
-    for ws_id in range(0, ws_num):
-        row = 1
-        ws = wb1.worksheets[ws_id]
-        while (ws['B' + str(row)].value) is not None:
-            row = row + 1
-        wb = add_watermark_wordart(wb, num, ws_id, row)
-    wb.save(filepath)
-    del wb
-    print(filepath)
+    # num = 791048
+    # wb = Workbook(filepath)
+    #
+    # for ws_id in range(0, ws_num):
+    #     row = 1
+    #     ws = wb1.worksheets[ws_id]
+    #     while (ws['B' + str(row)].value) is not None:
+    #         row = row + 1
+    #     wb = add_watermark_wordart(wb, num, ws_id, row)
+    # wb.save(filepath)
+    # del wb
+    # print(filepath)
 
     xl = win32.gencache.EnsureDispatch('Excel.Application')
     xl.Visible = False

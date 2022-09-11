@@ -14,6 +14,8 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame_ = frame[185: 263, 1376: 1832, :]
         # frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
         # roi = frame[558: 885, 1759: 1919, :]
+    elif name == "j":
+        frame_ = frame[131: 212, 1333: 1836, :]
     elif name == "l":
         frame_ = frame[135: 213, 1367: 1834, :]
     elif name == "m":
@@ -42,6 +44,8 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         # frame_ = frame[122: 183, 910: 1228, :]
         # frame_ = frame[70: 119, 733: 1009, :]
         frame_ = frame[41: 94, 897: 1226, :]
+    elif name == "z":
+        frame_ = frame[186: 261, 1371: 1845, :]
     frame0 = cv2.cvtColor(frame_, cv2.COLOR_BGR2GRAY)
     _, frame0 = cv2.threshold(frame0, thres, 255, cv2.THRESH_BINARY)
     # kernel = np.ones((8, 8), np.uint8)
@@ -79,6 +83,12 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
             min_size = 100
             min_height = 53
             max_height = 78
+            ksize = 3
+            ystart = 20
+        if name == "j":  # ipad2022air5 10.9inch
+            min_size = 300
+            min_height = 50
+            max_height = 70
             ksize = 3
             ystart = 20
         elif name == "l":
@@ -135,6 +145,12 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         #     max_height = 75
         #     ksize = 2
         #     ystart = 20
+        elif name == "z":
+            min_size = 100
+            min_height = 53
+            max_height = 78
+            ksize = 3
+            ystart = 20
         else:
             min_size = 100
             min_height = 50
@@ -198,7 +214,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/5715(95343.33333333333).jpg")
-    pic_ = img_ini(pic, mode="d", name='qx')
+    pic = cv2.imread("./raw_img/7072(118460.00000000001).jpg")
+    pic_ = img_ini(pic, mode="y", name='j')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

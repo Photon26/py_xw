@@ -396,9 +396,11 @@ def gen_file_with_fulllst(cata, full_lst, output_root, sspflag, season = ''):
     workbook = xlsxwriter.Workbook(output_file)
     for m in q:
         lst_m = lst_4[m]
+        # lst_m = lst_m[lst_m[:, 2].argsort()]
+        # lst_m = lst_m[lst_m[:, 1].argsort()]
+        # lst_m = lst_m[lst_m[:, 0].argsort()]
+        lst_m.sort(key=lambda x: (x[0], x[1], x[2]))
         lst_m = np.array(lst_m)
-        lst_m = lst_m[lst_m[:, 2].argsort()]
-        lst_m = lst_m[lst_m[:, 0].argsort()]
         lst67, lst810 = separate(lst_m)
         writein_format(lst67, workbook, name[m], name[m]+"6-7", sspflag)
         writein_format(lst810, workbook, name[m], name[m] + "8-10", sspflag)

@@ -41,7 +41,7 @@ def num_Recog(frame0, model, name = "l"):
     elif name == "s":
         area = (45, 42)
     elif name == "j":
-        area = (55, 45)
+        area = (85, 55)
     elif name == "m":
         area = (60, 45)
     elif name == "mj":
