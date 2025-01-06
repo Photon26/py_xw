@@ -49,8 +49,8 @@ from firetime_Check import firetime_Check
 # Inputfolder = '/media/gao/GAO/vid/2021/s6'
 # Outputfolder = '/media/gao/GAO/data/2021/s6'
 
-Inputfolder = 'D:/vid/2022/s9'
-Outputfolder = 'D:/data/2022/s9'
+Inputfolder = 'D:/vid/2025-1/1'
+Outputfolder = 'D:/data/2025-1/1'
 
 # Inputfolder = 'H:/vid/debug'
 # Outputfolder = 'H:/data/debug'
@@ -61,123 +61,131 @@ lagging = 167   # for all ios devices
 nolagging_test = 1
 
 for f in a:
-    #   Define name
-    if f.startswith("a_"):
-        name = "a"
-        modeldir = "./model/model"
-        stmax = 150
-    if f.startswith("b_"):
-        name = "b"
-        modeldir = "./model/model_b"
-        stmax = 150
-    elif f.startswith("a1_"):
-        name = "a1"
-        modeldir = "./model/model"
-        stmax = 150
-    elif f.startswith("c_"):
-        name = "c"
-        modeldir = "./model/model_c"
-        stmax = 150
-    elif f.startswith("d_"):
-        name = "d"
-        modeldir = "./model/model_d"
-        stmax = 150
-    elif f.startswith("e_"):
-        name = "e"
-        modeldir = "./model/model_e"
-        stmax = 100
-    elif f.startswith("f_"):
-        name = "f"
-        modeldir = "./model/model_f"
-        stmax = 150
-    elif f.startswith("g_"):
-        name = "g"
-        modeldir = "./model/model_g_old"
-        stmax = 150
-    elif f.startswith("h_"):
-        name = "h"
-        modeldir = "./model/model_h"
-        stmax = 150
-    elif f.startswith("j_"):
-        name = "j"
-        modeldir = "./model/model_j"
-        stmax = 150
-    elif f.startswith("k_"):
-        name = "k"
-        modeldir = "./model/model_k"
-        stmax = 100
-    elif f.startswith("l_"):
-        name = "l"
-        modeldir = "./model/model_l"
-        stmax = 150
-    elif f.startswith("m_"):
-        name = "m"
-        modeldir = "./model/model_m"
-        stmax = 150
-    elif f.startswith("mj_"):
-        name = "mj"
-        modeldir = "./model/model_mj"
-        stmax = 150
-    elif f.startswith("mz_"):
-        name = "mz"
-        modeldir = "./model/model_mz"
-        stmax = 150
-        lagging = 164
-    elif f.startswith("q_"):
-        name = "q"
-        modeldir = "./model/model_q"
-        stmax = 150
-        lagging = 166
-    elif f.startswith("qx_"):
-        name = "qx"
-        # modeldir = "./model/model_qx_old"
-        modeldir = "./model/model_qx"
-        stmax = 150
-    elif f.startswith("r_"):
-        name = "r"
-        modeldir = "./model/model_r"
-        stmax = 150
-    elif f.startswith("s_"):
-        name = "j"
-        modeldir = "./model/model_j"
-        stmax = 150
-    elif f.startswith("t_"):
-        name = "t"
-        modeldir = "./model/model_t"
-        stmax = 150
-        lagging = 166
-    elif f.startswith("t1_"):
-        name = "t1"
-        modeldir = "./model/model_t1"
-        stmax = 150
-    elif f.startswith("x_"):
-        name = "x"
-        modeldir = "./model/model_x"
-        stmax = 150
-    elif f.startswith("w_"):
-        name = "w"
-        modeldir = "./model/model_w1"
-        stmax = 50
-        lagging = 166
-    elif f.startswith("y_"):
-        name = "y"
-        modeldir = "./model/model_ym"
-        stmax = 150
-        lagging = 206
-    elif f.startswith("y1_"):
-        name = "y1"
-        modeldir = "./model/model_y1"
-        stmax = 50
-        lagging = 206
-    elif f.startswith("z_"):
-        name = "z"
-        modeldir = "./model/model_z"
-        stmax = 150
-    # elif f.startswith("RP_"):
-    #     name = "mj"
-    #     modeldir = "./model/model_mj"
-    #     stmax = 150
-    #     f = "mj_x_xxyy_152.MP4"
+    if f.endswith(".MP4") or f.endswith(".mp4"):
+        #   Define name
+        if f.startswith("a_"):
+            name = "a"
+            modeldir = "./model/model"
+            stmax = 150
+        if f.startswith("b_"):
+            name = "b"
+            modeldir = "./model/model_b"
+            stmax = 150
+        elif f.startswith("a1_"):
+            name = "a1"
+            modeldir = "./model/model"
+            stmax = 150
+        elif f.startswith("c_"):
+            name = "c"
+            modeldir = "./model/model_c"
+            stmax = 150
+        elif f.startswith("d_"):
+            name = "d"
+            modeldir = "./model/model_d"
+            stmax = 150
+        elif f.startswith("e_"):
+            name = "e"
+            modeldir = "./model/model_e"
+            stmax = 100
+        elif f.startswith("f_"):
+            name = "f"
+            modeldir = "./model/model_f"
+            stmax = 150
+        elif f.startswith("g_"):
+            name = "g"
+            modeldir = "./model/model_g_old"
+            stmax = 150
+        elif f.startswith("h_"):
+            name = "h"
+            modeldir = "./model/model_h"
+            stmax = 150
+        elif f.startswith("j_"):
+            name = "j"
+            modeldir = "./model/model_j"
+            stmax = 150
+        elif f.startswith("k_"):
+            name = "k"
+            modeldir = "./model/model_k"
+            stmax = 100
+        elif f.startswith("l_"):
+            name = "l"
+            modeldir = "./model/model_l"
+            stmax = 150
+        elif f.startswith("m_"):
+            name = "m"
+            modeldir = "./model/model_m"
+            stmax = 150
+        elif f.startswith("mj_"):
+            name = "mj"
+            modeldir = "./model/model_mj"
+            stmax = 150
+        elif f.startswith("mz_"):
+            name = "mz"
+            modeldir = "./model/model_mz"
+            stmax = 150
+            lagging = 164
+        elif f.startswith("q_"):
+            name = "q"
+            modeldir = "./model/model_q"
+            stmax = 150
+            lagging = 166
+        elif f.startswith("qx_"):
+            name = "qx"
+            # modeldir = "./model/model_qx_old"
+            modeldir = "./model/model_qx"
+            stmax = 150
+        elif f.startswith("r_"):
+            name = "r"
+            modeldir = "./model/model_r"
+            stmax = 150
+        elif f.startswith("s_"):
+            name = "j"
+            modeldir = "./model/model_j"
+            stmax = 150
+        elif f.startswith("t_"):
+            name = "t"
+            modeldir = "./model/model_t"
+            stmax = 150
+            # lagging = 166
+        elif f.startswith("t1_"):
+            name = "t1"
+            modeldir = "./model/model_t1"
+            stmax = 150
+        elif f.startswith("x_"):
+            name = "x"
+            modeldir = "./model/model_x"
+            stmax = 150
+        elif f.startswith("w_"):
+            name = "w"
+            modeldir = "./model/model_w1"
+            stmax = 50
+            lagging = 166
+        elif f.startswith("y_"):
+            name = "y"
+            modeldir = "./model/model_ym"
+            stmax = 150
+            lagging = 206
+        elif f.startswith("y1_"):
+            name = "y1"
+            modeldir = "./model/model_y1"
+            stmax = 50
+            lagging = 206
+        elif f.startswith("z_"):
+            name = "z"
+            modeldir = "./model/model_z"
+            stmax = 150
+        # elif f.startswith("RP_"):
+        #     name = "mj"
+        #     modeldir = "./model/model_mj"
+        #     stmax = 150
+        #     f = "mj_x_xxyy_152.MP4"
+        else:
+            os.rename(Inputfolder + '/' + f, Inputfolder + '/' + 't_' + f)
+            f = 't_' + f
+            name = "t"
+            modeldir = "./model/model_t"
+            stmax = 150
+            # continue
     else:
         continue
 

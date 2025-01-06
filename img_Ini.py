@@ -24,10 +24,10 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
         frame = cv2.rotate(frame, cv2.ROTATE_90_CLOCKWISE)
         frame_ = frame[1391: 1839, 1176: 1253, :]
         frame_ = cv2.rotate(frame_, cv2.ROTATE_90_COUNTERCLOCKWISE)
+    # elif name == "t1":
+    #     frame_ = frame[185: 257, 1340: 1833, :]
     elif name == "t":
-        frame_ = frame[185: 257, 1340: 1833, :]
-    elif name == "t1":
-        frame_ = frame[186: 271, 1306: 1842, :]
+        frame_ = frame[131: 219, 1306: 1824, :]
     elif name == "qx":
         # frame_ = frame[130: 179, 942: 1221, :]        #   low resolution
         frame = cv2.rotate(frame, cv2.ROTATE_90_COUNTERCLOCKWISE)
@@ -51,10 +51,10 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     # kernel = np.ones((8, 8), np.uint8)
     #
     # frame0 = cv2.erode(frame0, kernel, iterations=1)
-    if name == "y1"  or name == "t1" or name == "w":
+    if name == "y1"  or name == "t" or name == "w":
         kernel = np.ones((2, 2), np.uint8)
         frame0 = cv2.dilate(frame0, kernel, iterations=1)
-    if name == "g" or name == "t":
+    if name == "g" or name == "t1":
         kernel = np.ones((3, 3), np.uint8)
         frame0 = cv2.dilate(frame0, kernel, iterations=1)
         kernel = np.ones((2, 2), np.uint8)
@@ -214,7 +214,7 @@ def img_ini(frame, thres = 240, mode = "x", name = "l"):
     return frame0
 
 if __name__ == '__main__':
-    pic = cv2.imread("./raw_img/7072(118460.00000000001).jpg")
-    pic_ = img_ini(pic, mode="y", name='j')
+    pic = cv2.imread("./raw_img/1703.jpg")
+    pic_ = img_ini(pic, mode="d", name='t')
     cv2.imshow("ini_pic", pic_)
     cv2.waitKey(0)

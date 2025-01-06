@@ -3,8 +3,8 @@ import time
 import os
 
 # Opens the Video file
-filen = "k_x_need_165"
-cap= cv2.VideoCapture('C:/Users/GAO/Videos/vid/'+filen+'.MP4')
+filen = "RPReplay_Final1735996451"
+cap= cv2.VideoCapture('C:/Users/GAO/Videos/'+filen+'.MP4')
 i=0
 st = time.time()
 dir = "./"+filen

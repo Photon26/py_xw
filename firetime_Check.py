@@ -50,8 +50,9 @@ def firetime_Check(frame, name="a"):
     elif name == "s":
         roi = frame[222: 420, 1185: 1280, :]
     elif name == "t":
-        frame = cv2.rotate(frame, cv2.ROTATE_180)
-        roi = frame[493: 840, 1: 155, :]
+        # frame = cv2.rotate(frame, cv2.ROTATE_180)
+        # roi = frame[493: 840, 1: 155, :]
+        roi = frame[506: 838, 1761: 1920, :]
     elif name == "t1":
         frame = cv2.rotate(frame, cv2.ROTATE_180)
         roi = frame[548: 889, 1758: 1921, :]
